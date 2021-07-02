@@ -1,0 +1,18 @@
+{
+  "name": "assignment-one-project-and-report-NicolasNuttall",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.3",
+    "@glidejs/glide": "^3.4.1",
+    "bootstrap": "^4.5.3",
+    "grunt": "^1.3.0",
+    "grunt-concurrent": "^3.0.0",
+    "grunt-contrib-uglify": "^5.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-sass": "^3.1.0",
+    "jquery": "^3.5.1",
+    "node-sass": "^5.0.0"
+  }
+}
