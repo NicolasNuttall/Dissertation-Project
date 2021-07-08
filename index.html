@@ -14,7 +14,83 @@
 </head>
 
 <body>
-  <div class="pop-up-window">
+  <div id="dashboardCreationWindow" style="display: none;" class="pop-up-window">
+    <div class="pop-up-box w-25 h-50">
+      <div class="close-window-box">
+        <button class="close-window"><i class="fas fa-times-circle"></i></button>
+      </div>
+      <div class="d-flex flex-column">
+          <input placeholder="Dashboard name" type="text" class="add-dashboard">
+          <div class="icon-select-box">
+            <h3 id="iconAdd">Edit Icon <span><i class="fas fa-caret-down"></i></span> <span><i id="icon-select-preview" class="fas fa-folder"></i></span></h3>
+            <div style="display: none;" class="icon-select">
+              <div class="icon-item">
+                <i class="fas fa-adjust"></i>
+                <p>Skeletonator</p>
+              </div>
+              <div class="icon-item">
+                <i class="fas fa-brain"></i>
+                <p>Brain</p>
+              </div>
+              <div class="icon-item">
+                <i class="fas fa-brain"></i>
+                <p>Brain</p>
+              </div>
+              <div class="icon-item">
+                <i class="fas fa-brain"></i>
+                <p>Brain</p>
+              </div>
+              <div class="icon-item">
+                <i class="fas fa-brain"></i>
+                <p>Brain</p>
+              </div>
+              <div class="icon-item">
+                <i class="fas fa-brain"></i>
+                <p>Brain</p>
+              </div>
+              <div class="icon-item">
+                <i class="fas fa-brain"></i>
+                <p>Brain</p>
+              </div>
+              <div class="icon-item">
+                <i class="fas fa-brain"></i>
+                <p>Brain</p>
+              </div>
+              <div class="icon-item">
+                <i class="fas fa-brain"></i>
+                <p>Brain</p>
+              </div>
+              <div class="icon-item">
+                <i class="fas fa-brain"></i>
+                <p>Brain</p>
+              </div>
+              <div class="icon-item">
+                <i class="fas fa-brain"></i>
+                <p>Brain</p>
+              </div>
+              <div class="icon-item">
+                <i class="fas fa-brain"></i>
+                <p>Brain</p>
+              </div>
+              <div class="icon-item">
+                <i class="fas fa-brain"></i>
+                <p>Brain</p>
+              </div>
+              <div class="icon-item">
+                <i class="fas fa-brain"></i>
+                <p>Brain</p>
+              </div>
+              <div class="icon-item">
+                <i class="fas fa-brain"></i>
+                <p>Brain</p>
+              </div>
+            </div>
+          </div>
+          <button class="add-button w-50 mt-5">Create Dashboard</button>
+      </div>
+    </div>
+  </div>
+  <div id="book-preview" class="pop-up-window">
     <div class="pop-up-box">
       <div class="close-window-box">
         <button class="close-window"><i class="fas fa-times-circle"></i></button>
@@ -82,7 +158,7 @@
         <li class="inactive-dashboard"><span><i class="fas fa-cog"></i></span> Settings</li>
       </a>
     </ul>
-    <button><span>Log out</span></button>
+    <a class="login" href="login.html"><span>Log out</span></a>
   </div>
       <div class="container-fluid p-0 m-0 dash-cont">
         <div class="navigator">
@@ -99,7 +175,7 @@
                 </div>
               </div>
             </div>
-            <button class="nav-create">Create +</button>
+            <button id="nav-create" class="nav-create">Create +</button>
           </div>
         </div>
         <div class="dashboard"> 

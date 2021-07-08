@@ -1,0 +1,71 @@
+.pop-up-box {
+  .close-window-box {
+    height: fit-content;
+  }
+  .add-dashboard {
+    margin-top: 1em;
+    border: 0px;
+    border-bottom: 1px solid var(--purple);
+    width: 40%;
+    font-size: 1.3rem;
+    &:focus {
+      outline: none;
+    }
+  }
+  .icon-select-box {
+    margin-top: 2rem;
+    position: relative;
+    width: 50%;
+    h3 {
+      font-size: 1.2rem;
+      cursor: pointer;
+      &:hover {
+        color: var(--purple);
+      }
+      #icon-select-preview {
+        margin-left: 1em;
+      }
+    }
+    .icon-select {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+      flex: 1 1 1 1;
+      max-height: 20rem;
+      overflow: scroll;
+      width: 200%;
+      padding: 0.2em;
+      position: absolute;
+      align-items: center;
+      background-color: white;
+      box-shadow: 5px 19px 49px -25px rgba(0, 0, 0, 0.75);
+      -webkit-box-shadow: 5px 19px 49px -25px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 5px 19px 49px -25px rgba(0, 0, 0, 0.75);
+      .icon-item {
+        padding: 0.5em;
+        text-align: center;
+        cursor: pointer;
+        width: 8em;
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          left: 0;
+          bottom: 0;
+          height: 0px;
+          background-color: var(--yellow);
+          transition: 0.1s ease-in-out;
+        }
+        &:hover {
+          background-color: #f8f9fa;
+          color: var(--purple);
+          &::after {
+            height: 10px;
+          }
+        }
+      }
+    }
+  }
+}
