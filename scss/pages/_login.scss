@@ -1,0 +1,127 @@
+.login-page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  overflow-y: hidden;
+  .login-left {
+    flex: 1;
+    background-color: var(--darkblue);
+    position: relative;
+    section {
+      display: flex;
+      flex-direction: column;
+      color: white;
+      justify-content: center;
+      align-items: center;
+      height: 70%;
+      width: 20em;
+      h3 {
+        font-size: 3em;
+      }
+    }
+  }
+  .login-right {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .logo {
+      text-align: left;
+      margin-top: 4em;
+      border-top: 1px solid var(--darkblue);
+      padding: 1em 3em 0 3em;
+      text-align: center;
+      img {
+        width: 150px;
+      }
+    }
+    form {
+      width: 35%;
+      display: flex;
+      flex-direction: column;
+      h1 {
+        font-weight: bold;
+        margin-bottom: 1em;
+      }
+      .input-section {
+        display: flex;
+        flex-direction: column;
+        height: 5em;
+        position: relative;
+        .acc-field {
+          outline: none;
+          border: 1px solid lightgrey;
+          transition: 0.1s ease-in-out;
+          margin-bottom: 1em;
+          padding: 0.7em;
+          border-radius: 5px;
+          position: relative;
+          height: 100%;
+         
+        }
+        .login-label {
+          position: absolute;
+          top: 20%;
+          margin-left: 1em;
+          z-index: 100;
+          transition: 0.1s ease-in-out;
+        }
+      }
+      button {
+        background-color: var(--purple);
+        color: white;
+        padding: 1em 0 1em 0;
+        transition: 0.1s ease-in-out;
+        &:hover {
+          background-color: var(--lowPurple);
+        }
+      }
+      a {
+        margin-bottom: 1em;
+      }
+    }
+  }
+}
+
+.acc-field:focus ~ .login-label, 
+.acc-field:not(:placeholder-shown).acc-field:not(:focus) ~.login-label{
+    top:5% !important;
+    font-size: 0.7rem;
+}
+
+.acc-field:focus{
+    border:2px solid var(--purple) !important;
+}
+
+.acc-field:focus ~ .login-label{
+    color:var(--purple);
+}
+
+@media (max-width: 1450px) {
+  .acc-form {
+    width: 60% !important;
+  }
+  .login-left {
+    section {
+      h3 {
+        font-size: 2em !important;
+        margin-left: 1em;
+      }
+    }
+  }
+}
+
+@media (max-width: 780px) {
+  .login-page {
+    flex-direction: column-reverse;
+    height: 160vh;
+    .login-right {
+      flex: 1;
+    }
+    form {
+      width: 80% !important;
+    }
+  }
+}
