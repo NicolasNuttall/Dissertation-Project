@@ -5,13 +5,13 @@ html {
   --bgblue: #2d9aed;
   --itemblue: #2a9df5;
   --purple: #605bac;
-  --lowPurple:rgb(81, 81, 133);
+  --lowPurple: rgb(81, 81, 133);
   --darkblue: #0e1327;
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 8px;
 }
 ::-webkit-scrollbar-thumb {
   background-color: var(--itemblue);

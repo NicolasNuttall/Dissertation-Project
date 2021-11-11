@@ -8,14 +8,15 @@
   <meta charset="utf-8">
   <title>Promotion - Sharing animation tips for free!</title>
   <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="css/styles.css" rel="stylesheet">
   <script src="https://kit.fontawesome.com/d96356a49f.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+  <div class="home-page-container">
   <div id="dashboardCreationWindow" style="display: none;" class="pop-up-window">
-    <div class="pop-up-box w-25 h-50">
+    <div class="pop-up-box h-50">
       <div class="close-window-box">
         <button class="close-window"><i class="fas fa-times-circle"></i></button>
       </div>
@@ -158,7 +159,7 @@
         <li class="inactive-dashboard"><span><i class="fas fa-cog"></i></span> Settings</li>
       </a>
     </ul>
-    <a class="login" href="login.html"><span>Log out</span></a>
+    <a class="login" href="log_in.html"><span>Log out</span></a>
   </div>
       <div class="container-fluid p-0 m-0 dash-cont">
         <div class="navigator">
@@ -179,7 +180,7 @@
           </div>
         </div>
         <div class="dashboard"> 
-          <div class="dashboard-item search-screen">
+          <div class="dashboard-item search-screen col-4">
             <div class="searchBox">
               <div class="search-box-shadow">
                   <i class="searchIcon fas fa-search"></i>
@@ -219,12 +220,35 @@
                     <p class="publishYear">1983</p>             
                 </div>
                 <button class="bookshelf-button"><span>+</span></button>
+              </div>
+              <div class="book-item-container">
+                <div class="book-img-container">
+                    <img class="book-item-image" src="./images/book.jpg"/>
+                </div>
+                <div class="book-item-text">
+                    <p class="book-item-title">Psxycholgy of perusuasion </p>
+                    <p class="book-item-authors">Dr Cialdini</p> 
+                    <p class="publishYear">1983</p>             
+                </div>
+                <button class="bookshelf-button"><span>+</span></button>
+    
+              </div>
+              <div class="book-item-container">
+                <div class="book-img-container">
+                    <img class="book-item-image" src="./images/book.jpg"/>
+                </div>
+                <div class="book-item-text">
+                    <p class="book-item-title">Psxycholgy of perusuasion </p>
+                    <p class="book-item-authors">Dr Cialdini</p> 
+                    <p class="publishYear">1983</p>             
+                </div>
+                <button class="bookshelf-button"><span>+</span></button>
     
               </div>
             </div>
             
           </div>
-          <div class="f-col">
+          <div class="f-col col">
             <div class="dash-item-half bs-container">
               <div class="f-row alc mb-2">
                 <h2>Psychology Bookshelf <span class="notes-pseudo purp"></span> <span><i class="ml-4 fas fa-book"></i></span></h2>
@@ -313,7 +337,7 @@
                 </div>
               </div>
             </div>
-            <div class="f-row">
+            <div class="f-row h-60">
               <div class="dash-item-half">
                 <h2 class="mb-4">Your Notes<span class="ml-3"><i class="fas fa-sticky-note"></i></span><span class="notes-pseudo yellow"></span><span></span></h2>
                 <div class="dashboard-item-scroll notes-list">
@@ -352,26 +376,24 @@
 
                 </div>
               </div>
-              <div>
-                <div class="dash-item-half">
-                  <form class="note-edit" action="">
-                    <div class="note-inputs">
-                      <input type="text" class="note-title-input" placeholder="Note Title">
-                      <textarea name="" id="" cols="30" rows="10" class="note-content-input" placeholder="Note away all your noteness . . ."></textarea>
-                    </div>
-                    <div class="note-edit-buttons">
-                      <button class="add-button">Add reference</button>
-                      <button class="save-note"><i class="fas fa-check"></i></button>
-                    </div>
-                  </form>
-                </div>
+              <div class="dash-item-half">
+                <form class="note-edit" action="">
+                  <div class="note-inputs">
+                    <input type="text" class="note-title-input" placeholder="Note Title">
+                    <textarea name="" id="" cols="30" rows="10" class="note-content-input" placeholder="Note away all your noteness . . ."></textarea>
+                  </div>
+                  <div class="note-edit-buttons">
+                    <button class="add-button">Add reference</button>
+                    <button class="save-note"><i class="fas fa-check"></i></button>
+                  </div>
+                </form>
               </div>
+       
             </div>
           </div>
         </div>
       </div>
-    
-  
+    </div>
 </body>
 
 </html>

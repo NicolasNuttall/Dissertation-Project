@@ -4,6 +4,17 @@
   width: auto;
 }
 
+.home-page-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+
+.h-60{
+  height:58%;
+}
+
 .f-row {
   display: flex;
   flex-direction: row;
@@ -13,7 +24,7 @@
   display: flex;
   flex-direction: row;
   padding-left: 5rem;
-  height: 100%;
+  flex: 9;
   position: relative;
   overflow: hidden;
   &::after {
@@ -24,22 +35,26 @@
     bottom: 0;
     left: 0;
     width: 100%;
+    z-index: -10;
   }
 }
 
 .dash-cont {
-  height: 1000px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .dashboard-item {
-  min-width: 600px;
+  min-width: 400px;
   height: 90%;
   position: relative;
-  padding: 2em;
+  padding: 2em 1em;
   background-color: white;
   box-shadow: -1px 10px 16px 0px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: -1px 10px 16px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: -1px 10px 16px 0px rgba(0, 0, 0, 0.75);
+  overflow-y: hidden;
 }
 
 .jcc {
@@ -81,8 +96,7 @@
   padding: 2em;
   padding-bottom: 4em;
   margin-bottom: 1rem;
-  min-width: 457px;
-  height: 603px;
+  min-width: 27.5rem;
   background-color: white;
   margin-left: 3rem;
   box-shadow: -1px 10px 16px 0px rgba(0, 0, 0, 0.75);
@@ -158,7 +172,7 @@
 .book-item-container {
   display: flex;
   flex-direction: row;
-  margin: 0 3em 1.4em 0em;
+  margin: 0 1em 1.4em 0em;
   text-align: center;
   background-color: white;
   border-radius: 10;
@@ -317,8 +331,8 @@
 
 .bs-container {
   min-width: 40rem;
-  max-width: 60rem;
-  height: 28%;
+  max-width: 58rem;
+  height: 32% !important;
   h2 {
     font-family: serif;
     font-size: 1.6em;
@@ -480,5 +494,48 @@
       -webkit-box-orient: vertical;
       max-width: 90%;
     }
+  }
+}
+
+@media screen and (max-width:900px) {
+  .home-page-container{
+    overflow:hidden;
+  }
+  .dashboard{
+    flex-direction: column !important;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    &::after{
+      display: none;
+    }
+  }
+  .bs-container{
+    max-width: 60%;
+    min-width: 50%;
+    max-height: 20rem;
+    .bs-grid{
+      padding-bottom: 0 !important;
+      height: 90%;
+    }
+    .notes-pseudo{
+      top:0;
+    }
+  }
+  .h-60{
+    flex-direction: column !important;
+  }
+  .dash-item-half{
+    margin-left: 0rem;
+    margin-top:1em;
+    max-width: 60% !important;
+
+  }
+  .dashboard-item{
+    min-height: 35rem !important;
+    max-width: 60% !important;
+  }
+  .f-col{
+    padding:0;
   }
 }

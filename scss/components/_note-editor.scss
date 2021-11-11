@@ -1,7 +1,7 @@
 .note-edit {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 100%; 
   .note-inputs {
     display: flex;
     flex-direction: column;
@@ -30,7 +30,7 @@
     }
   }
   .note-edit-buttons {
-    flex: 1;
+    height: 20%;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -93,3 +93,4 @@
         top:0px;
     }
 }
+

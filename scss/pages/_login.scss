@@ -6,6 +6,7 @@
   overflow-y: hidden;
   .login-left {
     flex: 1;
+    overflow: hidden;
     background-color: var(--darkblue);
     position: relative;
     section {
@@ -14,7 +15,7 @@
       color: white;
       justify-content: center;
       align-items: center;
-      height: 70%;
+      height: 100%;
       width: 20em;
       h3 {
         font-size: 3em;
@@ -59,7 +60,6 @@
           border-radius: 5px;
           position: relative;
           height: 100%;
-         
         }
         .login-label {
           position: absolute;
@@ -74,29 +74,65 @@
         color: white;
         padding: 1em 0 1em 0;
         transition: 0.1s ease-in-out;
+        outline: none;
+        border: 0px;
         &:hover {
           background-color: var(--lowPurple);
         }
       }
       a {
-        margin-bottom: 1em;
+        margin-top: 1em;
+        position: relative;
+        color:black;
+        &:hover{
+          text-decoration: none;
+          &::after{
+            height:100%;
+            width: 105%;;
+          }
+        }
+        &::after {
+          transition:0.1s ease-in-out;
+          content: "";
+          position: absolute;
+          width: 100%;
+          left: 10px;
+          z-index: -1;
+          top:20%;
+
+          background-color: #c7e4ed;
+          height: 80%;
+        }
       }
     }
   }
 }
 
-.acc-field:focus ~ .login-label, 
-.acc-field:not(:placeholder-shown).acc-field:not(:focus) ~.login-label{
-    top:5% !important;
-    font-size: 0.7rem;
+.long-btext-cont {
+  height: 3em;
+  .login-btext {
+    animation: log-high 2s linear infinite;
+    color: var(--yellow);
+    text-align: left;
+    &::after {
+      content: "";
+      position: absolute;
+    }
+  }
 }
 
-.acc-field:focus{
-    border:2px solid var(--purple) !important;
+.acc-field:focus ~ .login-label,
+.acc-field:not(:placeholder-shown).acc-field:not(:focus) ~ .login-label {
+  top: 5% !important;
+  font-size: 0.7rem;
 }
 
-.acc-field:focus ~ .login-label{
-    color:var(--purple);
+.acc-field:focus {
+  border: 2px solid var(--purple) !important;
+}
+
+.acc-field:focus ~ .login-label {
+  color: var(--purple);
 }
 
 @media (max-width: 1450px) {
@@ -113,7 +149,7 @@
   }
 }
 
-@media (max-width: 780px) {
+@media (max-width: 1200px) {
   .login-page {
     flex-direction: column-reverse;
     height: 160vh;
@@ -123,5 +159,17 @@
     form {
       width: 80% !important;
     }
+  }
+}
+
+@keyframes log-high {
+  0% {
+    content: "adad";
+  }
+  50% {
+    content: "AD";
+  }
+  100% {
+    content: "asdna";
   }
 }
