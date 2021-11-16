@@ -1,13 +1,14 @@
 .navbar-body {
-  height: 100%;
+  height: 100vh;
   width: 22rem;
   min-width: 17rem;
   background-color: #0e1327;
-  position: relative;
+  position: fixed;
   display: flex;
   flex-direction: column;
   color: white;
   padding: 1rem 2em 1rem 3em;
+
   .login {
     text-align: center;
     text-decoration: none;
@@ -17,7 +18,6 @@
     padding: 0.7em 1em 1em 1em;
     border-radius: 1em;
     overflow: hidden;
-    position: relative;
     position: relative;
     span {
       z-index: 100;
