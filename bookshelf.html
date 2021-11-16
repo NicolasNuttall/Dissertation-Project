@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="./js/scripts-vendor.min.js"></script>
+  <script src="./js/scripts.min.js"></script>
+  <meta charset="utf-8">
+  <title>Promotion - Sharing animation tips for free!</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/styles.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/d96356a49f.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="navbar-body">
+        <h1>BookBeater</h1>
+        <div class="jcc alc f-row add-dashboard">
+          <div class="plus-sign">
+            <i class="fas fa-plus-circle"></i>
+          </div>
+          <textarea placeholder="Add a new dashboard"></textarea>
+        </div>
+        <ul class="mb-5">
+          <a href="">
+            <li class="active-dashboard"><span><i class="fas fa-brain"></i></span>Psychology</li>
+          </a>
+          <a href="">
+            <li class="inactive-dashboard"><span><i class="far fa-lightbulb"></i></span>Philosophy</li>
+          </a>
+          <a href="">
+            <li class="inactive-dashboard"><span><i class="fas fa-laptop"></i></span>Computers</li>
+          </a>
+          <a href="">
+            <li class="inactive-dashboard"><span><i class="fas fa-user-tie"></i></span>Business</li>
+          </a>
+        </ul>
+        <ul class="mb-5">
+          <a href="">
+            <li class="inactive-dashboard"><span><i class="fas fa-cog"></i></span> Settings</li>
+          </a>
+        </ul>
+        <a class="login" href="log_in.html"><span>Log out</span></a>
+    </div>
+    <div class="container">
+        <h2>Bookshelf</h2>
+        <div class="row">
+            <input placeholder="Search for a book" type="text">
+            <button>Search</button>
+        </div>
+        <button>Create Custom Item</button>
+        <div class="row">
+            <div class="col-6">
+                <div class="d-flex bookshelf-display">
+                    <h3>Display:</h3>
+                    <i class="fas fa-grip-horizontal"></i>
+                    <i class="fas fa-th-list"></i>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="d-flex bookshelf-filter">
+                    <h3>Filter:</h3>
+                    <select name="" id="">
+                        <option>Recently Viewed</option>
+                        <option>Oldest Viewed</option>
+                        <option>Recently Noted</option>
+                        <option>Recently Studied</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="bookshelf-grid">
+                <div class="bookshelf-item-container">
+                    <div class="book-item-front">
+                        <img src="./images/book.jpg" alt="">
+                        <div class="front-info">
+                            <h2>Book Title</h2>
+                            <p>By Author name</p>
+                        </div>
+                    </div>
+                    <div class="book-item-back">
+                        <div class="d-flex">
+                            <p class="notes-number">21 - </p>
+                            <p class="reading-time"> 00:32:23</p>
+                        </div>
+                        <div class="d-flex book-buttons">
+                            <button>View Book</button>
+                            <button>Study</button>
+                        </div>
+                    </div>
+                    <div class="background"></div>
+                </div>
+           
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
