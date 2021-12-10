@@ -14,7 +14,91 @@
 </head>
 
 <body>
+  <nav class="navbar-body">
+    <h1>BookBeater</h1>
+    <div class="jcc alc f-row add-dashboard">
+      <div class="plus-sign">
+        <i class="fas fa-plus-circle"></i>
+      </div>
+      <textarea placeholder="Add a new dashboard"></textarea>
+    </div>
+    <ul class="mb-5">
+      <a href="">
+        <li class="active-dashboard"><span><i class="fas fa-brain"></i></span>Psychology</li>
+      </a>
+      <a href="">
+        <li class="inactive-dashboard"><span><i class="far fa-lightbulb"></i></span>Philosophy</li>
+      </a>
+      <a href="">
+        <li class="inactive-dashboard"><span><i class="fas fa-laptop"></i></span>Computers</li>
+      </a>
+      <a href="">
+        <li class="inactive-dashboard"><span><i class="fas fa-user-tie"></i></span>Business</li>
+      </a>
+    </ul>
+    <ul class="mb-5">
+      <a href="">
+        <li class="inactive-dashboard"><span><i class="fas fa-cog"></i></span> Settings</li>
+      </a>
+    </ul>
+    <a class="login" href="log_in.html"><span>Log out</span></a>
+  </nav>
+  <div class="book-header-container">
+    <div class="container bookPageBody">
+      <div class="row book-header">
+          <div class="book-nav">      
+            <ul>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Study</a></li>
+              <li><a href="#">Notes</a></li> 
+              <li><a href="#">Community</a></li>
+            </ul>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="container bookPageBody" '>  
+    <div class="row">
+      <div class="col-3 bcc ">
+        <div class="book-cover-container">
+          <img src="./images/5695.jpg" alt="">
+        </div>
+        <button class="green-button">Add to Bookshelf</button>
+        <div class="stats">
+          <a class="stat">
+            <i class="fas fa-clock"></i>
+            <p>2h 30m</p>
+          </a>
+          <a class="stat">
+            <i class="fas fa-sticky-note"></i>
+            <p>23 Notes</p>
+          </a>
+        </div>
+      </div>
+      <div class="col">
+        <div class="book-details">
+          <h3>DEMONS (1876) </h3>
+          <p class="author-name">By Fyodor Dostoevsky</p>
+          <p class="book-description">Dostoevsky conceived the idea of Crime and Punishment, prompted by the case of Pierre François Lacenaire, in the summer of 1865.[citation needed] He had been working on another project at the time entitled The Drunkards, which was to deal with "the present question of drunkenness ... [in] all its ramifications, especially the picture of a family and the bringing up of children in these circumstances, etc., etc." This theme, centering on the story of the Marmeladov family, became ancillary to the story of Raskolnikov and his crime.[7] </p>
+          <p class="loadmore">Read More</p>
+        </div>
+        <h3 class="recent-heading">Recent Notes<span><a class="loadmore" href="">View All</a></span></h3>
+        <div class="recent-activity-container">
+          <div class="recent-activity">
+            <h4>23 Days ago... <span><i class="fas fa-ellipsis-v"></i></span></h4>
+            <p>You completed a 60 minute reading session, where you created 30 notes</p>
+            <p class="loadmore">Read More</p>
+          </div>
+          <div class="recent-activity">
+            <h4>23 Days ago... <span><i class="fas fa-ellipsis-v"></i></span></h4>
+            <p>You completed a 60 minute reading session, wYou completed a 60 minute reading session,here you created reading session, wYou completed a 60 minute reading session,here you created 21 notes</p>
+            <p class="loadmore">Read More</p>
+          </div>
+        </div>
+      </div>
+    </div>
     
+  </div>
 </body>
 
 </html>

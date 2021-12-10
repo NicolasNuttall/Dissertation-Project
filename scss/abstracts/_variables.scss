@@ -9,22 +9,10 @@ html {
   --darkblue: #10196c;
 }
 
-::-webkit-scrollbar {
-  width: 6px;
-  height: 8px;
-}
-::-webkit-scrollbar-thumb {
-  background-color: var(--itemblue);
-}
-::-webkit-scrollbar-track {
-  background-color: white;
-}
-
 body {
   margin: 0;
   padding: 0;
-  display: flex;
-  background-color: rgb(241, 241, 241) !important;
+  background-color: white !important;
   max-width: 100vw;
 }
 
@@ -34,4 +22,14 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+@font-face {
+  font-family: "BreeSerif";
+  src: url("../../fonts/BreeSerif-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Song";
+  src: url("../../fonts/SongMyung-Regular.ttf") format("truetype");
 }

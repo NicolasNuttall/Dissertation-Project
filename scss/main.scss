@@ -6,6 +6,7 @@
 
 //components
 @import "components/navbar";
+@import "components/book-item";
 @import "components/navigator";
 @import "components/note-editor";
 @import "components/book-pop-up";
@@ -14,4 +15,5 @@
 @import "pages/dashboard";
 @import "pages/login";
 @import "pages/bookshelf";
+@import "pages/about-book";
 //layout

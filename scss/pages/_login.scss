@@ -7,7 +7,7 @@
   .login-left {
     flex: 1;
     overflow: hidden;
-    background-color: var(--darkblue);
+    background-color: #0d1226;
     position: relative;
     section {
       display: flex;
@@ -83,22 +83,22 @@
       a {
         margin-top: 1em;
         position: relative;
-        color:black;
-        &:hover{
+        color: black;
+        &:hover {
           text-decoration: none;
-          &::after{
-            height:100%;
-            width: 105%;;
+          &::after {
+            height: 100%;
+            width: 105%;
           }
         }
         &::after {
-          transition:0.1s ease-in-out;
+          transition: 0.1s ease-in-out;
           content: "";
           position: absolute;
           width: 100%;
           left: 10px;
           z-index: -1;
-          top:20%;
+          top: 20%;
 
           background-color: #c7e4ed;
           height: 80%;

@@ -1,0 +1,232 @@
+.bookPageBody {
+  padding-left: 12rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom:4rem;
+  .recent-heading{
+    font-family:"Song";
+    max-width: 500px;
+    display:flex;
+    margin-top:4rem;
+    span{
+      margin-left: auto;
+      font-size: 1.2rem !important;
+      padding:6px;
+      padding-bottom:0px;
+      margin-top:auto;
+      margin-bottom: auto;
+      a{
+        text-decoration: none;
+        color:black;
+        margin-top:auto;
+        margin-bottom:auto;
+        height: 100%;
+        padding:0.4em 0.2em;
+      }
+    }
+  }
+  .recent-activity-container{
+    max-width: 500px;
+    animation: textload 0.4s forwards;
+    animation-delay: 0.2s;
+    opacity:0;
+    .recent-activity{
+      width:100%;
+      padding:2rem 3rem 4rem 3rem;
+      background-color: white;
+      box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.34);
+      margin-top:2rem;
+      h4{
+        font-family: "Song";
+        width: 100%;
+        display:flex;
+        margin-bottom:1.5rem;
+        font-size: 1.7rem;
+        span{
+          margin-left:auto;
+          i{
+            font-size:1rem;
+            margin-top:auto;
+            margin-bottom:auto;
+          }
+        }
+      }
+      p{
+
+      }
+    }
+  }
+}
+
+.book-header-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.book-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  justify-content: space-between;
+  img {
+    width: 80%;
+    height: auto;
+  }
+  h2 {
+    font-family: "Song";
+    margin-bottom: 0px;
+    color: white;
+  }
+  p {
+    color: white;
+  }
+}
+
+.loadmore{
+  font-family: "Song";
+  border-bottom: 1px solid black;
+  width: fit-content;
+  font-size: 1.1rem;
+  cursor:pointer;
+  margin-bottom: 0px;
+  &:hover{
+    font-weight: bold;
+    border-bottom:2px solid black;
+    margin-bottom: -1px;
+  }
+}
+
+.book-details {
+  display: flex;
+  flex-direction: column;
+  animation: textload 0.5s forwards;
+  h3 {
+    font-family: "Song";
+    font-size: 2.6rem;
+    text-transform: uppercase;
+    margin-bottom: 0px;
+  }
+  .author-name {
+    letter-spacing: 3px;
+    font-family: "Song";
+    text-transform: uppercase;
+  }
+  .book-description {
+    font-family: "Song";
+    max-width: 50ch;
+    line-height: 20px;
+    font-size: 1.1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+  }
+}
+
+.book-nav {
+  width: 86%;
+  margin-bottom: 1rem;
+  ul {
+    list-style: none;
+    display: flex;
+    margin-left: 0px;
+    padding-left: 0px;
+    justify-content: space-between;
+    margin-top: 1rem;
+    li {
+      a {
+        color: black;
+        padding: 0.7em 1em;
+        font-family: "BreeSerif";
+        &:hover {
+        }
+      }
+    }
+  }
+}
+.bcc{
+  margin-right: 4rem;
+  display: flex;
+  flex-direction: column;
+  .green-button{
+    margin-top:2rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .stats{
+    margin-top:2rem;
+    .stat{
+      display:flex;
+      padding:1em;
+      border-radius: 1em;
+      cursor:pointer;
+      text-decoration: none;
+      color:$purple;
+      &:hover{
+        background-color:rgb(237, 248, 240);
+        color:rgb(72, 35, 95);
+      }
+      i{
+        margin-right: 1em;
+        font-size:1.5rem;
+      }
+      p{
+        margin-bottom:0px;
+        font-weight: bold;
+        font-family: "Song";
+      }
+    }
+  }
+}
+.book-cover-container {
+  width:100%;
+  img {
+    width: 100%;
+    height: auto;
+    position: relative;
+    box-shadow: 4px 5px 4px rgba(0, 0, 0, 0.58);
+    animation:bookload 0.4s;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    width: 270px;
+    height: 270px;
+    background-color: rgb(243, 196, 206);
+    left: -1rem;
+    right: 0;
+    top:1rem;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    z-index: -1;
+    animation: bookload 0.4s forwards ;
+    opacity:0;
+    animation-delay: 0.2s;
+  }
+}
+
+@keyframes bookload{
+  0%{
+    transform:scale(0.6);
+    opacity:1;
+  }
+  100%{
+    transform:scale(1);
+    opacity:1;
+  }
+}
+
+@keyframes textload{
+  0%{
+    opacity:0;
+    transform:translateY(30px);
+  }
+  100%{
+    opacity:1;
+    transform:translayeY(0px);
+  }
+}
