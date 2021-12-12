@@ -1,0 +1,178 @@
+.mini-book-box{
+    display:flex;
+    flex-direction: row;
+    margin-bottom:4rem;
+    animation: textload 0.4s;
+    .mini-book-img{
+        max-width:80px;
+        img{
+            width: 100%;
+        }
+    }
+    .mini-book-text{
+        margin-left: 2rem;
+        h3{
+            font-family:"Song";
+            text-transform: uppercase;
+            font-size: 2rem;
+            margin-bottom: 0.1em;
+        }
+        p{
+            text-transform: uppercase;
+            font-family: "Song";
+            letter-spacing: 2px;
+        }
+    }
+}
+
+.study-body{
+
+    .study-section{
+        width: 80%;
+        .study-top{
+            display: flex;
+            position: relative;
+            h4{
+                font-family: "Song";
+                font-size: 1.7rem;
+            }
+            .timer-menu{
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+                margin-left: auto;
+                position: relative;
+                padding:0.2em 1em;
+                border-radius: 1em 0px 1em 0px;
+                cursor:pointer;
+                color:$green;
+                background-color: $darkblue;
+                i{
+                    transition:0.2s ease-in-out;
+                }
+                .upwardsarrow{
+                    transform: rotate(180deg);
+                }
+                &:hover{
+                   .fa-hourglass-start{
+                       transform:translateY(-2px);
+                   }
+                }
+                p{
+                    margin-bottom: 0px;
+                    margin-left:1em;
+                    margin-right:1em;
+                }
+                
+                
+            }
+            .revealed-menu{
+                display:flex !important;
+            }
+            .timer-changer{
+                display:none;
+                position: absolute;
+                right:0;
+                bottom:-160%;
+                padding:1em;
+                background-color:white;
+                box-shadow: $menu-dropdown;
+                width: fit-content;
+                border-radius:1em;
+                input{
+                 width:3.5em;
+                 border:0px;
+                 outline:none;
+                }
+                i{
+                    margin-left:1em;
+                    margin-top: auto;
+                    margin-bottom: auto;
+                    width:30px;
+                    height: 30px;
+                    background-color:red;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color:white;
+                    margin-left: auto;
+                    cursor:pointer;
+                }
+            }
+        }
+        .sticky-box{
+            position:sticky;
+            top:20px;
+            background-color: white;
+            z-index: 100;
+        }
+        .note-creation-box{
+            width:100%;
+            margin-top:1em;
+            background-color: white;
+            padding-bottom: 1em;
+            textarea{
+                width:100%;
+            }
+        }
+    }
+    .study-notes-container{
+        margin-top:4rem;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        .study-note-item{
+            box-shadow: $menu-dropdown;
+            padding:1rem 2rem;
+            max-width: 500px;
+            margin-bottom: 2rem;
+            h4{
+                font-family: "Song";
+                width: 100%;
+                display:flex;
+                margin-bottom:1.5rem;
+                font-size: 1.7rem;
+                span{
+                  margin-left:auto;
+                  position: relative;
+                  i{
+                    font-size:1rem;
+                    margin-top:auto;
+                    margin-bottom:auto;
+                    width:30px;
+                    height:30px;
+                    border-radius: 50%;
+                    text-align: center;
+                    cursor:pointer;
+                  }
+                  .note-menu{
+                    position: absolute;
+                    width:200px;
+                    right:0;
+                    top:100%;
+                    background-color:white;
+                    box-shadow: $menu-dropdown;
+                    display:none;
+                    ul{
+                      list-style: none;
+                      margin-left:0px;
+                      padding-left: 0px;
+                      li{
+                        font-family: sans-serif;
+                        font-size: 1rem;
+                        padding:0.7em;
+                        cursor:pointer;
+                        &:hover{
+                          background-color:rgb(237, 248, 240);
+                          color:rgb(72, 35, 95);
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+        }
+    }
+}

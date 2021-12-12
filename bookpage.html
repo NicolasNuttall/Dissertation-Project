@@ -1,151 +1,204 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+      integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/scripts-vendor.min.js"></script>
+    <script src="./js/scripts.min.js"></script>
+    <meta charset="utf-8" />
+    <title>Promotion - Sharing animation tips for free!</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <script
+      src="https://kit.fontawesome.com/d96356a49f.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<head>
-  <script src="jquery-3.5.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-  <script src="./js/scripts-vendor.min.js"></script>
-  <script src="./js/scripts.min.js"></script>
-  <meta charset="utf-8">
-  <title>Promotion - Sharing animation tips for free!</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="css/styles.css" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/d96356a49f.js" crossorigin="anonymous"></script>
-
-</head>
-
-<body>
-  <nav class="navbar-body">
-    <h1>BookBeater</h1>
-    <div class="jcc alc f-row add-dashboard">
-      <div class="plus-sign">
-        <i class="fas fa-plus-circle"></i>
+  <body>
+    <nav class="navbar-body">
+      <h1>BookBeater</h1>
+      <div class="jcc alc f-row add-dashboard">
+        <div class="plus-sign">
+          <i class="fas fa-plus-circle"></i>
+        </div>
+        <textarea placeholder="Add a new dashboard"></textarea>
       </div>
-      <textarea placeholder="Add a new dashboard"></textarea>
-    </div>
-    <ul class="mb-5">
-      <a href="">
-        <li class="active-dashboard"><span><i class="fas fa-brain"></i></span>Psychology</li>
-      </a>
-      <a href="">
-        <li class="inactive-dashboard"><span><i class="far fa-lightbulb"></i></span>Philosophy</li>
-      </a>
-      <a href="">
-        <li class="inactive-dashboard"><span><i class="fas fa-laptop"></i></span>Computers</li>
-      </a>
-      <a href="">
-        <li class="inactive-dashboard"><span><i class="fas fa-user-tie"></i></span>Business</li>
-      </a>
-    </ul>
-    <ul class="mb-5">
-      <a href="">
-        <li class="inactive-dashboard"><span><i class="fas fa-cog"></i></span> Settings</li>
-      </a>
-    </ul>
-    <a class="login" href="log_in.html"><span>Log out</span></a>
-  </nav>
-  <div class="book-header-container">
-    <div class="container bookPageBody">
-      <div class="row book-header">
-          <div class="book-nav">      
+      <ul class="mb-5">
+        <a href="">
+          <li class="active-dashboard">
+            <span><i class="fas fa-brain"></i></span>Psychology
+          </li>
+        </a>
+        <a href="">
+          <li class="inactive-dashboard">
+            <span><i class="far fa-lightbulb"></i></span>Philosophy
+          </li>
+        </a>
+        <a href="">
+          <li class="inactive-dashboard">
+            <span><i class="fas fa-laptop"></i></span>Computers
+          </li>
+        </a>
+        <a href="">
+          <li class="inactive-dashboard">
+            <span><i class="fas fa-user-tie"></i></span>Business
+          </li>
+        </a>
+      </ul>
+      <ul class="mb-5">
+        <a href="">
+          <li class="inactive-dashboard">
+            <span><i class="fas fa-cog"></i></span> Settings
+          </li>
+        </a>
+      </ul>
+      <a class="login" href="log_in.html"><span>Log out</span></a>
+    </nav>
+    <div class="book-header-container mb-5">
+      <div class="container bpb">
+        <div class="row book-header">
+          <div class="book-nav">
             <ul>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Study</a></li>
-              <li><a href="#">Notes</a></li> 
-              <li><a href="#">Community</a></li>
+              <li><a href="bookpage.html">About</a></li>
+              <li><a href="study.html">Study</a></li>
+              <li><a href="notes.html">Notes</a></li>
+              <li><a href="community.html">Community</a></li>
             </ul>
           </div>
-      </div>
-    </div>
-  </div>
-  <div class="container bookPageBody" '>  
-    <div class="row">
-      <div class="col-3 mr-6">
-        <div class="bcc">
-          <div class="book-cover-container">
-            <img src="./images/5695.jpg" alt="">
-          </div>
-          <button class="green-button">Add to Bookshelf</button>
-          <div class="stats">
-            <a class="stat">
-              <i class="fas fa-clock"></i>
-              <p>2h 30m</p>
-            </a>
-            <a class="stat">
-              <i class="fas fa-sticky-note"></i>
-              <p>23 Notes</p>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="book-details">
-          <h3>DEMONS (1876) </h3>
-          <p class="author-name">By Fyodor Dostoevsky</p>
-          <p class="book-description">Dostoevsky conceived the idea of Crime and Punishment, prompted by the case of Pierre François Lacenaire, in the summer of 1865.[citation needed] He had been working on another project at the time entitled The Drunkards, which was to deal with "the present question of drunkenness ... [in] all its ramifications, especially the picture of a family and the bringing up of children in these circumstances, etc., etc." This theme, centering on the story of the Marmeladov family, became ancillary to the story of Raskolnikov and his crime.[7] </p>
-          <p class="loadmore">Read More</p>
-        </div>
-        <h3 class="recent-heading">Recent Notes<span><a class="loadmore" href="">View All</a></span></h3>
-        <div class="recent-activity-container">
-
-          
-          <div class="recent-activity">
-            <h4>23 Days ago... 
-              <span>
-                <div class="note-menu">
-                  <ul>
-                    <li>Edit Note</li>
-                    <li>Delete Note</li>
-                    <li>Publish Note</li>
-                  </ul>
-                </div>
-                <i class="fas fa-ellipsis-v note-menu-icon "></i> 
-              </span>
-            </h4>
-
-            <p class="note-text">You completed a 60 minute reading session, wYou completed a 60 minute reading session,here you  reading session, wYou completed a 60 minute reading session,here you created reading session, wYou completed a 60 minute reading session,here you created  reading session, wYou completed a 60 minute reading session,here you created reading session, wYou completed a 60 minute reading session,here you created created reading session, wYou completed a 60 minute reading session,here you created 21 notes</p>
-            <p class="loadmore">Read More</p>
-          </div>
-          <div class="recent-activity">
-            <h4>23 Days ago... 
-              <span>
-                <div class="note-menu">
-                  <ul>
-                    <li>Edit Note</li>
-                    <li>Delete Note</li>
-                    <li>Publish Note</li>
-                  </ul>
-                </div>
-                <i class="fas fa-ellipsis-v note-menu-icon "></i> 
-              </span>
-            </h4>
-
-            <p class="note-text">You completed a 60 minute reading session, wYou completed a 60 minute reading session,here you  reading session, wYou completed a 60 minute reading session,here you created reading session, wYou completed a 60 minute reading session,here you created  reading session, wYou completed a 60 minute reading session,here you created reading session, wYou completed a 60 minute reading session,here you created created reading session, wYou completed a 60 minute reading session,here you created 21 notes</p>
-            <p class="loadmore">Read More</p>
-          </div>
-          <div class="recent-activity">
-            <h4>23 Days ago... 
-              <span>
-                <div class="note-menu">
-                  <ul>
-                    <li>Edit Note</li>
-                    <li>Delete Note</li>
-                    <li>Publish Note</li>
-                  </ul>
-                </div>
-                <i class="fas fa-ellipsis-v note-menu-icon "></i> 
-              </span>
-            </h4>
-
-            <p class="note-text">You completed a 60 minute reading session, wYou completed a 60 minute reading session,here you  reading session, wYou completed a 60 minute reading session,here you created reading session, wYou completed a 60 minute reading session,here you created  reading session, wYou completed a 60 minute reading session,here you created reading session, wYou completed a 60 minute reading session,here you created created reading session, wYou completed a 60 minute reading session,here you created 21 notes</p>
-            <p class="loadmore">Read More</p>
-          </div>
         </div>
       </div>
     </div>
-    
-  </div>
-</body>
+    <div class="container bookPageBody bpb">
+      <div class="row">
+        <div class="col-3 mr-6">
+          <div class="bcc">
+            <div class="book-cover-container">
+              <img src="./images/5695.jpg" alt="" />
+            </div>
+            <button class="green-button">Add to Bookshelf</button>
+            <div class="stats">
+              <a class="stat">
+                <i class="fas fa-clock"></i>
+                <p>2h 30m</p>
+              </a>
+              <a class="stat">
+                <i class="fas fa-sticky-note"></i>
+                <p>23 Notes</p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="book-details">
+            <h3>DEMONS (1876)</h3>
+            <p class="author-name">By Fyodor Dostoevsky</p>
+            <p class="book-description">
+              Dostoevsky conceived the idea of Crime and Punishment, prompted by
+              the case of Pierre François Lacenaire, in the summer of
+              1865.[citation needed] He had been working on another project at
+              the time entitled The Drunkards, which was to deal with "the
+              present question of drunkenness ... [in] all its ramifications,
+              especially the picture of a family and the bringing up of children
+              in these circumstances, etc., etc." This theme, centering on the
+              story of the Marmeladov family, became ancillary to the story of
+              Raskolnikov and his crime.[7]
+            </p>
+            <p class="loadmore">Read More</p>
+          </div>
+          <h3 class="recent-heading">
+            Recent Notes<span><a class="loadmore" href="">View All</a></span>
+          </h3>
+          <div class="recent-activity-container">
+            <div class="recent-activity">
+              <h4>
+                23 Days ago...
+                <span>
+                  <div class="note-menu">
+                    <ul>
+                      <li>Edit Note</li>
+                      <li>Delete Note</li>
+                      <li>Publish Note</li>
+                    </ul>
+                  </div>
+                  <i class="fas fa-ellipsis-v note-menu-icon"></i>
+                </span>
+              </h4>
 
+              <p class="note-text">
+                You completed a 60 minute reading session, wYou completed a 60
+                minute reading session,here you reading session, wYou completed
+                a 60 minute reading session,here you created reading session,
+                wYou completed a 60 minute reading session,here you created
+                reading session, wYou completed a 60 minute reading session,here
+                you created reading session, wYou completed a 60 minute reading
+                session,here you created created reading session, wYou completed
+                a 60 minute reading session,here you created 21 notes
+              </p>
+              <p class="loadmore">Read More</p>
+            </div>
+            <div class="recent-activity">
+              <h4>
+                23 Days ago...
+                <span>
+                  <div class="note-menu">
+                    <ul>
+                      <li>Edit Note</li>
+                      <li>Delete Note</li>
+                      <li>Publish Note</li>
+                    </ul>
+                  </div>
+                  <i class="fas fa-ellipsis-v note-menu-icon"></i>
+                </span>
+              </h4>
+
+              <p class="note-text">
+                You completed a 60 minute reading session, wYou completed a 60
+                minute reading session,here you reading session, wYou completed
+                a 60 minute reading session,here you created reading session,
+                wYou completed a 60 minute reading session,here you created
+                reading session, wYou completed a 60 minute reading session,here
+                you created reading session, wYou completed a 60 minute reading
+                session,here you created created reading session, wYou completed
+                a 60 minute reading session,here you created 21 notes
+              </p>
+              <p class="loadmore">Read More</p>
+            </div>
+            <div class="recent-activity">
+              <h4>
+                23 Days ago...
+                <span>
+                  <div class="note-menu">
+                    <ul>
+                      <li>Edit Note</li>
+                      <li>Delete Note</li>
+                      <li>Publish Note</li>
+                    </ul>
+                  </div>
+                  <i class="fas fa-ellipsis-v note-menu-icon"></i>
+                </span>
+              </h4>
+
+              <p class="note-text">
+                You completed a 60 minute reading session, wYou completed a 60
+                minute reading session,here you reading session, wYou completed
+                a 60 minute reading session,here you created reading session,
+                wYou completed a 60 minute reading session,here you created
+                reading session, wYou completed a 60 minute reading session,here
+                you created reading session, wYou completed a 60 minute reading
+                session,here you created created reading session, wYou completed
+                a 60 minute reading session,here you created 21 notes
+              </p>
+              <p class="loadmore">Read More</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

@@ -1,0 +1,87 @@
+.your-notes-container{
+    h3{
+        font-family: "Song";
+        font-size: 1.7rem;
+        animation:textload 0.3s ease-in-out;
+    }
+}
+
+.notes-boxes{
+    animation: textload 0.4s forwards;
+    animation-delay: 0.2s;
+    opacity:0;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    .note-box{
+      max-width: 450px;
+      min-width: 400px;
+      margin-right: 1em;
+      padding:2rem 3rem 4rem 3rem;
+      background-color: white;
+      box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.34);
+      margin-top:2rem;
+      height: fit-content;
+      .noteauthor{
+        letter-spacing: 2px;
+        font-family: "Song";
+        width: 100%;
+        display: flex;
+        span{
+            font-family: sans-serif !important;
+            letter-spacing: 0px;
+            margin-left: auto;
+            font-size: 0.9rem;
+        }
+      }
+      h4{
+        font-family: "Song";
+        width: 100%;
+        display:flex;
+        font-size: 1.7rem;
+        span{
+          margin-left:auto;
+          position: relative;
+          i{
+            font-size:1rem;
+            margin-top:auto;
+            margin-bottom:auto;
+            width:30px;
+            height:30px;
+            border-radius: 50%;
+            text-align: center;
+            cursor:pointer;
+          }
+          .note-menu{
+            position: absolute;
+            width:200px;
+            right:0;
+            top:1.2em;
+            background-color:white;
+            box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.34);
+            display:none;
+            ul{
+              list-style: none;
+              margin-left:0px;
+              padding-left: 0px;
+              li{
+                font-family: sans-serif;
+                font-size: 1rem;
+                padding:0.7em;
+                cursor:pointer;
+                &:hover{
+                  background-color:rgb(237, 248, 240);
+                  color:rgb(72, 35, 95);
+                }
+              }
+            }
+          }
+        }
+      }
+      .note-text{
+        margin-top:1.5rem;
+      }
+     
+    }
+  }
