@@ -2,6 +2,7 @@
 <html>
 
 <head>
+  <script src="jquery-3.5.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
   <script src="./js/scripts-vendor.min.js"></script>
   <script src="./js/scripts.min.js"></script>
@@ -11,6 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="css/styles.css" rel="stylesheet">
   <script src="https://kit.fontawesome.com/d96356a49f.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -59,20 +61,22 @@
   </div>
   <div class="container bookPageBody" '>  
     <div class="row">
-      <div class="col-3 bcc ">
-        <div class="book-cover-container">
-          <img src="./images/5695.jpg" alt="">
-        </div>
-        <button class="green-button">Add to Bookshelf</button>
-        <div class="stats">
-          <a class="stat">
-            <i class="fas fa-clock"></i>
-            <p>2h 30m</p>
-          </a>
-          <a class="stat">
-            <i class="fas fa-sticky-note"></i>
-            <p>23 Notes</p>
-          </a>
+      <div class="col-3 mr-6">
+        <div class="bcc">
+          <div class="book-cover-container">
+            <img src="./images/5695.jpg" alt="">
+          </div>
+          <button class="green-button">Add to Bookshelf</button>
+          <div class="stats">
+            <a class="stat">
+              <i class="fas fa-clock"></i>
+              <p>2h 30m</p>
+            </a>
+            <a class="stat">
+              <i class="fas fa-sticky-note"></i>
+              <p>23 Notes</p>
+            </a>
+          </div>
         </div>
       </div>
       <div class="col">
@@ -84,14 +88,57 @@
         </div>
         <h3 class="recent-heading">Recent Notes<span><a class="loadmore" href="">View All</a></span></h3>
         <div class="recent-activity-container">
+
+          
           <div class="recent-activity">
-            <h4>23 Days ago... <span><i class="fas fa-ellipsis-v"></i></span></h4>
-            <p>You completed a 60 minute reading session, where you created 30 notes</p>
+            <h4>23 Days ago... 
+              <span>
+                <div class="note-menu">
+                  <ul>
+                    <li>Edit Note</li>
+                    <li>Delete Note</li>
+                    <li>Publish Note</li>
+                  </ul>
+                </div>
+                <i class="fas fa-ellipsis-v note-menu-icon "></i> 
+              </span>
+            </h4>
+
+            <p class="note-text">You completed a 60 minute reading session, wYou completed a 60 minute reading session,here you  reading session, wYou completed a 60 minute reading session,here you created reading session, wYou completed a 60 minute reading session,here you created  reading session, wYou completed a 60 minute reading session,here you created reading session, wYou completed a 60 minute reading session,here you created created reading session, wYou completed a 60 minute reading session,here you created 21 notes</p>
             <p class="loadmore">Read More</p>
           </div>
           <div class="recent-activity">
-            <h4>23 Days ago... <span><i class="fas fa-ellipsis-v"></i></span></h4>
-            <p>You completed a 60 minute reading session, wYou completed a 60 minute reading session,here you created reading session, wYou completed a 60 minute reading session,here you created 21 notes</p>
+            <h4>23 Days ago... 
+              <span>
+                <div class="note-menu">
+                  <ul>
+                    <li>Edit Note</li>
+                    <li>Delete Note</li>
+                    <li>Publish Note</li>
+                  </ul>
+                </div>
+                <i class="fas fa-ellipsis-v note-menu-icon "></i> 
+              </span>
+            </h4>
+
+            <p class="note-text">You completed a 60 minute reading session, wYou completed a 60 minute reading session,here you  reading session, wYou completed a 60 minute reading session,here you created reading session, wYou completed a 60 minute reading session,here you created  reading session, wYou completed a 60 minute reading session,here you created reading session, wYou completed a 60 minute reading session,here you created created reading session, wYou completed a 60 minute reading session,here you created 21 notes</p>
+            <p class="loadmore">Read More</p>
+          </div>
+          <div class="recent-activity">
+            <h4>23 Days ago... 
+              <span>
+                <div class="note-menu">
+                  <ul>
+                    <li>Edit Note</li>
+                    <li>Delete Note</li>
+                    <li>Publish Note</li>
+                  </ul>
+                </div>
+                <i class="fas fa-ellipsis-v note-menu-icon "></i> 
+              </span>
+            </h4>
+
+            <p class="note-text">You completed a 60 minute reading session, wYou completed a 60 minute reading session,here you  reading session, wYou completed a 60 minute reading session,here you created reading session, wYou completed a 60 minute reading session,here you created  reading session, wYou completed a 60 minute reading session,here you created reading session, wYou completed a 60 minute reading session,here you created created reading session, wYou completed a 60 minute reading session,here you created 21 notes</p>
             <p class="loadmore">Read More</p>
           </div>
         </div>

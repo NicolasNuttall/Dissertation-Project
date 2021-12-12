@@ -1,6 +1,5 @@
 html {
   --star: #ebb810;
-  --Green: #7cf46f;
   --bgblue: #2d9aed;
   --blueText: #193888;
   --itemblue: #2a9df5;
@@ -9,11 +8,22 @@ html {
   --darkblue: #10196c;
 }
 
+$green: #7cf46f;
+$purple:#6523ea;
+$itemblue: #2a9df5;
+$blueText: #193888;
+$lowPurple: rgb(81, 81, 133);
+$darkblue: #10196c;
+
 body {
   margin: 0;
   padding: 0;
   background-color: white !important;
   max-width: 100vw;
+}
+
+.mr-6{
+  margin-right: 5rem;
 }
 
 #body {

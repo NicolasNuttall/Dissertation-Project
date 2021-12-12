@@ -36,6 +36,7 @@
       background-color: white;
       box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.34);
       margin-top:2rem;
+      
       h4{
         font-family: "Song";
         width: 100%;
@@ -44,10 +45,40 @@
         font-size: 1.7rem;
         span{
           margin-left:auto;
+          position: relative;
           i{
             font-size:1rem;
             margin-top:auto;
             margin-bottom:auto;
+            width:30px;
+            height:30px;
+            border-radius: 50%;
+            text-align: center;
+            cursor:pointer;
+          }
+          .note-menu{
+            position: absolute;
+            width:200px;
+            right:0;
+            top:100%;
+            background-color:white;
+            box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.34);
+            display:none;
+            ul{
+              list-style: none;
+              margin-left:0px;
+              padding-left: 0px;
+              li{
+                font-family: sans-serif;
+                font-size: 1rem;
+                padding:0.7em;
+                cursor:pointer;
+                &:hover{
+                  background-color:rgb(237, 248, 240);
+                  color:rgb(72, 35, 95);
+                }
+              }
+            }
           }
         }
       }
@@ -62,6 +93,13 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+}
+
+.note-text{
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
 }
 
 .book-header {
@@ -126,6 +164,13 @@
   }
 }
 
+
+
+.loadedtext{
+  overflow: visible !important;
+  -webkit-line-clamp: 30 !important;
+}
+
 .book-nav {
   width: 86%;
   margin-bottom: 1rem;
@@ -141,7 +186,28 @@
         color: black;
         padding: 0.7em 1em;
         font-family: "BreeSerif";
+        position: relative;
+        &::after{
+          content:'';
+          position: absolute;
+          background-color:$green;
+          margin-left: auto;
+          margin-right: auto;
+          left:0;
+          right:0;
+          width:0%;
+          height:0px;
+          border-radius: 10px;
+          z-index: -1;
+          top:7px;
+          transition:0.1s ease-in-out;
+        }
         &:hover {
+          text-decoration: none;
+          &::after{
+            height:30px;
+            width:100%;
+          }
         }
       }
     }
@@ -151,6 +217,10 @@
   margin-right: 4rem;
   display: flex;
   flex-direction: column;
+  position: -webkit-sticky;
+  position: sticky;
+  top:40px;
+  width: 100%;
   .green-button{
     margin-top:2rem;
     margin-left: auto;
@@ -196,7 +266,7 @@
     width: 270px;
     height: 270px;
     background-color: rgb(243, 196, 206);
-    left: -1rem;
+    left: -1.6rem;
     right: 0;
     top:1rem;
     margin-left: auto;
