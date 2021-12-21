@@ -1,5 +1,5 @@
 .bpb{
-  padding-left: 12rem;
+
   display: flex;
   flex-direction: column;
   margin-bottom:2rem;
@@ -226,8 +226,9 @@
   width: 100%;
   .green-button{
     margin-top:2rem;
-    margin-left: auto;
+
     margin-right: auto;
+    height: fit-content;
   }
   .stats{
     margin-top:2rem;
@@ -263,23 +264,7 @@
     box-shadow: 4px 5px 4px rgba(0, 0, 0, 0.58);
     animation:bookload 0.4s;
   }
-  &::after {
-    content: "";
-    position: absolute;
-    width: 270px;
-    height: 270px;
-    background-color: rgb(243, 196, 206);
-    left: -1.6rem;
-    right: 0;
-    top:1rem;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 50%;
-    z-index: -1;
-    animation: bookload 0.4s forwards ;
-    opacity:0;
-    animation-delay: 0.2s;
-  }
+
 }
 
 @keyframes bookload{
@@ -301,5 +286,25 @@
   100%{
     opacity:1;
     transform:translayeY(0px);
+  }
+}
+
+@media screen and (max-width: 700px){
+  .about-page{
+    flex-direction: column;
+  }
+  .book-cover-container{
+    width: 100px;
+    margin-right: 2rem;
+  }
+  .bcc{
+    flex-direction: row;
+    .green-button{
+      margin-top:0px;
+    }
+  }
+  .bcc-container{
+    max-width: 90%;
+    margin-bottom: 5rem;
   }
 }

@@ -21,152 +21,188 @@
   </head>
 
   <body>
-    <nav class="navbar-body">
-      <h1>BookBeater</h1>
+    <nav class="vertical-nav pl-4" id="sidebar">
+      <button id="sidebarCollapse" type="button" class="burgerbar-button">
+        <i class="fa fa-bars"></i>
+      </button>
+      <a href="index.html">
+        <img class="readie-logo mb-5" src="./images/ReadieLogo.png" alt="" />
+      </a>
+      <p class="font-weight-bold text-uppercase px-3 small pb-4 mb-0">
+        Dashboards
+      </p>
       <div class="jcc alc f-row add-dashboard">
         <div class="plus-sign">
           <i class="fas fa-plus-circle"></i>
         </div>
         <textarea placeholder="Add a new dashboard"></textarea>
       </div>
-      <ul class="mb-5">
-        <a href="">
-          <li class="active-dashboard">
-            <span><i class="fas fa-brain"></i></span>Psychology
-          </li>
-        </a>
-        <a href="">
-          <li class="inactive-dashboard">
-            <span><i class="far fa-lightbulb"></i></span>Philosophy
-          </li>
-        </a>
-        <a href="">
-          <li class="inactive-dashboard">
-            <span><i class="fas fa-laptop"></i></span>Computers
-          </li>
-        </a>
-        <a href="">
-          <li class="inactive-dashboard">
-            <span><i class="fas fa-user-tie"></i></span>Business
-          </li>
-        </a>
+      <ul class="nav flex-column mb-0">
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="fa fa-th-large mr-3 fa-fw"></i>
+            Subject
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="fa fa-address-card mr-3 fa-fw"></i>
+            Subject
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="fa fa-cubes mr-3 fa-fw"></i>
+            Subject
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="fa fa-picture-o mr-3 fa-fw"></i>
+            Subject
+          </a>
+        </li>
       </ul>
-      <ul class="mb-5">
-        <a href="">
-          <li class="inactive-dashboard">
-            <span><i class="fas fa-cog"></i></span> Settings
-          </li>
-        </a>
+
+      <p
+        class="
+          text-gray
+          mt-5
+          font-weight-bold
+          text-uppercase
+          px-3
+          small
+          py-4
+          mb-0
+        "
+      >
+        Recent
+      </p>
+
+      <ul class="nav flex-column mb-0">
+        <li class="nav-item">
+          <a href="#" class="nav-link font-italic"> Crime and Punishment </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link font-italic"> Crime and Punishment </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link font-italic">
+            Crime and Punishment And some long text
+          </a>
+        </li>
+        <a class="login" href="log_in.html"><span>Log out</span></a>
       </ul>
-      <a class="login" href="log_in.html"><span>Log out</span></a>
     </nav>
-    <div class="book-header-container mb-2">
+    <div class="page-content" id="content">
+      <div class="book-header-container mb-2">
+        <div class="container bpb">
+          <div class="row book-header">
+            <div class="book-nav">
+              <ul>
+                <li><a href="bookpage.html">About</a></li>
+                <li><a href="study.html">Study</a></li>
+                <li><a href="notes.html">Notes</a></li>
+                <li><a href="community.html">Community</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="container bpb">
-        <div class="row book-header">
-          <div class="book-nav">
-            <ul>
-              <li><a href="bookpage.html">About</a></li>
-              <li><a href="study.html">Study</a></li>
-              <li><a href="notes.html">Notes</a></li>
-              <li><a href="community.html">Community</a></li>
-            </ul>
+        <div class="mini-book-box">
+          <div class="mini-book-img">
+            <img src="./images/5695.jpg" alt="" />
+          </div>
+          <div class="mini-book-text">
+            <h3>Demons</h3>
+            <p>By Fyodor Dostoevsky</p>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="container bpb">
-      <div class="mini-book-box">
-        <div class="mini-book-img">
-          <img src="./images/5695.jpg" alt="" />
-        </div>
-        <div class="mini-book-text">
-          <h3>Demons</h3>
-          <p>By Fyodor Dostoevsky</p>
-        </div>
-      </div>
-      <div class="your-notes-container">
-        <h3>Your Notes</h3>
-        <div class="notes-boxes">
-          <div class="note-box">
-            <h4>
-              23 Days ago...
-              <span>
-                <div class="note-menu">
-                  <ul>
-                    <li>Edit Note</li>
-                    <li>Delete Note</li>
-                    <li>Publish Note</li>
-                  </ul>
-                </div>
-                <i class="fas fa-ellipsis-v note-menu-icon"></i>
-              </span>
-            </h4>
+        <div class="your-notes-container">
+          <h3>Your Notes</h3>
+          <div class="notes-boxes">
+            <div class="note-box">
+              <h4>
+                23 Days ago...
+                <span>
+                  <div class="note-menu">
+                    <ul>
+                      <li>Edit Note</li>
+                      <li>Delete Note</li>
+                      <li>Publish Note</li>
+                    </ul>
+                  </div>
+                  <i class="fas fa-ellipsis-v note-menu-icon"></i>
+                </span>
+              </h4>
 
-            <p class="note-text">
-              You completed a 60 minute reading session, wYou completed a 60
-              minute reading session,here you reading session, wYou completed a
-              60 minute reading session,here you created reading session, wYou
-              completed a 60 minute reading session,here you created reading
-              session, wYou completed a 60 minute reading session,here you
-              created reading session, wYou completed a 60 minute reading
-              session,here you created created reading session, wYou completed a
-              60 minute reading session,here you created 21 notes
-            </p>
-            <p class="loadmore">Read More</p>
-          </div>
-          <div class="note-box">
-            <h4>
-              23 Days ago...
-              <span>
-                <div class="note-menu">
-                  <ul>
-                    <li>Edit Note</li>
-                    <li>Delete Note</li>
-                    <li>Publish Note</li>
-                  </ul>
-                </div>
-                <i class="fas fa-ellipsis-v note-menu-icon"></i>
-              </span>
-            </h4>
+              <p class="note-text">
+                You completed a 60 minute reading session, wYou completed a 60
+                minute reading session,here you reading session, wYou completed
+                a 60 minute reading session,here you created reading session,
+                wYou completed a 60 minute reading session,here you created
+                reading session, wYou completed a 60 minute reading session,here
+                you created reading session, wYou completed a 60 minute reading
+                session,here you created created reading session, wYou completed
+                a 60 minute reading session,here you created 21 notes
+              </p>
+              <p class="loadmore">Read More</p>
+            </div>
+            <div class="note-box">
+              <h4>
+                23 Days ago...
+                <span>
+                  <div class="note-menu">
+                    <ul>
+                      <li>Edit Note</li>
+                      <li>Delete Note</li>
+                      <li>Publish Note</li>
+                    </ul>
+                  </div>
+                  <i class="fas fa-ellipsis-v note-menu-icon"></i>
+                </span>
+              </h4>
 
-            <p class="note-text">
-              You completed a 60 minute reading session, wYou completed a 60
-              minute reading session,here you reading session, wYou completed a
-              60 minute reading session,here you created reading session, wYou
-              completed a 60 minute reading session,here you created reading
-              session, wYou completed a 60 minute reading session,here you
-              created reading session, wYou completed a 60 minute reading
-              session,here you created created reading session, wYou completed a
-              60 minute reading session,here you created 21 notes
-            </p>
-            <p class="loadmore">Read More</p>
-          </div>
-          <div class="note-box">
-            <h4>
-              23 Days ago...
-              <span>
-                <div class="note-menu">
-                  <ul>
-                    <li>Edit Note</li>
-                    <li>Delete Note</li>
-                    <li>Publish Note</li>
-                  </ul>
-                </div>
-                <i class="fas fa-ellipsis-v note-menu-icon"></i>
-              </span>
-            </h4>
+              <p class="note-text">
+                You completed a 60 minute reading session, wYou completed a 60
+                minute reading session,here you reading session, wYou completed
+                a 60 minute reading session,here you created reading session,
+                wYou completed a 60 minute reading session,here you created
+                reading session, wYou completed a 60 minute reading session,here
+                you created reading session, wYou completed a 60 minute reading
+                session,here you created created reading session, wYou completed
+                a 60 minute reading session,here you created 21 notes
+              </p>
+              <p class="loadmore">Read More</p>
+            </div>
+            <div class="note-box">
+              <h4>
+                23 Days ago...
+                <span>
+                  <div class="note-menu">
+                    <ul>
+                      <li>Edit Note</li>
+                      <li>Delete Note</li>
+                      <li>Publish Note</li>
+                    </ul>
+                  </div>
+                  <i class="fas fa-ellipsis-v note-menu-icon"></i>
+                </span>
+              </h4>
 
-            <p class="note-text">
-              You completed a 60 minute reading session, wYou completed a 60
-              minute reading session,here you reading session, wYou completed a
-              60 minute reading session,here you created reading session, wYou
-              completed a 60 minute reading session,here you created reading
-              session, wYou completed a 60 minute reading session,here you
-              created reading session, wYou completed a 60 minute reading
-              session,here you created created reading session, wYou completed a
-              60 minute reading session,here you created 21 notes
-            </p>
-            <p class="loadmore">Read More</p>
+              <p class="note-text">
+                You completed a 60 minute reading session, wYou completed a 60
+                minute reading session,here you reading session, wYou completed
+                a 60 minute reading session,here you created reading session,
+                wYou completed a 60 minute reading session,here you created
+                reading session, wYou completed a 60 minute reading session,here
+                you created reading session, wYou completed a 60 minute reading
+                session,here you created created reading session, wYou completed
+                a 60 minute reading session,here you created 21 notes
+              </p>
+              <p class="loadmore">Read More</p>
+            </div>
           </div>
         </div>
       </div>

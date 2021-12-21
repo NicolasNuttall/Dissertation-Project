@@ -15,6 +15,7 @@ $blueText: #193888;
 $lowPurple: rgb(81, 81, 133);
 $darkblue: #10196c;
 $menu-dropdown: 0px 1px 4px rgba(0, 0, 0, 0.34);
+$navbg:#0e1327;
 
 body {
   margin: 0;
@@ -28,7 +29,6 @@ body {
 }
 
 #body {
-  padding-left: 22rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
