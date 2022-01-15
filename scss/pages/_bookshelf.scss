@@ -72,6 +72,49 @@
   margin-bottom: 4rem;
 }
 
+.create-custom-item-container{
+  display:none;
+  width:100vw;
+    height:100vh;
+    background-color:rgba(0, 0, 0, 0.2);
+    position:fixed;
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top:0;
+    left:0;
+  .create-custom-item{
+    width:40%;
+    min-width: 350px;
+    max-width: 700px;
+    background-color: $offwhite;
+    padding:3em 4em;
+    position: relative;
+    h3{
+      font-family:"Song";
+      font-weight: bold;
+    }
+  }
+}
+
+.close-pop-up{
+  position: absolute;
+  top:-10px;
+  right:-10px;
+  background-color:$purple;
+  cursor:pointer;
+  border-radius: 50%;
+  height:40px;
+  width:40px;
+  color:white;
+  -webkit-box-shadow: 5px 4px 32px -10px rgba(0,0,0,0.57); 
+  box-shadow: 5px 4px 32px -10px rgba(0,0,0,0.57);
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @keyframes book-item-animation {
   0% {
     opacity: 0;

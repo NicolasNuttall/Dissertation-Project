@@ -85,24 +85,9 @@
         position: relative;
         color: black;
         &:hover {
-          text-decoration: none;
-          &::after {
-            height: 100%;
-            width: 105%;
-          }
-        }
-        &::after {
-          transition: 0.1s ease-in-out;
-          content: "";
-          position: absolute;
-          width: 100%;
-          left: 10px;
-          z-index: -1;
-          top: 20%;
-
-          background-color: #c7e4ed;
-          height: 80%;
-        }
+          color:$blueText;
+          
+        }      
       }
     }
   }
@@ -112,7 +97,7 @@
   height: 3em;
   .login-btext {
     animation: log-high 2s linear infinite;
-    color: var(--yellow);
+    color: $yellow;
     text-align: left;
     &::after {
       content: "";

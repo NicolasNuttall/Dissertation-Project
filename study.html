@@ -65,16 +65,7 @@
       </ul>
 
       <p
-        class="
-          text-gray
-          mt-5
-          font-weight-bold
-          text-uppercase
-          px-3
-          small
-          py-4
-          mb-0
-        "
+        class="text-gray mt-5 font-weight-bold text-uppercase px-3 small py-4 mb-0"
       >
         Recent
       </p>
@@ -123,16 +114,48 @@
           <div class="sticky-box">
             <div class="study-top">
               <h4>Create a Note</h4>
-              <div class="timer-menu">
-                <i class="fas fa-hourglass-start"></i>
-                <p>Timer</p>
-                <i class="fas fa-caret-down dropdown-arrow"></i>
-              </div>
               <div class="timer-changer">
-                <input placeholder="00h" type="number" name="" id="" />
-                <input placeholder="00m" type="number" name="" id="" />
-                <input placeholder="00s" type="number" name="" id="" />
-                <i class="fas fa-play timer-start"></i>
+                <div class="timer-labels">
+                  <p>H</p>
+                  <p>M</p>
+                  <p>S</p>
+                </div>
+                <input
+                  placeholder="00"
+                  value="00"
+                  min="0"
+                  max="24"
+                  type="number"
+                  name=""
+                  id="hour"
+                  class="timer-input"
+                />
+                <input
+                  value="05"
+                  placeholder="00"
+                  min="0"
+                  max="60"
+                  type="number"
+                  name=""
+                  id="min"
+                  class="timer-input"
+                />
+                <input
+                  value="10"
+                  placeholder="00"
+                  min="0"
+                  max="60"
+                  type="number"
+                  name=""
+                  id="sec"
+                  class="timer-input"
+                />
+                <button class="timer-button" id="timerStart">
+                  <i class="fas fa-play-circle timer-start"></i>
+                </button>
+                <button class="timer-button" id="timerStop">
+                  <i class="fas fa-stop-circle timer-stop"></i>
+                </button>
               </div>
             </div>
             <div class="note-creation-box">

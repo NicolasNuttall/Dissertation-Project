@@ -71,32 +71,28 @@
                 display:flex !important;
             }
             .timer-changer{
-                display:none;
-                position: absolute;
-                right:0;
-                bottom:-160%;
+                display:flex;
+                margin-left: auto;
                 padding:1em;
                 background-color:white;
-                box-shadow: $menu-dropdown;
+
                 width: fit-content;
                 border-radius:1em;
+                position: relative;
                 input{
-                 width:3.5em;
+                 width:2.5em;
+                 overflow: visible;
                  border:0px;
                  outline:none;
+                 -webkit-appearance: none;
                 }
                 i{
                     margin-left:1em;
                     margin-top: auto;
                     margin-bottom: auto;
-                    width:30px;
-                    height: 30px;
-                    background-color:red;
-                    border-radius: 50%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    color:white;
+                    font-size: 1.5rem;
+
+                    color:red;
                     margin-left: auto;
                     cursor:pointer;
                 }
@@ -170,4 +166,38 @@
               }
         }
     }
+}
+
+#timerStop{
+    display: none;
+    i{
+        color:$purple !important;
+    }
+}
+
+.timer-button{
+    border:none;
+    background-color:rgba(0,0,0,0);
+}
+
+.timer-labels{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 52%;
+    font-weight: bold;
+    position: absolute;
+    top:-1em;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }

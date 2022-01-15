@@ -1,22 +1,5 @@
 <?php
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_URL, "https://type.fit/api/quotes");
-    $output = curl_exec($ch);
-    curl_close($ch);
-    $quote = json_decode($output, true);
-    $random_num = rand(0, count($quote) - 1);
-    $quote_text = $quote[$random_num]["text"];
-    $quote_author = $quote[$random_num]["author"];
-    if($quote_text){
-        $smarty->assign("quote",$quote_text);
-        if($quote_author){
-            $smarty->assign("author",$quote_author);
-        }
-    }
-    if($active_user_data){
-        session_destroy();
-    }
+ 
     if($_POST){
         $User = new User($Conn);
         $account_exist_check = $User->userExists($_POST["username"],$_POST["email"]);
@@ -54,20 +37,20 @@
 
                 if($attempt){
                     
-                    $email = new \SendGrid\Mail\Mail();
-                    $email->setFrom("s204369@uos.ac.uk","Promotion");
-                    $email->setSubject("Welcome to Promotion");
-                    $email->addTo($_POST['email'],"User");
-                    $email->addContent(
-                        "text/html","
-                        <h1 style='font-weight:bold;'>Hey ".$_POST["username"] .",</h1>
-                        <p>Welcome to Promotion, your account has successfully been registered!</p>
-                        <p>Once you're logged in, you can edit your profile page, interact with posts and share some of your own.
-                        Have fun! </p>
-                        "
-                    );
-                    $sendgrid=new \SendGrid('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');
-                    $respone = $sendgrid->send($email);
+                    // $email = new \SendGrid\Mail\Mail();
+                    // $email->setFrom("s204369@uos.ac.uk","Promotion");
+                    // $email->setSubject("Welcome to Promotion");
+                    // $email->addTo($_POST['email'],"User");
+                    // $email->addContent(
+                    //     "text/html","
+                    //     <h1 style='font-weight:bold;'>Hey ".$_POST["username"] .",</h1>
+                    //     <p>Welcome to Promotion, your account has successfully been registered!</p>
+                    //     <p>Once you're logged in, you can edit your profile page, interact with posts and share some of your own.
+                    //     Have fun! </p>
+                    //     "
+                    // );
+                    // $sendgrid=new \SendGrid('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');
+                    // $respone = $sendgrid->send($email);
 
                     
                     $user_data = $User->loginUser($_POST['email'],$_POST['password']);

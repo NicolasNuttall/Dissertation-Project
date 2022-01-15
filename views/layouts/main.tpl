@@ -1,102 +1,120 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+      integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/scripts-vendor.min.js"></script>
+    <script src="./js/scripts.min.js"></script>
+    <meta charset="utf-8" />
+    <title>Promotion - Sharing animation tips for free!</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <script
+      src="https://kit.fontawesome.com/d96356a49f.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<head>
-  <script src="/Promotion//js/scripts-vendor.min.js"></script>
-  <meta charset="utf-8">
-  <title>Promotion - Sharing animation tips for free!</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="/Promotion/css/styles.css" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/d96356a49f.js" crossorigin="anonymous"></script>
-</head>
-
-
-<body>
-    <nav class="navbar navbar-expand-lg fixed-top navbar-light container-fluid">
-      <div class="container">
-        <a href="/Promotion/" class="navbar-brand"><img src="/Promotion/images/LogoDark.png" alt=""></a>
-        <button class="navbar-toggler" data-toggle="collapse" type="button" data-target="#navSupCont" aria-controls="navSupCont" aria-expanded="false" aria-label="Toggle Navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navSupCont">
-          
-          <form action="" method="POST" name="search" class="my-2 my-lg-0 mx-auto searchbar">
-            <input placeholder="Search for tutorials" name="query" aria-label="Search" type="search" class="form-control rounded-0 mr-0">
-            <button type="submit" name="search" class="ml-0 my-sm-0 rounded-0 search-button">Search</button>
-          </form>
-          {if $user_datas}
-            <ul class="navbar-nav mr-0">
-              <li class="nav-item dropdown" id="nav-drop">
-                <a href="#" id="profile-menu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <img src="/Promotion/images/avatars/{$user_datas.avatar_img}" alt="" class="avatar-img">
-                </a>
-                <div class="dropdown-menu" aria-labelledby="profile-menu">
-                  <a class="dropdown-item drp" href="/Promotion/profile/{$user_datas.username}">Your Profile</a>
-                  <a class="dropdown-item drp" href="/Promotion/profile/{$user_datas.username}/likes">Your Likes</a>
-                  <a class="dropdown-item drp" href="/Promotion/profile/{$user_datas.username}/finished">Your Finished</a>
-                  <a class="dropdown-item drp" href="/Promotion/profile/{$user_datas.username}/followers">Your Followers</a>
-                  <a class="dropdown-item drp" href="/Promotion/profile/{$user_datas.username}/following">Your Following</a>
-                  <a class="dropdown-item drp" href="/Promotion/login">Log out</a>
-                </div>
-              </li>
-              
-              <a class="upload-but" href="/Promotion/upload">Upload </a>
-            </ul>
-          {else}
-            <a class="upload-but" href="/Promotion/register">Register</a>
-          {/if}
+  <body>
+    <div class="create-custom-item-container">
+      <div class="create-custom-item d-flex flex-column">
+        <div class="close-pop-up">
+          <i class="fas fa-times"></i>
         </div>
+        <h3 class="mb-4">Create a Custom Item</h3>
+        <label for="item-name">Item Name (optional)</label>
+        <input class="mb-4" type="text" name="item-name" />
+        <label for="item-author">Item Author (optional)</label>
+        <input class="mb-4" type="text" name="item-author" />
+        <label for="item-desc">Item Summary (optional)</label>
+        <textarea
+          name="item-desc"
+          id="item-desc"
+          cols="10"
+          rows="5"
+          class="mb-4"
+        ></textarea>
+        <label for="item-img">Item Cover Image (optional)</label>
+        <input class="mb-5 mt-2" type="file" name="item-img" id="item-img" />
+        <button class="green-button">Create Item</button>
       </div>
-    </nav>
-
-
-
-
-    {block name="body"}{/block}
-    
-
-
-
-
-    <footer class="page-footer font-small mainfooter container-fluid pt-5">
-      <div class="row">
-        <div class="col-lg-3"></div>
-        <div class="col-lg-2">
-          <ul class="footerlist">
-            <li><a href="/Promotion/"><img src="/Promotion/images/LogoWhite.png" alt=""></a></li>
-            <li>We aspire to connect animators globaly and provide free learning for those who aspire to be better</li>
-          </ul>
+    </div>
+    <nav class="vertical-nav pl-4" id="sidebar">
+      <button id="sidebarCollapse" type="button" class="burgerbar-button">
+        <i class="fa fa-bars"></i>
+      </button>
+      <a href="index.html">
+        <img class="readie-logo mb-5" src="./images/ReadieLogo.png" alt="" />
+      </a>
+      {if $user_datas}
+      <p class="font-weight-bold text-uppercase px-3 small pb-4 mb-0">
+        Dashboards
+      </p>
+      <div class="jcc alc f-row add-dashboard">
+        <div class="plus-sign">
+          <i class="fas fa-plus-circle"></i>
         </div>
-        <div class="col-lg-2">
-          {if $user_datas}
-          <ul class="footerlist">
-            <li><h3>Profile</h3></li>
-            <li><a href="/Promotion/profile/{$user_datas.username}">Your profile page</a></li>
-            <li><a href="/Promotion/profile/{$user_datas.username}/likes">Your Likes</a></li>
-            <li><a href="/Promotion/profile/{$user_datas.username}/finished">Your Finished</a></li>
-            <li><a href="/Promotion/profile/{$user_datas.username}/followers">Your Followers</a></li>
-            <li><a href="/Promotion/profile/{$user_datas.username}/following">Your Following</a></li>
-            <li><a href="/Promotion/profileEdit">Edit your Profile</a></li>
-          </ul>
-          {/if}
-        </div>
-        <div class="col-lg-2">
-          <ul class="footerlist">
-            <li><h3>Account</h3></li>
-            <li><a href="/Promotion/login">{if $user_datas} Log out {else} Log in {/if}</a></li>
-            <li><a href="/Promotion/register">Create an account</a></li>
-          </ul>
-        </div>
+        <textarea placeholder="Add a new dashboard"></textarea>
+      </div>
+      <ul class="nav flex-column mb-0">
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="fa fa-th-large mr-3 fa-fw"></i>
+            Subject
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="fa fa-address-card mr-3 fa-fw"></i>
+            Subject
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="fa fa-cubes mr-3 fa-fw"></i>
+            Subject
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="fa fa-picture-o mr-3 fa-fw"></i>
+            Subject
+          </a>
+        </li>
+      </ul>
+
+      <p
+        class="text-gray mt-5 font-weight-bold text-uppercase px-3 small py-4 mb-0"
+      >
+        Recent
+      </p>
+
+      <ul class="nav flex-column mb-0">
+        <li class="nav-item">
+          <a href="#" class="nav-link font-italic"> Crime and Punishment </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link font-italic"> Crime and Punishment </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link font-italic">
+            Crime and Punishment And some long text
+          </a>
+        </li>
+        <a class="login" href="/Readie/login"><span>Log out</span></a>
         
-      </div>
-    </footer>
-    <script src="/Promotion/js/scripts.min.js"></script>
-    <script>new Glide('.glide').mount(),{
-      type:'carousel',
-      perView:1
-    }</script>
-</body>
-
+      </ul>
+      {else}
+      <ul class="nav flex-column mb-0">
+        <a class="login" href="/Readie/register">Sign Up</a>
+      </ul>
+      {/if}
+    </nav>
+    {block name="main-body"} {/block}
+    </div>
+  </body>
 </html>

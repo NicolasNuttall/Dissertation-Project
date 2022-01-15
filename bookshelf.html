@@ -20,6 +20,29 @@
   </head>
 
   <body>
+    <div class="create-custom-item-container">
+      <div class="create-custom-item d-flex flex-column">
+        <div class="close-pop-up">
+          <i class="fas fa-times"></i>
+        </div>
+        <h3 class="mb-4">Create a Custom Item</h3>
+        <label for="item-name">Item Name (optional)</label>
+        <input class="mb-4" type="text" name="item-name" />
+        <label for="item-author">Item Author (optional)</label>
+        <input class="mb-4" type="text" name="item-author" />
+        <label for="item-desc">Item Summary (optional)</label>
+        <textarea
+          name="item-desc"
+          id="item-desc"
+          cols="10"
+          rows="5"
+          class="mb-4"
+        ></textarea>
+        <label for="item-img">Item Cover Image (optional)</label>
+        <input class="mb-5 mt-2" type="file" name="item-img" id="item-img" />
+        <button class="green-button">Create Item</button>
+      </div>
+    </div>
     <nav class="vertical-nav pl-4" id="sidebar">
       <button id="sidebarCollapse" type="button" class="burgerbar-button">
         <i class="fa fa-bars"></i>
@@ -64,16 +87,7 @@
       </ul>
 
       <p
-        class="
-          text-gray
-          mt-5
-          font-weight-bold
-          text-uppercase
-          px-3
-          small
-          py-4
-          mb-0
-        "
+        class="text-gray mt-5 font-weight-bold text-uppercase px-3 small py-4 mb-0"
       >
         Recent
       </p>
@@ -100,7 +114,9 @@
           <i class="fas fa-search"></i>
           <input placeholder="Search for a book to add" type="text" />
         </div>
-        <button class="green-button">Create Custom Item</button>
+        <button id="create-custome-item-button" class="green-button">
+          Create Custom Item
+        </button>
         <!-- <div class="row">
             <div class="col-6">
                 <div class="d-flex bookshelf-display">
@@ -142,7 +158,29 @@
                 </p>
               </div>
               <div class="d-flex book-buttons">
-                <button>View Book</button>
+                <button class="green-button">Study</button>
+              </div>
+            </div>
+            <div class="background"></div>
+          </div>
+          <div class="bookshelf-item-container">
+            <div class="book-item-front">
+              <img src="./images/book.jpg" alt="" />
+              <div class="front-info">
+                <h2>Book Title</h2>
+                <p>By Author name</p>
+              </div>
+            </div>
+            <div class="book-item-back">
+              <div class="book-stats">
+                <p class="notes-number">
+                  <span><i class="fas fa-sticky-note"></i></span> 21 Notes
+                </p>
+                <p class="reading-time">
+                  <span><i class="fas fa-clock"></i></span> 00:32:23
+                </p>
+              </div>
+              <div class="d-flex book-buttons">
                 <button>Study</button>
               </div>
             </div>
@@ -166,7 +204,6 @@
                 </p>
               </div>
               <div class="d-flex book-buttons">
-                <button>View Book</button>
                 <button>Study</button>
               </div>
             </div>
@@ -174,7 +211,7 @@
           </div>
           <div class="bookshelf-item-container">
             <div class="book-item-front">
-              <img src="./images/5695.jpg" alt="" />
+              <img src="./images/book.jpg" alt="" />
               <div class="front-info">
                 <h2>Book Title</h2>
                 <p>By Author name</p>
@@ -190,7 +227,6 @@
                 </p>
               </div>
               <div class="d-flex book-buttons">
-                <button>View Book</button>
                 <button>Study</button>
               </div>
             </div>
@@ -198,7 +234,7 @@
           </div>
           <div class="bookshelf-item-container">
             <div class="book-item-front">
-              <img src="./images/5695.jpg" alt="" />
+              <img src="./images/book.jpg" alt="" />
               <div class="front-info">
                 <h2>Book Title</h2>
                 <p>By Author name</p>
@@ -214,79 +250,6 @@
                 </p>
               </div>
               <div class="d-flex book-buttons">
-                <button>View Book</button>
-                <button>Study</button>
-              </div>
-            </div>
-            <div class="background"></div>
-          </div>
-          <div class="bookshelf-item-container">
-            <div class="book-item-front">
-              <img src="./images/5695.jpg" alt="" />
-              <div class="front-info">
-                <h2>Book Title</h2>
-                <p>By Author name</p>
-              </div>
-            </div>
-            <div class="book-item-back">
-              <div class="book-stats">
-                <p class="notes-number">
-                  <span><i class="fas fa-sticky-note"></i></span> 21 Notes
-                </p>
-                <p class="reading-time">
-                  <span><i class="fas fa-clock"></i></span> 00:32:23
-                </p>
-              </div>
-              <div class="d-flex book-buttons">
-                <button>View Book</button>
-                <button>Study</button>
-              </div>
-            </div>
-            <div class="background"></div>
-          </div>
-          <div class="bookshelf-item-container">
-            <div class="book-item-front">
-              <img src="./images/5695.jpg" alt="" />
-              <div class="front-info">
-                <h2>Book Title</h2>
-                <p>By Author name</p>
-              </div>
-            </div>
-            <div class="book-item-back">
-              <div class="book-stats">
-                <p class="notes-number">
-                  <span><i class="fas fa-sticky-note"></i></span> 21 Notes
-                </p>
-                <p class="reading-time">
-                  <span><i class="fas fa-clock"></i></span> 00:32:23
-                </p>
-              </div>
-              <div class="d-flex book-buttons">
-                <button>View Book</button>
-                <button>Study</button>
-              </div>
-            </div>
-            <div class="background"></div>
-          </div>
-          <div class="bookshelf-item-container">
-            <div class="book-item-front">
-              <img src="./images/5695.jpg" alt="" />
-              <div class="front-info">
-                <h2>Book Title</h2>
-                <p>By Author name</p>
-              </div>
-            </div>
-            <div class="book-item-back">
-              <div class="book-stats">
-                <p class="notes-number">
-                  <span><i class="fas fa-sticky-note"></i></span> 21 Notes
-                </p>
-                <p class="reading-time">
-                  <span><i class="fas fa-clock"></i></span> 00:32:23
-                </p>
-              </div>
-              <div class="d-flex book-buttons">
-                <button>View Book</button>
                 <button>Study</button>
               </div>
             </div>
