@@ -1,0 +1,60 @@
+.search-results{
+    display:flex;
+    flex-direction: column;
+    width:21rem;
+    position: absolute;
+    top:100%;
+    z-index: 100;
+    .search-result{
+        width:100%;
+        padding:0.5em 1em;
+        background-color: $offwhite;
+        display: flex;
+        flex-direction: row;
+        text-decoration: none;
+        &:hover{
+            background-color: rgb(243, 237, 243);
+            cursor:pointer;
+        }
+        .thumbnail{
+            margin-right: 1em;
+            height:80px;
+            img{
+                height: 100%;
+            }
+        }
+        .text-info{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+         
+            h4,p{
+                color:$darkblue !important;
+                &:hover{
+                    color:$darkblue !important;
+                    text-decoration: none !important;
+                    
+                }
+            }
+            h4{
+                font-size: 1.1rem;
+                font-family: "Song";
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2; /* number of lines to show */
+                -webkit-box-orient: vertical;
+                margin-bottom:0.2em;
+            }
+            p{
+                font-size: 1rem;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 1; /* number of lines to show */
+                -webkit-box-orient: vertical;
+                margin-bottom:0em;
+            }
+        }
+    }
+}

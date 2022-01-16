@@ -14,9 +14,11 @@ $(document).ready(function(){
 })
 
 window.addEventListener('mouseup', function(e) {
-    var x = document.querySelector('.note-menu');
-    if (event.target != document.querySelector(".note-menu-icon")) {
-        x.style.display = "none";
+    if($(".study-note-item").length){
+        var x = document.querySelector('.note-menu');
+        if (event.target != document.querySelector(".note-menu-icon")) {
+            x.style.display = "none";
+        }
     }
 });
 

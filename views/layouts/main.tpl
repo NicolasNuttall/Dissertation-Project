@@ -6,13 +6,14 @@
       integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
       crossorigin="anonymous"
     ></script>
-    <script src="./js/scripts-vendor.min.js"></script>
-    <script src="./js/scripts.min.js"></script>
+    <script src="/Readie/js/scripts-vendor.min.js"></script>
+    <script src="/Readie/js/scripts.min.js"></script>
     <meta charset="utf-8" />
-    <title>Promotion - Sharing animation tips for free!</title>
+    <title>Readie - Stay Educated</title>
+    <link rel="icon" href="/Readie/images/RLogo@4x.png">
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="css/styles.css" rel="stylesheet" />
+    <link href="/Readie/css/styles.css" rel="stylesheet" />
     <script
       src="https://kit.fontawesome.com/d96356a49f.js"
       crossorigin="anonymous"
@@ -48,7 +49,7 @@
         <i class="fa fa-bars"></i>
       </button>
       <a href="index.html">
-        <img class="readie-logo mb-5" src="./images/ReadieLogo.png" alt="" />
+        <img class="readie-logo mb-5" src="/Readie/images/ReadieLogo.png" alt="" />
       </a>
       {if $user_datas}
       <p class="font-weight-bold text-uppercase px-3 small pb-4 mb-0">

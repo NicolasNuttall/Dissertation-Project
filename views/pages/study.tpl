@@ -1,4 +1,5 @@
 {extends file="layouts/main.tpl"} {block name="main-body"}
+
 <div class="page-content" id="content">
   <div class="book-header-container mb-2">
     <div class="container bpb">
@@ -17,11 +18,11 @@
   <div class="container study-body bpb">
     <div class="mini-book-box">
       <div class="mini-book-img">
-        <img src="./images/5695.jpg" alt="" />
+        <img src="{$thumbnail}" alt="" />
       </div>
       <div class="mini-book-text">
-        <h3>Demons</h3>
-        <p>By Fyodor Dostoevsky</p>
+        <h3>{$title}</h3>
+        <p>By {$author}</p>
       </div>
     </div>
     <div class="study-section">

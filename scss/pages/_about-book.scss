@@ -257,12 +257,16 @@
 }
 .book-cover-container {
   width:100%;
+  animation:bookload 0.4s;
+  height:fit-content;
+  min-height: 15rem;
+  background-color: rgb(214, 204, 219);
   img {
     width: 100%;
     height: auto;
     position: relative;
     box-shadow: 4px 5px 4px rgba(0, 0, 0, 0.58);
-    animation:bookload 0.4s;
+
   }
 
 }

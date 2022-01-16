@@ -4,7 +4,12 @@
     <h2>Your Bookshelf</h2>
     <div class="row mb-4 search-bar">
       <i class="fas fa-search"></i>
-      <input placeholder="Search for a book to add" type="text" />
+      <input
+        placeholder="Search for a book to add"
+        type="text"
+        name="search-input"
+        id="search-input"
+      />
     </div>
     <button id="create-custome-item-button" class="green-button">
       Create Custom Item

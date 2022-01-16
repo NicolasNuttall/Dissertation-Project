@@ -8,7 +8,7 @@ require_once(__DIR__.'/../includes/autoloader.include.php');
  $ch = curl_init();
 
  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
- curl_setopt($ch, CURLOPT_URL, " https://www.googleapis.com/books/v1/volumes?q=javascript");
+ curl_setopt($ch, CURLOPT_URL, "https://www.googleapis.com/books/v1/volumes?q=javascript");
  $output = curl_exec($ch);
  curl_close($ch);
 

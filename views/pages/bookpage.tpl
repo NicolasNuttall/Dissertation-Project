@@ -1,6 +1,15 @@
 {extends file="layouts/main.tpl"} {block name="main-body"}
 <div class="page-content" id="content">
-  <div class="book-header-container mb-5">
+  <div class="row mt-5 mx-auto search-bar">
+    <i class="fas fa-search"></i>
+    <input
+      placeholder="Search for a book to add"
+      type="text"
+      name="search-input"
+      id="search-input"
+    />
+  </div>
+  <div class="book-header-container">
     <div class="container bpb">
       <div class="row book-header">
         <div class="book-nav">
@@ -14,12 +23,13 @@
       </div>
     </div>
   </div>
+
   <div class="container bookPageBody bpb">
     <div class="row about-page">
       <div class="col-3 bcc-container">
         <div class="bcc">
           <div class="book-cover-container">
-            <img src="./images/5695.jpg" alt="" />
+            <img src="{$thumbnail}" alt="" />
           </div>
           <div class="d-flex flex-column">
             <button class="green-button">Save</button>
@@ -38,19 +48,9 @@
       </div>
       <div class="col pl-5">
         <div class="book-details">
-          <h3>DEMONS (1876)</h3>
-          <p class="author-name">By Fyodor Dostoevsky</p>
-          <p class="book-description">
-            Dostoevsky conceived the idea of Crime and Punishment, prompted by
-            the case of Pierre François Lacenaire, in the summer of
-            1865.[citation needed] He had been working on another project at the
-            time entitled The Drunkards, which was to deal with "the present
-            question of drunkenness ... [in] all its ramifications, especially
-            the picture of a family and the bringing up of children in these
-            circumstances, etc., etc." This theme, centering on the story of the
-            Marmeladov family, became ancillary to the story of Raskolnikov and
-            his crime.[7]
-          </p>
+          <h3>{$title}</h3>
+          <p class="author-name">By {$author}</p>
+          <p class="book-description">{$booksubtitle}</p>
           <p class="loadmore">Read More</p>
         </div>
         <h3 class="recent-heading">

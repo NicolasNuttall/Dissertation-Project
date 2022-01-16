@@ -1,6 +1,8 @@
 <IfModule mod_rewrite.c>
     RewriteEngine on
-    RewriteRule ^(.+[^/])/$ http://%{HTTPS_HOST}/Promotion/$1 [R=301,L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.+[^/])/$ http://%{HTTPS_HOST}/Readie/$1 [R=301,L]
 
 
     RewriteRule ^([^/\.]+)?$ index.php?p=$1 [L]
