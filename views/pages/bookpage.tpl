@@ -32,13 +32,13 @@
             <img src="{$thumbnail}" alt="" />
           </div>
           <div class="d-flex flex-column">
-            {if $book.is_saved}
-            <button class="green-button" id="unsave" data-bookid="{$book.id}">
-              Save
+            {if $is_added}
+            <button class="green-button saved" id="unsave" data-bookid="{$id}">
+              Remove from shelf
             </button>
             {else}
-            <button class="green-button" id="save" data-bookid="{$book.id}">
-              Remove from shelf
+            <button class="green-button save" id="save" data-bookid="{$id}">
+              Save
             </button>
             {/if}
             <div class="stats">

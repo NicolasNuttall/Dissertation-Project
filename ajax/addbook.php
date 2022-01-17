@@ -6,26 +6,26 @@
 
  
  if($_SESSION["user_data"]){
-     $tutorial_id = (int) $_POST["tutorial_id"];
-     if($tutorial_id){
-         $finish = new Mark($Conn); 
-         $toggle = $finish->ToggleMark($tutorial_id);
+     $book_id = (string) $_POST["book_id"];
+     if($book_id){
+         $add = new Book($Conn); 
+         $toggle = $add->ToggleAdd($book_id);
          if($toggle){
              echo json_encode(array(
                  "success"=>true,
-                 "reason"=>"Mark Was submitted",
+                 "reason"=>"Add Was submitted",
 
              ));
          }else{
              echo json_encode(array(
                  "success"=>true,
-                 "reason"=>"Mark wasn't submitted"
+                 "reason"=>"Add wasn't submitted"
              ));
          }
      }else{
          echo json_encode(array(
              "success"=>false,
-             "reason"=>"No tutorial ID"
+             "reason"=>"No book ID"
          ));
      }
  }else{

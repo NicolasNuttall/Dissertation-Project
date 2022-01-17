@@ -17,4 +17,36 @@ class Book{
         $book = json_decode($output, true);
         return $book;
     }
+
+    public function ToggleAdd($book_id){
+        $added = $this->isadded($book_id);
+        if($added){
+            $query = "DELETE FROM DashboardItems WHERE BookID = :BookID AND username = :username";
+            $stmt = $this->Conn->prepare($query);
+            $stmt->execute([
+                "BookID"=>$book_id,
+                "username"=>$_SESSION["user_data"]["username"]
+            ]);
+            return false;
+        }else{
+            $query = "INSERT INTO DashboardItems (BookID, username, add_time) VALUES (:book_id,:username,:add_time)";
+            $stmt = $this->Conn->prepare($query);
+            $stmt->execute(array(
+                "book_id"=>$book_id,
+                "username"=>$_SESSION["user_data"]["username"],
+                "add_time"=>date("Y-m-d H:i:s")
+            ));
+            return true;
+        }
+    }
+
+    public function isadded($book_id){
+        $query = "SELECT * FROM DashboardItems WHERE BookID = :book_id AND username = :username";
+        $stmt = $this->Conn->prepare($query);
+        $stmt->execute([
+            "book_id"=>$book_id,
+            "username"=>$_SESSION["user_data"]["username"]
+        ]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
 }

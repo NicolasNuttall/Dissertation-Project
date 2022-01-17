@@ -1,6 +1,8 @@
 <?php 
     if($_GET["id"]){
         $book = new Book($Conn);
+        $book_id = $_GET["id"];
+        $smarty->assign("id",$book_id);
         $book_data = $book->LoadData();
         if($book_data){
             $booktitle = $book_data["volumeInfo"]["title"];
@@ -42,5 +44,18 @@
 
             
         }
+
+    }
+
+    if($_SESSION['user_data']){
+        $book = new Book($Conn);
+        $is_added = $book->isadded($book_id);
+
+        if($is_added){
+            $smarty->assign("is_added", true);
+        }else{
+            $smarty->assign("is_added",false);
+        }
+
 
     }
