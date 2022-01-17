@@ -161,7 +161,7 @@
     line-height: 20px;
     font-size: 1.1rem;
     display: -webkit-box;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 6;
     -webkit-box-orient: vertical;  
     overflow: hidden;
   }
@@ -171,7 +171,7 @@
 
 .loadedtext{
   overflow: visible !important;
-  -webkit-line-clamp: 30 !important;
+  -webkit-line-clamp: 100 !important;
 }
 
 .book-nav {

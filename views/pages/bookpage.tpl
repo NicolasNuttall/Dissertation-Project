@@ -32,7 +32,15 @@
             <img src="{$thumbnail}" alt="" />
           </div>
           <div class="d-flex flex-column">
-            <button class="green-button">Save</button>
+            {if $book.is_saved}
+            <button class="green-button" id="unsave" data-bookid="{$book.id}">
+              Save
+            </button>
+            {else}
+            <button class="green-button" id="save" data-bookid="{$book.id}">
+              Remove from shelf
+            </button>
+            {/if}
             <div class="stats">
               <a class="stat">
                 <i class="fas fa-clock"></i>
@@ -48,9 +56,9 @@
       </div>
       <div class="col pl-5">
         <div class="book-details">
-          <h3>{$title}</h3>
+          <h3>{$title} ({$year})</h3>
           <p class="author-name">By {$author}</p>
-          <p class="book-description">{$booksubtitle}</p>
+          <div class="book-description">{$booksubtitle}</div>
           <p class="loadmore">Read More</p>
         </div>
         <h3 class="recent-heading">

@@ -9,28 +9,35 @@
             $bookimagesmall = $book_data["volumeInfo"]["imageLinks"]["small"];
             $bookimagethumb = $book_data["volumeInfo"]["imageLinks"]["thumbnail"];
             $bookimagesmallthumb = $book_data["volumeInfo"]["imageLinks"]["smallThumbnail"];
-            
-            $booksubtitle = $book_data["volumeInfo"]["subtitle"];
+            $bookdate = $book_data["volumeInfo"]["publishedDate"];
+            $bookyear = substr($bookdate, 0, 4 ); 
+            $bookdescription = $book_data["volumeInfo"]["description"];
             $smarty->assign("title",$booktitle);
+            if($bookyear){
+                $smarty->assign("year", $bookyear);
+            }else{
+                $smarty->assign("year", "Unknown");
+            }
             if($bookauthor){
                 $smarty->assign("author", implode(", ", $bookauthor));
             }else{
                 $smarty->assign("author","Unknown Author");
             }
-            if($bookimage){
-                $smarty->assign("thumbnail",$bookimage);
-            }
-            elseif($bookimagesmall){
-                $smarty->assign("thumbnail",$bookimagesmall);
-            }
-            elseif($bookimagethumb){
+            if($bookimagethumb){
                 $smarty->assign("thumbnail",$bookimagethumb);
             }
             elseif($bookimagesmallthumb){
                 $smarty->assign("thumbnail",$bookimagethumb);
             }
-            if($booksubtitle){
-                $smarty->assign("booksubtitle",$booksubtitle);
+            elseif($bookimage){
+                $smarty->assign("thumbnail",$bookimage);
+            }
+            elseif($bookimagesmall){
+                $smarty->assign("thumbnail",$bookimagesmall);
+            }
+
+            if($bookdescription){
+                $smarty->assign("booksubtitle",$bookdescription);
             }
 
             
