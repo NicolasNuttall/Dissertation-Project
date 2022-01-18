@@ -17,12 +17,16 @@
   </div>
   <div class="row">
     <div class="bookshelf-grid">
-      <div class="bookshelf-item-container">
+      {foreach from=$bookshelf item=book}
+      <a
+        href="/Readie/bookpage/{$book.BookID}"
+        class="bookshelf-item-container"
+      >
         <div class="book-item-front">
-          <img src="./images/71wdVdp0ncL.jpg" alt="" />
+          <img src="{$book.BookImage}" alt="" />
           <div class="front-info">
-            <h2>Book Title</h2>
-            <p>By Author name</p>
+            <h2>{$book.BookTitle}</h2>
+            <p>By {$book.Authors}</p>
           </div>
         </div>
         <div class="book-item-back">
@@ -39,99 +43,8 @@
           </div>
         </div>
         <div class="background"></div>
-      </div>
-      <div class="bookshelf-item-container">
-        <div class="book-item-front">
-          <img src="./images/book.jpg" alt="" />
-          <div class="front-info">
-            <h2>Book Title</h2>
-            <p>By Author name</p>
-          </div>
-        </div>
-        <div class="book-item-back">
-          <div class="book-stats">
-            <p class="notes-number">
-              <span><i class="fas fa-sticky-note"></i></span> 21 Notes
-            </p>
-            <p class="reading-time">
-              <span><i class="fas fa-clock"></i></span> 00:32:23
-            </p>
-          </div>
-          <div class="d-flex book-buttons">
-            <button>Study</button>
-          </div>
-        </div>
-        <div class="background"></div>
-      </div>
-      <div class="bookshelf-item-container">
-        <div class="book-item-front">
-          <img src="./images/book.jpg" alt="" />
-          <div class="front-info">
-            <h2>Book Title</h2>
-            <p>By Author name</p>
-          </div>
-        </div>
-        <div class="book-item-back">
-          <div class="book-stats">
-            <p class="notes-number">
-              <span><i class="fas fa-sticky-note"></i></span> 21 Notes
-            </p>
-            <p class="reading-time">
-              <span><i class="fas fa-clock"></i></span> 00:32:23
-            </p>
-          </div>
-          <div class="d-flex book-buttons">
-            <button>Study</button>
-          </div>
-        </div>
-        <div class="background"></div>
-      </div>
-      <div class="bookshelf-item-container">
-        <div class="book-item-front">
-          <img src="./images/book.jpg" alt="" />
-          <div class="front-info">
-            <h2>Book Title</h2>
-            <p>By Author name</p>
-          </div>
-        </div>
-        <div class="book-item-back">
-          <div class="book-stats">
-            <p class="notes-number">
-              <span><i class="fas fa-sticky-note"></i></span> 21 Notes
-            </p>
-            <p class="reading-time">
-              <span><i class="fas fa-clock"></i></span> 00:32:23
-            </p>
-          </div>
-          <div class="d-flex book-buttons">
-            <button>Study</button>
-          </div>
-        </div>
-        <div class="background"></div>
-      </div>
-      <div class="bookshelf-item-container">
-        <div class="book-item-front">
-          <img src="./images/book.jpg" alt="" />
-          <div class="front-info">
-            <h2>Book Title</h2>
-            <p>By Author name</p>
-          </div>
-        </div>
-        <div class="book-item-back">
-          <div class="book-stats">
-            <p class="notes-number">
-              <span><i class="fas fa-sticky-note"></i></span> 21 Notes
-            </p>
-            <p class="reading-time">
-              <span><i class="fas fa-clock"></i></span> 00:32:23
-            </p>
-          </div>
-          <div class="d-flex book-buttons">
-            <button>Study</button>
-          </div>
-        </div>
-        <div class="background"></div>
-      </div>
+      </a>
+      {/foreach}
     </div>
   </div>
 </div>
