@@ -14,10 +14,10 @@
       <div class="row book-header">
         <div class="book-nav">
           <ul>
-            <li><a href="bookpage.html">About</a></li>
-            <li><a href="study.html">Study</a></li>
-            <li><a href="notes.html">Notes</a></li>
-            <li><a href="community.html">Community</a></li>
+            <li><a href="/Readie/summary/{$id}">Summary</a></li>
+            <li><a href="/Readie/study/{$id}">Study</a></li>
+            <li><a href="/Readie/notes/{$id}">Notes</a></li>
+            <li><a href="/Readie/community/{$id}">Community</a></li>
           </ul>
         </div>
       </div>

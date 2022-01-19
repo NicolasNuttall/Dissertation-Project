@@ -1,10 +1,6 @@
 $(document).ready(function(){
     $(".note-menu-icon").click(function(){
-        $(".note-menu").toggle();
-    }); 
-    $(".timer-menu").click(function(){
-        $(".timer-changer").toggleClass("revealed-menu");
-        $(".dropdown-arrow").toggleClass("upwardsarrow");
+        $(this).prev().toggle();
     }); 
 
     $("body").on("click", ".loadmore", function(e){

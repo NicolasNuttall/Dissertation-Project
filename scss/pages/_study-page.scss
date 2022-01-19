@@ -72,8 +72,8 @@
             }
             .timer-changer{
                 display:flex;
-                margin-left: auto;
-                padding:1em;
+                margin-left: 2em;
+                padding:0.5em;
                 background-color:white;
 
                 width: fit-content;
@@ -104,8 +104,15 @@
             margin-top:1em;
             background-color: white;
             padding-bottom: 1em;
+            display:flex;
+            flex-direction: column;
             textarea{
-                width:100%;
+                max-width:600px;
+                width: 100%;
+                min-height:200px;
+                margin-bottom:1em;
+                resize: none;
+                padding:1em;
             }
         }
     }

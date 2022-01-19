@@ -18,10 +18,7 @@
   <div class="row">
     <div class="bookshelf-grid">
       {foreach from=$bookshelf item=book}
-      <a
-        href="/Readie/bookpage/{$book.BookID}"
-        class="bookshelf-item-container"
-      >
+      <a href="/Readie/summary/{$book.BookID}" class="bookshelf-item-container">
         <div class="book-item-front">
           <img src="{$book.BookImage}" alt="" />
           <div class="front-info">

@@ -1,15 +1,24 @@
 {extends file="layouts/main.tpl"} {block name="main-body"}
 
 <div class="page-content" id="content">
+  <div class="row mt-5 mx-auto search-bar">
+    <i class="fas fa-search"></i>
+    <input
+      placeholder="Search for a book to add"
+      type="text"
+      name="search-input"
+      id="search-input"
+    />
+  </div>
   <div class="book-header-container mb-2">
     <div class="container bpb">
       <div class="row book-header">
         <div class="book-nav">
           <ul>
-            <li><a href="bookpage.html">About</a></li>
-            <li><a href="study.html">Study</a></li>
-            <li><a href="notes.html">Notes</a></li>
-            <li><a href="community.html">Community</a></li>
+            <li><a href="/Readie/summary/{$id}">Summary</a></li>
+            <li><a href="/Readie/study/{$id}">Study</a></li>
+            <li><a href="/Readie/notes/{$id}">Notes</a></li>
+            <li><a href="/Readie/community/{$id}">Community</a></li>
           </ul>
         </div>
       </div>
@@ -21,7 +30,7 @@
         <img src="{$thumbnail}" alt="" />
       </div>
       <div class="mini-book-text">
-        <h3>{$title}</h3>
+        <h3>{$title} {$year}</h3>
         <p>By {$author}</p>
       </div>
     </div>
@@ -74,8 +83,21 @@
           </div>
         </div>
         <div class="note-creation-box">
-          <textarea name="" id="" cols="30" rows="10"></textarea>
-          <button class="submit-note green-button">Submit</button>
+          <textarea
+            class="expandText"
+            name="noteText"
+            id="noteText"
+            cols="1"
+            rows="1"
+          ></textarea>
+          <button
+            class="submit-note green-button"
+            type="button"
+            data-bookid="{$id}"
+            id="createNote"
+          >
+            Submit
+          </button>
         </div>
       </div>
       <div class="study-notes-container">

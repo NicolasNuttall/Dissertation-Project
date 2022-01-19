@@ -1,15 +1,24 @@
 {extends file="layouts/main.tpl"} {block name="main-body"}
 
 <div class="page-content" id="content">
+  <div class="row mt-5 mx-auto search-bar">
+    <i class="fas fa-search"></i>
+    <input
+      placeholder="Search for a book to add"
+      type="text"
+      name="search-input"
+      id="search-input"
+    />
+  </div>
   <div class="book-header-container mb-2">
     <div class="container bpb">
       <div class="row book-header">
         <div class="book-nav">
           <ul>
-            <li><a href="bookpage.html">About</a></li>
-            <li><a href="study.html">Study</a></li>
-            <li><a href="notes.html">Notes</a></li>
-            <li><a href="community.html">Community</a></li>
+            <li><a href="/Readie/summary/{$id}">Summary</a></li>
+            <li><a href="/Readie/study/{$id}">Study</a></li>
+            <li><a href="/Readie/notes/{$id}">Notes</a></li>
+            <li><a href="/Readie/community/{$id}">Community</a></li>
           </ul>
         </div>
       </div>
@@ -18,11 +27,11 @@
   <div class="container bpb">
     <div class="mini-book-box">
       <div class="mini-book-img">
-        <img src="./images/5695.jpg" alt="" />
+        <img src="{$thumbnail}" alt="" />
       </div>
       <div class="mini-book-text">
-        <h3>Demons</h3>
-        <p>By Fyodor Dostoevsky</p>
+        <h3>{$title} {$year}</h3>
+        <p>By {$author}</p>
       </div>
     </div>
     <div class="your-notes-container">

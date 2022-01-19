@@ -1,23 +1,16 @@
 <?php 
     if($_GET["id"]){
         $book = new Book($Conn);
-        $book_data = $book->LoadData();
+        $book_id = $_GET["id"];
+        $smarty->assign("id",$book_id);
+        $book_data = $book->LoadData($book_id);
         if($book_data){
-            $booktitle = $book_data["volumeInfo"]["title"];
-            $bookauthor = $book_data["volumeInfo"]["authors"];
-            $bookimage = $book_data["volumeInfo"]["imageLinks"]["smallThumbnail"];
-            $booksubtitle = $book_data["volumeInfo"]["subtitle"];
-            $smarty->assign("title",$booktitle);
-            if($bookauthor){
-                $smarty->assign("author", implode(", ", $bookauthor));
-            }else{
-                $smarty->assign("author","Unknown Author");
-            }
-            if($bookimage){
-                $smarty->assign("thumbnail",$bookimage);
-            }
+            $smarty->assign("title",$book_data["title"]);
+            $smarty->assign("year", $book_data["year"]);
+            $smarty->assign("author", $book_data["authors"]);
 
-            
+            $smarty->assign("thumbnail",$book_data["usedImage"]);
+            $smarty->assign("booksubtitle",$book_data["description"]);  
         }
 
     }
