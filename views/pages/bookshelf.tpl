@@ -18,29 +18,35 @@
   <div class="row">
     <div class="bookshelf-grid">
       {foreach from=$bookshelf item=book}
-      <a href="/Readie/summary/{$book.BookID}" class="bookshelf-item-container">
-        <div class="book-item-front">
-          <img src="{$book.BookImage}" alt="" />
-          <div class="front-info">
-            <h2>{$book.BookTitle}</h2>
-            <p>By {$book.Authors}</p>
+      <div class="bs-container-container">
+        <a
+          href="/Readie/summary/{$book.BookID}"
+          class="bookshelf-item-container"
+        >
+          <div class="book-item-front">
+            <img src="{$book.BookImage}" alt="" />
+            <div class="front-info">
+              <h2>{$book.BookTitle}</h2>
+              <p>By {$book.Authors}</p>
+            </div>
           </div>
+          <div class="book-item-back">
+            <div class="book-stats">
+              <p class="notes-number">
+                <span><i class="fas fa-sticky-note"></i></span>
+                {$book.notes.amount} Notes
+              </p>
+              <p class="reading-time">
+                <span><i class="fas fa-clock"></i></span> 00:32:23
+              </p>
+            </div>
+          </div>
+          <div class="background"></div>
+        </a>
+        <div class="book-buttons">
+          <a href="/Readie/study/{$book.BookID}">Study</a>
         </div>
-        <div class="book-item-back">
-          <div class="book-stats">
-            <p class="notes-number">
-              <span><i class="fas fa-sticky-note"></i></span> 21 Notes
-            </p>
-            <p class="reading-time">
-              <span><i class="fas fa-clock"></i></span> 00:32:23
-            </p>
-          </div>
-          <div class="d-flex book-buttons">
-            <button class="green-button">Study</button>
-          </div>
-        </div>
-        <div class="background"></div>
-      </a>
+      </div>
       {/foreach}
     </div>
   </div>

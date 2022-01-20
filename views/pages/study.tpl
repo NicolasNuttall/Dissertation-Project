@@ -27,11 +27,11 @@
   <div class="container study-body bpb">
     <div class="mini-book-box">
       <div class="mini-book-img">
-        <img src="{$thumbnail}" alt="" />
+        <img src="{$book_data.usedImage}" alt="" />
       </div>
       <div class="mini-book-text">
-        <h3>{$title} {$year}</h3>
-        <p>By {$author}</p>
+        <h3>{$book_data.title} ({$book_data.year})</h3>
+        <p>By {$book_data.authors}</p>
       </div>
     </div>
     <div class="study-section">

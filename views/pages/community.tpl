@@ -27,19 +27,20 @@
   <div class="container bpb">
     <div class="mini-book-box">
       <div class="mini-book-img">
-        <img src="{$thumbnail}" alt="" />
+        <img src="{$book_data.usedImage}" alt="" />
       </div>
       <div class="mini-book-text">
-        <h3>{$title} {$year}</h3>
-        <p>By {$author}</p>
+        <h3>{$book_data.title} ({$book_data.year})</h3>
+        <p>By {$book_data.authors}</p>
       </div>
     </div>
     <div class="your-notes-container">
       <h3>Community Notes</h3>
       <div class="notes-boxes">
+        {foreach from=$notes item=note }
         <div class="note-box">
           <h4>
-            Note Heading Note Heading Note Heading Note Heading
+            {$note.Note_Title}
             <span>
               <div class="note-menu">
                 <ul>
@@ -51,46 +52,12 @@
               <i class="fas fa-ellipsis-v note-menu-icon"></i>
             </span>
           </h4>
-          <p class="noteauthor">By Nicolas Nuttall</p>
-          <p class="note-text">
-            You completed a 60 minute reading session, wYou completed a 60
-            minute reading session,here you reading session, wYou completed a 60
-            minute reading session,here you created reading session, wYou
-            completed a 60 minute reading session,here you created reading
-            session, wYou completed a 60 minute reading session,here you created
-            reading session, wYou completed a 60 minute reading session,here you
-            created created reading session, wYou completed a 60 minute reading
-            session,here you created 21 notes
-          </p>
+          <p class="noteauthor">By {$note.Username}</p>
+          <p class="note-text">{$note.NoteContent}</p>
           <p class="loadmore">Read More</p>
+          <p class="mt-4"><i>{$note.age}</i></p>
         </div>
-        <div class="note-box">
-          <h4>
-            Note Heading Note Heading Note Heading Note Heading
-            <span>
-              <div class="note-menu">
-                <ul>
-                  <li>Report User</li>
-                  <li>Save note</li>
-                  <li>Block User</li>
-                </ul>
-              </div>
-              <i class="fas fa-ellipsis-v note-menu-icon"></i>
-            </span>
-          </h4>
-          <p class="noteauthor">By Nicolas Nuttall<span>12 hours ago</span></p>
-          <p class="note-text">
-            You completed a 60 minute reading session, wYou completed a 60
-            minute reading session,here you reading session, wYou completed a 60
-            minute reading session,here you created reading session, wYou
-            completed a 60 minute reading session,here you created reading
-            session, wYou completed a 60 minute reading session,here you created
-            reading session, wYou completed a 60 minute reading session,here you
-            created created reading session, wYou completed a 60 minute reading
-            session,here you created 21 notes
-          </p>
-          <p class="loadmore">Read More</p>
-        </div>
+        {/foreach}
       </div>
     </div>
   </div>

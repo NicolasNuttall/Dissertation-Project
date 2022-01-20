@@ -48,7 +48,7 @@
       <button id="sidebarCollapse" type="button" class="burgerbar-button">
         <i class="fa fa-bars"></i>
       </button>
-      <a href="index.html">
+      <a href="/Readie/">
         <img class="readie-logo mb-5" src="/Readie/images/ReadieLogo.png" alt="" />
       </a>
       {if $user_datas}

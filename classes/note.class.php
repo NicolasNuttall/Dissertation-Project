@@ -48,4 +48,32 @@ class Note{
 
         return $notes_data;
     }
+
+    public function GetCommunityNotes($book_id){
+        $query = "SELECT * FROM Notes WHERE BookID = :book_id";
+        $stmt= $this->Conn->prepare($query);
+        $stmt->execute([
+            "book_id"=>$book_id
+        ]);
+        $notes_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        foreach($notes_data as &$note){
+            $origin = new DateTime();
+            $note_date = new DateTime(date($note["Creation_Date"]));
+            $age = $note_date->diff($origin);
+            if (!empty($age->format('%a'))){
+            $time_difference=$age->format('%a days ago');
+            } elseif ($note_date->format('d') != $origin->format('d')){
+                $time_difference="yesterday";
+            }elseif (!empty($age->format('%h'))){
+                    $time_difference=$age->format('%h hr, %i min ago');
+            } elseif (!empty($age->format('%i'))){
+                    $time_difference=$age->format('%i min ago');
+            } elseif (!empty($age->format('%s'))){
+                $time_difference=$age->format('%s sec ago');
+            }
+            $note["age"] = $time_difference;
+        }
+
+        return $notes_data;
+    }
 }

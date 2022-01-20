@@ -29,7 +29,7 @@
       <div class="col-3 bcc-container">
         <div class="bcc">
           <div class="book-cover-container">
-            <img src="{$thumbnail}" alt="" />
+            <img src="{$book_data.usedImage}" alt="" />
           </div>
           <div class="d-flex flex-column">
             {if $is_added}
@@ -48,7 +48,7 @@
               </a>
               <a class="stat">
                 <i class="fas fa-sticky-note"></i>
-                <p>23 Notes</p>
+                <p>{$book_data.notes.amount} Notes</p>
               </a>
             </div>
           </div>
@@ -56,9 +56,9 @@
       </div>
       <div class="col pl-5">
         <div class="book-details">
-          <h3>{$title} ({$year})</h3>
-          <p class="author-name">By {$author}</p>
-          <div class="book-description">{$booksubtitle}</div>
+          <h3>{$book_data.title} ({$book_data.year})</h3>
+          <p class="author-name">By {$book_data.authors}</p>
+          <div class="book-description">{$book_data.description}</div>
           <p class="loadmore">Read More</p>
         </div>
         <h3 class="recent-heading">

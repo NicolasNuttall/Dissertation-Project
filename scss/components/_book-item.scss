@@ -1,15 +1,13 @@
-.bookshelf-item-container {
-  margin-right: 4rem;
-  position: relative;
-  width: 13rem;
-  margin-top: 6rem;
-  text-decoration: none;
-  color:$darkblue;
-  height: 450px;
+.bs-container-container {
+  .bookshelf-item-container{
+    text-decoration: none;
+    color:$darkblue;
+  }
+
   &:hover {
     text-decoration: none;
     color:$darkblue;
-    height:450px;
+
     .background {
       transform: scale(1.1, 1.0);
       opacity: 1;
@@ -20,6 +18,7 @@
         object-fit: contain;
       }
       .front-info{
+        -webkit-line-clamp: 4;
         h2,p{
           -webkit-line-clamp: 3;
         }
@@ -93,7 +92,8 @@
     opacity: 0;
     transition: 0.1s ease-in-out;
     .book-stats {
-      margin-bottom: 1em;
+      margin-bottom: 2em;
+      margin-top:0.4rem;
       display: flex;
       flex-direction: row;
       justify-content: space-around;
@@ -113,23 +113,48 @@
       font-weight: lighter;
       margin-top: 0em;
     }
-    .book-buttons {
-      justify-content: center;
-      width: 84%;
-      button {
-        border-radius: 1em 0em 1em 0em;
-        padding: 0.6em 1em;
-        background-color:$green;
-        border: 0px;
-        outline: none;
-        color: var(--blueText);
-        font-weight: bold;
-        transition: 0.1s ease-in-out;
-        font-size: 0.9rem;
-        &:hover {
-          background-color: $darkblue;
-          color:$green;
-        }
+    
+  }
+}
+
+.bs-container-container{
+  height: fit-content;
+  width: fit-content;
+  height: 400px;
+  margin-right: 4rem;
+  position: relative;
+  width: 13rem;
+  margin-top: 6rem;
+  &:hover{
+    .book-buttons{
+
+      opacity:1;
+    }
+  }
+  .book-buttons {
+    justify-content: center;
+    width: 100%;
+    display:flex;
+    opacity: 0;
+    transition: 0.1s ease-in-out;
+    a {
+      border-radius: 1em 0em 1em 0em;
+      text-decoration: none;
+      padding: 0.6em 1em;
+      background-color:$green;
+      border: 0px;
+      outline: none;
+      color: var(--blueText);
+      font-weight: bold;
+      transition: 0.1s ease-in-out;
+      font-size: 0.9rem;
+      position:absolute;
+      margin-right: auto;
+      margin-left: auto;
+      bottom:1em;
+      &:hover {
+        background-color: $darkblue;
+        color:$green;
       }
     }
   }

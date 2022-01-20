@@ -52,7 +52,8 @@ class Book{
                 $book_data["description"] = "No Description";
             }
         }
-
+        $book_data["id"] = $book_id;
+        $book_data["notes"] = $this->getNotesAmount($book_id);
         return $book_data;
     }
 
@@ -135,13 +136,24 @@ class Book{
                 "book_id"=>$book["BookID"]
             ]);
             $book_item_data = $stmt->fetch();
-         
+            $book_item_data["notes"] = $this->getNotesAmount($book["BookID"]);
             if($book_item_data["BookID"]){
                 array_push($book_list,$book_item_data);
             }
         }
 
         return $book_list;
+    }
+
+    public function getNotesAmount($book_id){
+        $query = "SELECT COUNT(NoteID) as amount FROM Notes WHERE BookID = :BookID AND Username = :Username";
+        $stmt = $this->Conn->prepare($query);
+        $stmt->execute(array(
+            "BookID"=>$book_id,
+            "Username"=>$_SESSION["user_data"]["username"]
+        ));
+        return $attempt = $stmt->fetch();
+    
     }
     
 }

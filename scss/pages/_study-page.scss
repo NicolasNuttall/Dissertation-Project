@@ -106,13 +106,16 @@
             padding-bottom: 1em;
             display:flex;
             flex-direction: column;
+
             textarea{
                 max-width:600px;
                 width: 100%;
-                min-height:200px;
+                height:50px;
                 margin-bottom:1em;
                 resize: none;
                 padding:1em;
+                overflow:hidden ;
+                resize: none;
             }
         }
     }

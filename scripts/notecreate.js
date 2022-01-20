@@ -23,6 +23,15 @@ $(function(){
             txt.style.cssText = 'height:' + txt.scrollHeight + 'px';
         },0);
     });
+
+    $(".loadmore").each(function(index){
+        const l = $(this).prev().text();
+        const x = l.length;
+
+        if(x < 200){
+            $(this).hide();
+        }
+    })
 });
 
 
