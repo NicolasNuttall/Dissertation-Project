@@ -1,13 +1,24 @@
 {extends file="layouts/main.tpl"} {block name="main-body"}
 <div class="page-content" id="content">
-  <div class="row mt-5 mx-auto search-bar">
-    <i class="fas fa-search"></i>
-    <input
-      placeholder="Search for a book to add"
-      type="text"
-      name="search-input"
-      id="search-input"
-    />
+  <div class="container top-bar-book-page mx-auto row d-flex flex-row">
+    <div class="mini-book-box col-lg-6 mb-sm-0">
+      <div class="mini-book-img">
+        <img src="{$book_data.usedImage}" alt="" />
+      </div>
+      <div class="mini-book-text">
+        <h3>{$book_data.title} ({$book_data.year})</h3>
+        <p>By {$book_data.authors}</p>
+      </div>
+    </div>
+    <div class="search-bar col">
+      <i class="fas fa-search"></i>
+      <input
+        placeholder="Search for a book "
+        type="text"
+        name="search-input"
+        id="search-input"
+      />
+    </div>
   </div>
   <div class="book-header-container">
     <div class="container bpb">
@@ -34,7 +45,7 @@
           <div class="d-flex flex-column">
             {if $is_added}
             <button class="green-button saved" id="unsave" data-bookid="{$id}">
-              Remove from shelf
+              Remove
             </button>
             {else}
             <button class="green-button save" id="save" data-bookid="{$id}">

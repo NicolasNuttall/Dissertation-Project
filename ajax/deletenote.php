@@ -4,14 +4,13 @@
     require_once(__DIR__.'/../includes/db.include.php');
     require_once(__DIR__.'/../includes/autoloader.include.php');
     if($_SESSION["user_data"]){
-        $tutorial_id = (int) $_POST["tutorial_id"];
-        if($tutorial_id != ""){
-            $Tutorial = new Tutorial($Conn);
-            $delete = $Tutorial->DeleteTutorial($tutorial_id); 
-            if($delete){
+        $note_id = (int) $_POST["note_id"];
+        if($note_id != ""){
+            $note = new Note($Conn);
+            $delete = $note->Deletenote($note_id); 
+            if($delete == True){
                 echo json_encode(array(
                     "success"=>true,
-                    "link"=>"/Promotion/profile/".$_SESSION["user_data"]["username"]
                 ));
             }else{
                 echo json_encode(array(
@@ -22,7 +21,7 @@
         }else{
             echo json_encode(array(
                 "success"=>false,
-                "reason"=>"No tutorial ID"
+                "reason"=>"No note ID"
             ));
         }
     }else{

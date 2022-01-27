@@ -1,3 +1,57 @@
+.pop-up-box-container{
+  position: fixed;
+  z-index: 1000;
+  left:0;
+  top:0;
+  width:100vw;
+  height:100vh;
+  background-color: rgba(29, 25, 31, 0.4);
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  .pop-up-box{
+    max-width:280px;
+    padding:2.4em;
+    background-color: $offwhite;
+    border-radius: 1em;
+    display:flex;
+    flex-direction: column;
+    h4{
+      font-weight: bold;
+    }
+    p{
+      margin-bottom:2em;
+    }
+    #delete-button{
+      margin-bottom: 1em;
+      outline: none;
+      border:0px;
+      border-radius: 1.3em;
+      text-decoration: none;
+      background-color: $purple;
+      color:white;
+      padding:0.5em 1em;
+      font-weight: bold;
+      &:hover{
+        background-color: $darkblue;
+      }
+    }
+    #cancel-button{
+      font-weight: bold;
+      outline: none;
+      border-radius: 1.3em;
+      border:1px solid $darkblue;
+      color:$darkblue;
+      text-decoration: none;
+      background-color:$offwhite;
+      padding:0.5em 1em;
+      &:hover{
+        background-color: rgb(209, 206, 212);
+      }
+    }
+  }
+}
+
 .your-notes-container{
     h3{
         font-family: "Song";

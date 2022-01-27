@@ -1,15 +1,27 @@
 {extends file="layouts/main.tpl"} {block name="main-body"}
 
 <div class="page-content" id="content">
-  <div class="row mt-5 mx-auto search-bar">
-    <i class="fas fa-search"></i>
-    <input
-      placeholder="Search for a book to add"
-      type="text"
-      name="search-input"
-      id="search-input"
-    />
+  <div class="container top-bar-book-page mx-auto row d-flex flex-row">
+    <div class="mini-book-box col-lg-6 mb-sm-0">
+      <div class="mini-book-img">
+        <img src="{$book_data.usedImage}" alt="" />
+      </div>
+      <div class="mini-book-text">
+        <h3>{$book_data.title} ({$book_data.year})</h3>
+        <p>By {$book_data.authors}</p>
+      </div>
+    </div>
+    <div class="search-bar col">
+      <i class="fas fa-search"></i>
+      <input
+        placeholder="Search for a book "
+        type="text"
+        name="search-input"
+        id="search-input"
+      />
+    </div>
   </div>
+
   <div class="book-header-container mb-2">
     <div class="container bpb">
       <div class="row book-header">
@@ -25,15 +37,6 @@
     </div>
   </div>
   <div class="container study-body bpb">
-    <div class="mini-book-box">
-      <div class="mini-book-img">
-        <img src="{$book_data.usedImage}" alt="" />
-      </div>
-      <div class="mini-book-text">
-        <h3>{$book_data.title} ({$book_data.year})</h3>
-        <p>By {$book_data.authors}</p>
-      </div>
-    </div>
     <div class="study-section">
       <div class="sticky-box">
         <div class="study-top">
@@ -89,6 +92,7 @@
             id="noteText"
             cols="1"
             rows="1"
+            placeholder="What did you learn? Press Ctrl + Enter to fast submit"
           ></textarea>
           <button
             class="submit-note green-button"
@@ -100,80 +104,7 @@
           </button>
         </div>
       </div>
-      <div class="study-notes-container">
-        <div class="study-note-item">
-          <h4>
-            <span>
-              <div class="note-menu">
-                <ul>
-                  <li>Edit Note</li>
-                  <li>Delete Note</li>
-                  <li>Publish Note</li>
-                </ul>
-              </div>
-              <i class="fas fa-ellipsis-v note-menu-icon"></i>
-            </span>
-          </h4>
-          <p>
-            Something About this Something about that I think that his something
-            about that is really interesting and worth making a note of...
-          </p>
-        </div>
-        <div class="study-note-item">
-          <h4>
-            <span>
-              <div class="note-menu">
-                <ul>
-                  <li>Edit Note</li>
-                  <li>Delete Note</li>
-                  <li>Publish Note</li>
-                </ul>
-              </div>
-              <i class="fas fa-ellipsis-v note-menu-icon"></i>
-            </span>
-          </h4>
-          <p>
-            Something About this Something about that I think that his something
-            about that is really interesting and worth making a note of...
-          </p>
-        </div>
-        <div class="study-note-item">
-          <h4>
-            <span>
-              <div class="note-menu">
-                <ul>
-                  <li>Edit Note</li>
-                  <li>Delete Note</li>
-                  <li>Publish Note</li>
-                </ul>
-              </div>
-              <i class="fas fa-ellipsis-v note-menu-icon"></i>
-            </span>
-          </h4>
-          <p>
-            Something About this Something about that I think that his something
-            about that is really interesting and worth making a note of...
-          </p>
-        </div>
-        <div class="study-note-item">
-          <h4>
-            <span>
-              <div class="note-menu">
-                <ul>
-                  <li>Edit Note</li>
-                  <li>Delete Note</li>
-                  <li>Publish Note</li>
-                </ul>
-              </div>
-              <i class="fas fa-ellipsis-v note-menu-icon"></i>
-            </span>
-          </h4>
-          <p>
-            Something About this Something about that I think that his something
-            about that is really interesting and worth making a note of...
-          </p>
-        </div>
-      </div>
+      <div class="study-notes-container"></div>
     </div>
   </div>
 </div>
