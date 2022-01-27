@@ -15,9 +15,9 @@ $(function () {
             }
         })
         .done(function (rtnData) {
-            $(".study-notes-container").append('<div class="study-note-item" id=><h4><span><div class="note-menu"><ul><li id="' + rtnData["NoteID"] + '">Edit Note</li><li id="' + rtnData["NoteID"] + '">Delete Note</li><li id="' + rtnData["NoteID"] + '">Publish Note</li></ul></div><i class="fas fa-ellipsis-v note-menu-icon"></i></span></h4><p>' + note_data + '</p></div>')
+            $(".study-notes-container").append('<div class="study-note-item" id ='  + rtnData["NoteID"] + '><h4><span><div class="note-menu"><ul><li><button class="edit-note" data-noteid="' + rtnData["NoteID"] + '">Edit Note</button></li><li><button class="publish-note" data-noteid="' + rtnData["NoteID"] + '">Publish Note</button></li><li><button class="delete-note" data-noteid="' + rtnData["NoteID"] + '">Delete Note</button></li></ul></div><i class="fas fa-ellipsis-v note-menu-icon"></i></span></h4><p class="' +  rtnData["NoteID"]+'">'+ note_data + '</p></div>')
             $('#noteText').val('');
-           
+            
         })
     }
     $("body").on("click", '#createNote', function (e) {

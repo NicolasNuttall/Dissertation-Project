@@ -66,7 +66,7 @@
             </span>
           </h4>
 
-          <p class="note-text">{$note.NoteContent}</p>
+          <p class="{$note.NoteID} note-text">{$note.NoteContent}</p>
           <p class="loadmore">Read More</p>
         </div>
         {/foreach} {else}

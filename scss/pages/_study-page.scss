@@ -185,6 +185,17 @@
     }
 }
 
+.cool{
+    &:hover{
+        background-color: $purple !important;
+        color:white !important;
+    }
+}
+
+.study-finish{
+    animation: drop-in 0.3s ease-in-out;
+}
+
 #timerStop{
     display: none;
     i{

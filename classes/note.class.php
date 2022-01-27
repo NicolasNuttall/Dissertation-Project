@@ -7,7 +7,7 @@ class Note{
     }
 
     public function CreateNote($notecontent, $bookid){
-        $query = "INSERT INTO Notes (NoteContent,Username,BookID,Creation_Date,Note_Title,Private) VALUES (:NoteContent,:Username,:BookID,:Creation_Date, :Note_Title,:Private)";
+        $query = "INSERT INTO Notes (NoteContent,Username,BookID,Creation_Date,Note_Title,private_status) VALUES (:NoteContent,:Username,:BookID,:Creation_Date, :Note_Title,:private_status)";
         $stmt= $this->Conn->prepare($query);
         $stmt->execute([
             "NoteContent"=>$notecontent,
@@ -15,7 +15,7 @@ class Note{
             "BookID"=>$bookid,
             "Creation_Date"=>date("Y-m-d H:i:s"),
             "Note_Title"=>"Untitled Note",
-            "Private"=>"True"
+            "private_status"=>"True"
         ]);
         $a = $this->getNoteID($bookid);
         return $a;
@@ -105,5 +105,15 @@ class Note{
             "note_id"=>$note_id
         ]);
         return true;
+    }
+
+    public function EditNote($note_text, $note_id){
+        $query = "UPDATE Notes SET NoteContent = :note_text WHERE NoteID = :note_id";
+        $stmt= $this->Conn->prepare($query);
+        $stmt->execute([
+            "note_text"=>$note_text,
+            "note_id"=>$note_id
+        ]);
+        return $note_text;
     }
 }

@@ -76,87 +76,40 @@
           Recent Notes<span><a class="loadmore" href="">View All</a></span>
         </h3>
         <div class="recent-activity-container">
-          <div class="recent-activity">
+          {if $notes} {foreach from=$notes item=note}
+          <div class="recent-activity" id="{$note.NoteID}">
             <h4>
-              23 Days ago...
+              {$note.age}
               <span>
                 <div class="note-menu">
                   <ul>
-                    <li>Edit Note</li>
-                    <li>Delete Note</li>
-                    <li>Publish Note</li>
+                    <li>
+                      <button class="edit-note" data-noteid="{$note.NoteID}">
+                        Edit Note
+                      </button>
+                    </li>
+                    <li>
+                      <button class="publish-note" data-noteid="{$note.NoteID}">
+                        Publish Note
+                      </button>
+                    </li>
+                    <li>
+                      <button class="delete-note" data-noteid="{$note.NoteID}">
+                        Delete Note
+                      </button>
+                    </li>
                   </ul>
                 </div>
                 <i class="fas fa-ellipsis-v note-menu-icon"></i>
               </span>
             </h4>
 
-            <p class="note-text">
-              You completed a 60 minute reading session, wYou completed a 60
-              minute reading session,here you reading session, wYou completed a
-              60 minute reading session,here you created reading session, wYou
-              completed a 60 minute reading session,here you created reading
-              session, wYou completed a 60 minute reading session,here you
-              created reading session, wYou completed a 60 minute reading
-              session,here you created created reading session, wYou completed a
-              60 minute reading session,here you created 21 notes
-            </p>
+            <p class="note-text">{$note.NoteContent}</p>
             <p class="loadmore">Read More</p>
           </div>
-          <div class="recent-activity">
-            <h4>
-              23 Days ago...
-              <span>
-                <div class="note-menu">
-                  <ul>
-                    <li>Edit Note</li>
-                    <li>Delete Note</li>
-                    <li>Publish Note</li>
-                  </ul>
-                </div>
-                <i class="fas fa-ellipsis-v note-menu-icon"></i>
-              </span>
-            </h4>
-
-            <p class="note-text">
-              You completed a 60 minute reading session, wYou completed a 60
-              minute reading session,here you reading session, wYou completed a
-              60 minute reading session,here you created reading session, wYou
-              completed a 60 minute reading session,here you created reading
-              session, wYou completed a 60 minute reading session,here you
-              created reading session, wYou completed a 60 minute reading
-              session,here you created created reading session, wYou completed a
-              60 minute reading session,here you created 21 notes
-            </p>
-            <p class="loadmore">Read More</p>
-          </div>
-          <div class="recent-activity">
-            <h4>
-              23 Days ago...
-              <span>
-                <div class="note-menu">
-                  <ul>
-                    <li>Edit Note</li>
-                    <li>Delete Note</li>
-                    <li>Publish Note</li>
-                  </ul>
-                </div>
-                <i class="fas fa-ellipsis-v note-menu-icon"></i>
-              </span>
-            </h4>
-
-            <p class="note-text">
-              You completed a 60 minute reading session, wYou completed a 60
-              minute reading session,here you reading session, wYou completed a
-              60 minute reading session,here you created reading session, wYou
-              completed a 60 minute reading session,here you created reading
-              session, wYou completed a 60 minute reading session,here you
-              created reading session, wYou completed a 60 minute reading
-              session,here you created created reading session, wYou completed a
-              60 minute reading session,here you created 21 notes
-            </p>
-            <p class="loadmore">Read More</p>
-          </div>
+          {/foreach} {else}
+          <h2>No Notes</h2>
+          {/if}
         </div>
       </div>
     </div>

@@ -58,7 +58,7 @@
               class="timer-input"
             />
             <input
-              value="05"
+              value="00"
               placeholder="00"
               min="0"
               max="60"
@@ -68,7 +68,7 @@
               class="timer-input"
             />
             <input
-              value="10"
+              value="0"
               placeholder="00"
               min="0"
               max="60"

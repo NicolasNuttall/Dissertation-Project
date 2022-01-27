@@ -9,6 +9,12 @@
             $smarty->assign("book_data",$book_data);  
         }
 
+        $note = new Note($Conn);
+        $note_data = $note->GetUserNotes($book_id);
+        if($note_data){
+            $smarty->assign("notes", $note_data);
+        }
+
     }
 
     if($_SESSION['user_data']){

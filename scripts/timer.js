@@ -46,6 +46,7 @@ $(document).ready(()=>{
     const finishSession = () =>{
         console.log("DONE");
         clearInterval(timer);
+        $(".page-content").append("<div class='pop-up-box-container'><div class='edit-pop-up-box study-finish'><h4>Session Finished</h4><p>Time's up! All the notes you've created have been saved to the notes page. Meanwhile, you can use the  <span><i class='fa fa-ellipsis-v'></i></span> menu to publish, edit or delete your notes. </p><button id='cancel-button' class='cool'>Cool!</button></div></div>");
     };
 
 })

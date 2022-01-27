@@ -11,6 +11,19 @@
   align-items: center;
   .pop-up-box{
     max-width:280px;
+  }
+  .edit-pop-up-box{
+    max-width: 500px;
+    textarea{
+      width:400px;
+      height: fit-content;
+      max-height: 80vh;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      height:400px;
+    }
+  }
+  .pop-up-box, .edit-pop-up-box{
     padding:2.4em;
     background-color: $offwhite;
     border-radius: 1em;
