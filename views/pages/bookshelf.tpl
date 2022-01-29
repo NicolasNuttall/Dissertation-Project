@@ -37,7 +37,9 @@
                 {$book.notes.amount} Notes
               </p>
               <p class="reading-time">
-                <span><i class="fas fa-clock"></i></span> 00:32:23
+                <span><i class="fas fa-clock"></i></span>
+                {$book.timer.hours}h {$book.timer.minutes}m
+                {$book.timer.seconds}s
               </p>
             </div>
           </div>
