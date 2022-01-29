@@ -52,6 +52,21 @@ class Book{
                 $book_data["description"] = "No Description";
             }
         }
+        $query = "SELECT timer as amount FROM TimeSpent WHERE username = :username AND book_id = :book_id";
+        $stmt= $this->Conn->prepare($query);
+        $stmt->execute([
+            "username"=>$_SESSION["user_data"]["username"],
+            "book_id"=>$book_id
+        ]);
+        
+        $timer = $stmt->fetch();
+         
+        $book_data["sec"] = $timer["amount"];
+        
+        $book_data["timer"]["hours"] = floor($timer["amount"] / 3600);
+        $book_data["timer"]["minutes"] = floor(($timer["amount"]/60) % 60);
+        $book_data["timer"]["seconds"] = $timer["amount"] % 60;
+
         $book_data["id"] = $book_id;
         $book_data["notes"] = $this->getNotesAmount($book_id);
         return $book_data;

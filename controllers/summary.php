@@ -25,6 +25,4 @@
         }else{
             $smarty->assign("is_added",false);
         }
-
-
     }

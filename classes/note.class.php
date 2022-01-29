@@ -116,4 +116,36 @@ class Note{
         ]);
         return $note_text;
     }
+
+    public function UpdateTime($book_id, $count){
+
+        $query = "SELECT * FROM TimeSpent WHERE username = :username AND book_id = :book_id ";
+        $stmt= $this->Conn->prepare($query);
+        $stmt->execute([
+            "username"=>$_SESSION["user_data"]["username"],
+            "book_id"=>$book_id
+        ]);
+        $book = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        if(count($book) > 0){
+            $query = "UPDATE TimeSpent SET timer = timer + :count_ WHERE username = :username AND book_id = :book_id" ;
+            $stmt= $this->Conn->prepare($query);
+            $stmt->execute([
+                "count_"=>$count,
+                "username"=>$_SESSION["user_data"]["username"],
+                "book_id"=>$book_id
+            ]);
+            return $count; 
+
+        }else{
+            $query = "INSERT INTO TimeSpent (username, book_id, timer) VALUES (:username,:book_id, :count_)";
+            $stmt= $this->Conn->prepare($query);
+            $stmt->execute([
+                "username"=>$_SESSION["user_data"]["username"],
+                "book_id"=>$book_id,
+                "count_"=>$count
+            ]);
+            return $count;
+        }
+    }
 }

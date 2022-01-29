@@ -55,7 +55,10 @@
             <div class="stats">
               <a class="stat">
                 <i class="fas fa-clock"></i>
-                <p>2h 30m</p>
+                <p>
+                  {$book_data.timer.hours}h {$book_data.timer.minutes}m
+                  {$book_data.timer.seconds}s
+                </p>
               </a>
               <a class="stat">
                 <i class="fas fa-sticky-note"></i>

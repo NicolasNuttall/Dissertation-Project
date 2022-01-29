@@ -41,7 +41,7 @@
       <div class="sticky-box">
         <div class="study-top">
           <h4>Create a Note</h4>
-          <div class="timer-changer">
+          <div class="timer-changer" data-time="{$book_data.sec}">
             <div class="timer-labels">
               <p>H</p>
               <p>M</p>
@@ -85,7 +85,7 @@
             </button>
           </div>
         </div>
-        <div class="note-creation-box">
+        <div class="note-creation-box" data-noteno="{$book_data.notes.amount}">
           <textarea
             class="expandText"
             name="noteText"
