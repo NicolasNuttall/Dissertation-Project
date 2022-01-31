@@ -20,6 +20,8 @@
         $User = new User($Conn);
         $active_user_data = $User->getUser($_SESSION["user_data"]["username"]);
         $smarty->assign('user_datas',$active_user_data);
-
+        $book = new Book($Conn);
+        $recent_books = $book->recentlyRead();
+        $smarty->assign("recent_books", $recent_books);
     }
     

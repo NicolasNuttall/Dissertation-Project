@@ -58,7 +58,11 @@ class Book{
         $book_data["timer"]["hours"] = floor($timer["amount"] / 3600);
         $book_data["timer"]["minutes"] = floor(($timer["amount"]/60) % 60);
         $book_data["timer"]["seconds"] = $timer["amount"] % 60;
-
+        if($timer["amount"] > 0){
+            $book_data["sec"] = $timer["amount"];  
+        }else{
+            $book_data["sec"] = 0;
+        }
         $book_data["id"] = $book_id;
         $book_data["notes"] = $this->getNotesAmount($book_id);
         return $book_data;
@@ -182,4 +186,25 @@ class Book{
     
     }
     
+    public function recentlyRead(){
+        $query ="SELECT * FROM `Notes` GROUP BY BookID ORDER BY Creation_Date DESC LIMIT 5";
+        $stmt = $this->Conn->prepare($query);
+        $stmt->execute(array(
+            "Username"=>$_SESSION["user_data"]["username"]
+        ));
+        $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $book_list = array();
+        foreach($books as &$book){
+            $query ="SELECT * FROM Books WHERE BookID = :book_id";
+            $stmt = $this->Conn->prepare($query);
+            $stmt->execute(array(
+                "book_id"=>$book["BookID"]
+            ));
+            $item = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $book_item["BookID"] = $item[0]["BookID"];
+            $book_item["Title"] = $item[0]["BookTitle"];
+            array_push($book_list, $book_item);
+        }
+        return $book_list;
+    }
 }

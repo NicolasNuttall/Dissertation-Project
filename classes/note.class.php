@@ -68,6 +68,8 @@ class Note{
         ]);
         $notes_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
         foreach($notes_data as &$note){
+            $note["liked"] = $this->isadded($note["NoteID"]);
+
             $origin = new DateTime();
             $note_date = new DateTime(date($note["Creation_Date"]));
             $age = $note_date->diff($origin);
@@ -147,5 +149,36 @@ class Note{
             ]);
             return $count;
         }
+    }
+
+    public function ToggleSave($note_id){
+        $added = $this->isadded($note_id);
+        if($added){
+            $query = "DELETE FROM SavedNotes WHERE NoteID = :NoteID AND Username = :username";
+            $stmt = $this->Conn->prepare($query);
+            $stmt->execute([
+                "NoteID"=>$note_id,
+                "username"=>$_SESSION["user_data"]["username"]
+            ]);
+            return false;
+        }else{
+            $query = "INSERT INTO SavedNotes (NoteID, Username) VALUES (:NoteID,:username)";
+            $stmt = $this->Conn->prepare($query);
+            $stmt->execute(array(
+                "NoteID"=>$note_id,
+                "username"=>$_SESSION["user_data"]["username"]
+            ));           
+            return true;
+        }
+    }
+
+    public function isadded($note_id){
+        $query = "SELECT * FROM SavedNotes WHERE NoteID = :NoteID AND Username = :username";
+        $stmt = $this->Conn->prepare($query);
+        $stmt->execute([
+            "NoteID"=>$note_id,
+            "username"=>$_SESSION["user_data"]["username"]
+        ]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 }

@@ -41,13 +41,25 @@
       <div class="notes-boxes">
         {foreach from=$notes item=note }
         <div class="note-box">
+          {if $note.liked}
+          <i
+            class="like-button far fa-heart active-like-button"
+            id="unsave_note"
+            data-noteid="{$note.NoteID}"
+          ></i>
+          {else}
+          <i
+            class="like-button far fa-heart"
+            id="save_note"
+            data-noteid="{$note.NoteID}"
+          ></i>
+          {/if}
           <h4>
             {$note.Note_Title}
             <span>
               <div class="note-menu">
                 <ul>
                   <li>Report User</li>
-                  <li>Save note</li>
                   <li>Block User</li>
                 </ul>
               </div>

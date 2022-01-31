@@ -65,25 +65,31 @@
         <li class="nav-item">
           <a href="#" class="nav-link">
             <i class="fa fa-th-large mr-3 fa-fw"></i>
-            Subject
+            Bookshelf
           </a>
         </li>
         <li class="nav-item">
           <a href="#" class="nav-link">
             <i class="fa fa-address-card mr-3 fa-fw"></i>
-            Subject
+            Liked Notes
           </a>
         </li>
         <li class="nav-item">
           <a href="#" class="nav-link">
             <i class="fa fa-cubes mr-3 fa-fw"></i>
-            Subject
+            Journal
           </a>
         </li>
         <li class="nav-item">
           <a href="#" class="nav-link">
             <i class="fa fa-picture-o mr-3 fa-fw"></i>
-            Subject
+            Progress
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="fa fa-picture-o mr-3 fa-fw"></i>
+            All Notes
           </a>
         </li>
       </ul>
@@ -95,17 +101,11 @@
       </p>
 
       <ul class="nav flex-column mb-0">
+        {foreach from=$recent_books item=book}
         <li class="nav-item">
-          <a href="#" class="nav-link font-italic"> Crime and Punishment </a>
+          <a href="/Readie/summary/{$book.BookID}" class="nav-link font-italic"> {$book.Title}</a>
         </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link font-italic"> Crime and Punishment </a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link font-italic">
-            Crime and Punishment And some long text
-          </a>
-        </li>
+        {/foreach}
         <a class="login" href="/Readie/login"><span>Log out</span></a>
         
       </ul>

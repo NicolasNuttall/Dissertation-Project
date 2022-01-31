@@ -2,6 +2,7 @@
 $(document).ready(()=>{
     let count = 0;
     let notecount = 0;
+    let permcount = 0;
     var timer = null;
     $('#timerStart').click(()=>{
         let h = $("#hour").val();
@@ -27,6 +28,7 @@ $(document).ready(()=>{
     function startTimer(h, m, s){
         timer = setInterval(function(){
             count++;
+            permcount++;
             if(s > 0){
                 s--;
             }
@@ -42,7 +44,7 @@ $(document).ready(()=>{
                 h--;
             }
             else if (m == 0, h == 0, s == 0 ){
-                finishSession(count, notecount);
+                finishSession(permcount, notecount);
             }
             $("#sec").val(s);
             $("#min").val(m);
@@ -64,7 +66,7 @@ $(document).ready(()=>{
         }
     });
 
-    const finishSession = (count, notecount) =>{
+    const finishSession = (permcount, notecount) =>{
         const oldTime = parseInt($(".timer-changer").attr("data-time"));
         const oldNotes = parseInt($(".note-creation-box").attr("data-noteno"));
         clearInterval(timer);
@@ -83,10 +85,10 @@ $(document).ready(()=>{
             duration: 2000,
             easing: 'swing',
             step: function () {
-            $('#time-record').html(Math.floor(this.countNum) + " seconds");
+            $('#time-record').html(Math.floor(this.countNum) + " seconds <span>+" + permcount + "</span>");
         },
         complete: function () {
-            $('#time-record').html(this.countNum + " seconds");
+            $('#time-record').html(this.countNum + " seconds <span>+" + permcount + "</span>");
         }
         });
 
@@ -94,10 +96,10 @@ $(document).ready(()=>{
             duration: 2000,
             easing: 'swing',
             step: function () {
-            $('#notes-number').html(Math.floor(this.countNum) + " notes");
+            $('#notes-number').html(Math.floor(this.countNum) + " notes <span>+" + notecount + "</span>");
         },
         complete: function () {
-            $('#notes-number').html(this.countNum + " notes");
+            $('#notes-number').html(this.countNum + " notes <span>+" + notecount + "</span>");
         }
         });
 

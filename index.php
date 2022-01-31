@@ -4,8 +4,7 @@
  error_reporting(E_ALL & ~E_NOTICE);
  require_once(__DIR__.'/includes/boot.include.php');
 
-
-
+ 
 
  //Check if page is detected
  if($_GET['p']){
@@ -18,9 +17,16 @@
      }
      require_once('controllers/'.$_GET['p'].'.php');
      $smarty->display('pages/'.$_GET['p'].'.tpl');
+     $book = new Book($Conn);
+     $recent_books = $book->recentlyRead();
+ 
+     $smarty->assign("recent_books", $recent_books);
  }else{
      require_once('controllers/bookshelf.php');
      $smarty->display('pages/bookshelf.tpl');
  }
+
+
+
 
 ?>
