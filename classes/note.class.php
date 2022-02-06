@@ -38,7 +38,13 @@ class Note{
             "username"=>$_SESSION["user_data"]["username"],
             "book_id"=>$book_id
         ]);
-        $notes_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $notes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $notes_data = $this->getNoteAge($notes);
+
+        return $notes_data;
+    }
+
+    public function getNoteAge($notes_data){
         foreach($notes_data as &$note){
             $origin = new DateTime();
             $note_date = new DateTime(date($note["Creation_Date"]));
@@ -56,7 +62,6 @@ class Note{
             }
             $note["age"] = $time_difference;
         }
-
         return $notes_data;
     }
 
@@ -109,13 +114,15 @@ class Note{
         return true;
     }
 
-    public function EditNote($note_text, $note_id){
-        $query = "UPDATE Notes SET NoteContent = :note_text WHERE NoteID = :note_id";
+    public function EditNote($note_text, $note_id, $note_title){
+        $query = "UPDATE Notes SET NoteContent = :note_text, Note_Title = :note_title WHERE NoteID = :note_id";
         $stmt= $this->Conn->prepare($query);
         $stmt->execute([
             "note_text"=>$note_text,
+            "note_title"=>$note_title,
             "note_id"=>$note_id
         ]);
+        
         return $note_text;
     }
 
@@ -136,6 +143,12 @@ class Note{
                 "count_"=>$count,
                 "username"=>$_SESSION["user_data"]["username"],
                 "book_id"=>$book_id
+            ]);
+            $query = "UPDATE Goal SET goal_achieved = goal_achieved + :count_ WHERE username= :username";
+            $stmt= $this->Conn->prepare($query);
+            $stmt->execute([
+                "count_"=>$count,
+                "username"=>$_SESSION["user_data"]["username"],
             ]);
             return $count; 
 
@@ -180,5 +193,52 @@ class Note{
             "username"=>$_SESSION["user_data"]["username"]
         ]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function likedNotes(){
+        $query = "SELECT * FROM SavedNotes WHERE Username = :username";
+        $stmt = $this->Conn->prepare($query);
+        $stmt->execute([
+            "username"=>$_SESSION["user_data"]["username"]
+        ]);
+        $notes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $notes_list = array();
+        foreach($notes as &$note){
+            $query = "SELECT * FROM Notes WHERE NoteID = :note_id";
+            $stmt = $this->Conn->prepare($query);
+            $stmt->execute([
+                "note_id"=>$note["NoteID"]
+            ]);
+            $note_data =$stmt->fetch(PDO::FETCH_ASSOC);
+            $note_data["liked"] = $this->isadded($note["NoteID"]);
+            array_push($notes_list, $note_data);
+        }
+        $this->getNoteAge($notes_list);
+        return $notes_list;
+    }
+
+    public function getAllNotes(){
+        $query = "SELECT * FROM Notes WHERE Username = :username";
+        $stmt= $this->Conn->prepare($query);
+        $stmt->execute([
+            "username"=>$_SESSION["user_data"]["username"],
+        ]);
+        $notes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $notes_data = $this->getNoteAge($notes);
+        foreach($notes_data as &$note){
+            $note["liked"] = $this->isadded($note["NoteID"]);
+            $note["bookinfo"]=$this->getBookInfo($note["BookID"]);
+        }
+
+        return $notes_data;
+    }
+
+    public function getBookInfo($book_id){
+        $query = "SELECT * FROM Books WHERE BookID = :book_id";
+        $stmt= $this->Conn->prepare($query);
+        $stmt->execute([
+            "book_id"=>$book_id
+        ]);
+        return $stmt->fetch();
     }
 }

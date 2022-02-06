@@ -72,7 +72,7 @@ $(document).ready(()=>{
         clearInterval(timer);
         updateTimer(count);
         
-        let newTime = oldTime + count;
+        let newTime = oldTime + permcount;
         let newNotes = oldNotes + notecount;
 
 

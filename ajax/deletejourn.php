@@ -3,28 +3,25 @@
     require_once(__DIR__.'/../includes/config.include.php');
     require_once(__DIR__.'/../includes/db.include.php');
     require_once(__DIR__.'/../includes/autoloader.include.php');
-
-    
     if($_SESSION["user_data"]){
-        $username = (string) $_POST["username"];
-        if($username){
-            $User = new User($Conn);
-            $toggle = $User->toggleFollow($_POST['username']);
-            if($toggle){
+        $journ_id = (int) $_POST["journ_id"];
+        if($journ_id != ""){
+            $journ = new Journal($Conn);
+            $delete = $journ->DeleteJournal($journ_id); 
+            if($delete == True){
                 echo json_encode(array(
                     "success"=>true,
-                    "reason"=>"User was followed"
                 ));
             }else{
                 echo json_encode(array(
                     "success"=>true,
-                    "reason"=>"User was unfollowed"
+                    "reason"=>"Unsuccessfully deleted"
                 ));
             }
         }else{
             echo json_encode(array(
                 "success"=>false,
-                "reason"=>"No username"
+                "reason"=>"No journ ID"
             ));
         }
     }else{

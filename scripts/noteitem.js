@@ -20,7 +20,8 @@ $(document).ready(function(){
     $(document).on("click",".edit-note", function(){
         const a = $(this).data('noteid');
         const text = $("." + a).text();
-        $(".page-content").append("<div class='pop-up-box-container'><div class='edit-pop-up-box'><h4>Edit Note</h4><textarea   id='note-text-edit-input'>" + text + "</textarea><button id='edit-button' data-noteid='"+ a + "'>Save Changes</button><button id='cancel-button'>Cancel</button></div></div>");
+        const title = $(".x" + a).text();
+        $(".page-content").append("<div class='pop-up-box-container'><div class='edit-pop-up-box'><h4>Edit Note</h4><input id='note-title-input' type='text' value='" + title + "'><textarea  id='note-text-edit-input'>" + text + "</textarea><button id='edit-button' data-noteid='"+ a + "'>Save Changes</button><button id='cancel-button'>Cancel</button></div></div>");
     
     })
     $(document).on("click","#cancel-button", function(){
@@ -51,13 +52,15 @@ $(document).ready(function(){
     $(document).on("click","#edit-button",  function(){
         var note_id = $(this).data('noteid');
         var note_text = $("#note-text-edit-input").val();
+        var note_title = $("#note-title-input").val();
         $.ajax({
             method: "POST",
             url: "/Readie/ajax/editnote.php",
             dataType: 'json',
             data: {
                 note_id: note_id,
-                note_text:note_text
+                note_text:note_text,
+                note_title:note_title 
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log(textStatus, errorThrown);
@@ -66,7 +69,7 @@ $(document).ready(function(){
         .done(function (rtnData) {
             $(".pop-up-box-container").remove();
             $("." + note_id).text(rtnData);
-     
+
         })
     })
     

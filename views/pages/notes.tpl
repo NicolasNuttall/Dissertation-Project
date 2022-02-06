@@ -40,8 +40,8 @@
       <div class="notes-boxes">
         {if $notes} {foreach from=$notes item=note}
         <div class="note-box" id="{$note.NoteID}">
-          <h4>
-            {$note.age}
+          <h4 class="x{$note.NoteID}">
+            {$note.Note_Title}
             <span>
               <div class="note-menu">
                 <ul>
@@ -65,7 +65,7 @@
               <i class="fas fa-ellipsis-v note-menu-icon"></i>
             </span>
           </h4>
-
+          <p>{$note.age}</p>
           <p class="{$note.NoteID} note-text">{$note.NoteContent}</p>
           <p class="loadmore">Read More</p>
         </div>

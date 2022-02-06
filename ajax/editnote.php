@@ -6,9 +6,10 @@
     if($_SESSION["user_data"]){
         $note_id = (int) $_POST["note_id"];
         $note_text = (string) $_POST["note_text"];
+        $note_title = (string) $_POST["note_title"];
         if($note_id != ""){
             $note = new Note($Conn);
-            $publish = $note->EditNote($note_text, $note_id); 
+            $publish = $note->EditNote($note_text, $note_id, $note_title); 
             if($publish == True){
                 echo json_encode($publish);
             }else{

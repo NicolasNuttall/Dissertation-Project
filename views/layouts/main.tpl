@@ -52,42 +52,34 @@
         <img class="readie-logo mb-5" src="/Readie/images/ReadieLogo.png" alt="" />
       </a>
       {if $user_datas}
-      <p class="font-weight-bold text-uppercase px-3 small pb-4 mb-0">
-        Dashboards
-      </p>
-      <div class="jcc alc f-row add-dashboard">
-        <div class="plus-sign">
-          <i class="fas fa-plus-circle"></i>
-        </div>
-        <textarea placeholder="Add a new dashboard"></textarea>
-      </div>
+      
       <ul class="nav flex-column mb-0">
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="/Readie/bookshelf" class="nav-link">
             <i class="fa fa-th-large mr-3 fa-fw"></i>
             Bookshelf
           </a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="/Readie/liked-notes" class="nav-link">
             <i class="fa fa-address-card mr-3 fa-fw"></i>
             Liked Notes
           </a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="/Readie/journal" class="nav-link">
             <i class="fa fa-cubes mr-3 fa-fw"></i>
             Journal
           </a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="/Readie/progress" class="nav-link">
             <i class="fa fa-picture-o mr-3 fa-fw"></i>
             Progress
           </a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="/Readie/notes-archive" class="nav-link">
             <i class="fa fa-picture-o mr-3 fa-fw"></i>
             All Notes
           </a>

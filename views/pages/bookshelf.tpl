@@ -11,9 +11,9 @@
         id="search-input"
       />
     </div>
-    <button id="create-custome-item-button" class="green-button">
+    <!-- <button id="create-custome-item-button" class="green-button">
       Create Custom Item
-    </button>
+    </button> -->
   </div>
   <div class="row">
     <div class="bookshelf-grid">

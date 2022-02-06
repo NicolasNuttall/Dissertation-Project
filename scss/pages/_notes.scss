@@ -20,7 +20,7 @@
       max-height: 80vh;
       overflow-y: scroll;
       overflow-x: hidden;
-      height:400px;
+      height:fit-content;
     }
   }
   .pop-up-box, .edit-pop-up-box{
@@ -35,7 +35,23 @@
     p{
       margin-bottom:2em;
     }
-    #delete-button{
+    #edit-button, #edit-journ-button{
+      margin-top:1em;
+      margin-bottom: 1em;
+      padding:0.5em 1em;
+      border-radius: 1.3em;
+      text-decoration: none;
+      outline:none;
+      background-color:$green;
+      color:$darkblue;
+      font-weight: bold;
+      border:0px;
+      &:hover{
+        background-color: $darkblue;
+        color:$green;
+      }
+    }
+    #delete-button, #delete-journ-button{
       margin-bottom: 1em;
       outline: none;
       border:0px;
@@ -66,8 +82,9 @@
 }
 
 .your-notes-container{
+  margin-top:4rem;
     h3{
-        font-family: "Song";
+        font-family: "Bree Serif";
         font-size: 1.7rem;
         animation:textload 0.3s ease-in-out;
     }
@@ -91,6 +108,23 @@
       margin-top:2rem;
       height: fit-content;
       position: relative;
+      .book-info{
+        display: block;
+        position: absolute;
+        bottom:-1em;
+        text-decoration: none;
+        left:1em;
+        box-shadow:$menu-dropdown;
+        padding: 0.5em;
+        background-color: $offwhite;
+        transition: 0.1s ease-in-out;
+        &:hover{
+          transform:translateY(-5px);
+        }
+        img{
+          height:50px;
+        }
+      }
       .like-button{
         position: absolute;
         right:20px;
@@ -181,3 +215,8 @@
     }
   }
   
+
+.note-menu-icon{
+  padding:1em;
+  cursor:pointer;
+}

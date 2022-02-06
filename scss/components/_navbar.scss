@@ -1,9 +1,4 @@
 
-  
-
-
-
-
 .vertical-nav {
   min-width: 17rem;
   width: 17rem;
@@ -21,34 +16,7 @@
     height:2.5rem;
     padding-left: 1rem;
   }
-  .add-dashboard {
-    margin-bottom: 2rem;
-    width: 90%;
-    padding-left: 1rem;
-    textarea {
-      background-color: rgba(0, 0, 0, 0);
-      color: white;
-      outline: none;
-      border-bottom: 1px solid var(--purple);
-      border-right: 0px;
-      border-left: 0px;
-      width: 100%;
-      border-top: 0px;
-      height: 2rem;
-      &:hover,
-      &:focus {
-        border-bottom: 1px rgb(176, 51, 192) solid;
-      }
-    }
-    .plus-sign {
-      width: 40px;
-      margin-right: 0px;
-      i {
-        color: white;
-        font-size: 1.1rem;
-      }
-    }
-  }
+
   .burgerbar-button{
     position:fixed;
     top:1rem;
@@ -105,6 +73,8 @@
   }
   .nav-item{
     color:white;
+    width:80%;
+    border-radius:1em ;
     a{
       color:white;
       &:hover{
