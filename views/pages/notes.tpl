@@ -70,7 +70,9 @@
           <p class="loadmore">Read More</p>
         </div>
         {/foreach} {else}
-        <h2>No Notes</h2>
+        <div class="empty-container">
+          <p>You haven't created any notes for this book yet.</p>
+        </div>
         {/if}
       </div>
     </div>

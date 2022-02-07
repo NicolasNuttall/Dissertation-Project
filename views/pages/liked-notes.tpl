@@ -4,7 +4,7 @@
     <div class="your-notes-container">
       <h3>Liked Notes</h3>
       <div class="notes-boxes">
-        {foreach from=$note_data item=note}
+        {if $note_data} {foreach from=$note_data item=note}
         <div class="note-box">
           {if $note.liked}
           <i
@@ -36,7 +36,14 @@
           <p class="loadmore">Read More</p>
           <p class="mt-4"><i>{$note.age}</i></p>
         </div>
-        {/foreach}
+        {/foreach} {else}
+        <div class="empty-container">
+          <p>
+            No Liked notes here! Click on a note's heart icon whenever you want
+            to save it - you'll see them all here.
+          </p>
+        </div>
+        {/if}
       </div>
     </div>
   </div>

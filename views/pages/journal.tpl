@@ -59,7 +59,11 @@
           </div>
           <i class="fas fa-ellipsis-v note-menu-icon"></i>
         </div>
-        {/foreach}{/if}
+        {/foreach} {else}
+        <div class="empty-container">
+          <p>No Journal entries</p>
+        </div>
+        {/if}
       </div>
     </div>
   </div>

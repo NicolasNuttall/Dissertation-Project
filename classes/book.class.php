@@ -187,10 +187,10 @@ class Book{
     }
     
     public function recentlyRead(){
-        $query ="SELECT * FROM `Notes` GROUP BY BookID ORDER BY Creation_Date DESC LIMIT 5";
+        $query ="SELECT * FROM Notes WHERE username = :username GROUP BY BookID ORDER BY Creation_Date DESC LIMIT 5";
         $stmt = $this->Conn->prepare($query);
         $stmt->execute(array(
-            "Username"=>$_SESSION["user_data"]["username"]
+            "username"=>$_SESSION["user_data"]["username"]
         ));
         $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $book_list = array();

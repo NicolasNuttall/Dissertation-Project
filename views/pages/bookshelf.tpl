@@ -17,7 +17,7 @@
   </div>
   <div class="row">
     <div class="bookshelf-grid">
-      {foreach from=$bookshelf item=book}
+      {if $bookshelf} {foreach from=$bookshelf item=book}
       <div class="bs-container-container">
         <a
           href="/Readie/summary/{$book.BookID}"
@@ -49,7 +49,14 @@
           <a href="/Readie/study/{$book.BookID}">Study</a>
         </div>
       </div>
-      {/foreach}
+      {/foreach} {else}
+      <div class="empty-container">
+        <p>
+          There are no books on your shelf, use the search bar to find some and
+          add to your collection.
+        </p>
+      </div>
+      {/if}
     </div>
   </div>
 </div>

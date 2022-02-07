@@ -56,31 +56,31 @@
       <ul class="nav flex-column mb-0">
         <li class="nav-item">
           <a href="/Readie/bookshelf" class="nav-link">
-            <i class="fa fa-th-large mr-3 fa-fw"></i>
+            <i class="fas fa-book mr-3 fa-fw"></i>
             Bookshelf
           </a>
         </li>
         <li class="nav-item">
           <a href="/Readie/liked-notes" class="nav-link">
-            <i class="fa fa-address-card mr-3 fa-fw"></i>
+            <i class="fas fa-star  mr-3 fa-fw"></i>
             Liked Notes
           </a>
         </li>
         <li class="nav-item">
           <a href="/Readie/journal" class="nav-link">
-            <i class="fa fa-cubes mr-3 fa-fw"></i>
+            <i class="fas fa-book-open mr-3 fa-fw"></i>
             Journal
           </a>
         </li>
         <li class="nav-item">
           <a href="/Readie/progress" class="nav-link">
-            <i class="fa fa-picture-o mr-3 fa-fw"></i>
+            <i class="fas fa-signal mr-3 fa-fw"></i>
             Progress
           </a>
         </li>
         <li class="nav-item">
           <a href="/Readie/notes-archive" class="nav-link">
-            <i class="fa fa-picture-o mr-3 fa-fw"></i>
+            <i class="far fa-sticky-note mr-3 fa-fw"></i>
             All Notes
           </a>
         </li>
@@ -95,7 +95,7 @@
       <ul class="nav flex-column mb-0">
         {foreach from=$recent_books item=book}
         <li class="nav-item">
-          <a href="/Readie/summary/{$book.BookID}" class="nav-link font-italic"> {$book.Title}</a>
+          <a href="/Readie/summary/{$book.BookID}" class="nav-link "> {$book.Title}</a>
         </li>
         {/foreach}
         <a class="login" href="/Readie/login"><span>Log out</span></a>

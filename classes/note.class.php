@@ -66,7 +66,7 @@ class Note{
     }
 
     public function GetCommunityNotes($book_id){
-        $query = "SELECT * FROM Notes WHERE BookID = :book_id AND private_status = 'False'";
+        $query = "SELECT * FROM Notes WHERE BookID = :book_id AND private_status = 'False' ORDER BY Creation_Date DESC" ;
         $stmt= $this->Conn->prepare($query);
         $stmt->execute([
             "book_id"=>$book_id
@@ -196,7 +196,7 @@ class Note{
     }
 
     public function likedNotes(){
-        $query = "SELECT * FROM SavedNotes WHERE Username = :username";
+        $query = "SELECT * FROM SavedNotes WHERE Username = :username ORDER BY SavedNoteID DESC ";
         $stmt = $this->Conn->prepare($query);
         $stmt->execute([
             "username"=>$_SESSION["user_data"]["username"]
@@ -218,7 +218,7 @@ class Note{
     }
 
     public function getAllNotes(){
-        $query = "SELECT * FROM Notes WHERE Username = :username";
+        $query = "SELECT * FROM Notes WHERE Username = :username ORDER BY Creation_Date DESC";
         $stmt= $this->Conn->prepare($query);
         $stmt->execute([
             "username"=>$_SESSION["user_data"]["username"],

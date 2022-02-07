@@ -39,7 +39,7 @@
     <div class="your-notes-container">
       <h3>Community Notes</h3>
       <div class="notes-boxes">
-        {foreach from=$notes item=note }
+        {if $note} {foreach from=$notes item=note }
         <div class="note-box">
           {if $note.liked}
           <i
@@ -71,7 +71,11 @@
           <p class="loadmore">Read More</p>
           <p class="mt-4"><i>{$note.age}</i></p>
         </div>
-        {/foreach}
+        {/foreach} {else}
+        <div class="empty-container">
+          <p>No published notes yet.</p>
+        </div>
+        {/if}
       </div>
     </div>
   </div>

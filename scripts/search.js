@@ -38,7 +38,7 @@ $(document).ready(()=>{
                     bookInfo.image = (results.items[i].volumeInfo.imageLinks === undefined ? missingimg : results.items[i].volumeInfo.imageLinks.smallThumbnail);
                     bookInfo.publishDate = (results.items[i].volumeInfo.publishedDate === undefined ? "" : results.items[i].volumeInfo.publishedDate);
 
-                    $(".search-results").append("<a href='/Readie/bookpage/" + bookInfo.id + "' class='search-result'><div class='thumbnail'><img src=" + bookInfo.image + "></div><div class='text-info'><h4>" + bookInfo.title + "</h4><p>" + bookInfo.authors + "</p></div></a>")
+                    $(".search-results").append("<a href='/Readie/summary/" + bookInfo.id + "' class='search-result'><div class='thumbnail'><img src=" + bookInfo.image + "></div><div class='text-info'><h4>" + bookInfo.title + "</h4><p>" + bookInfo.authors + "</p></div></a>")
                 }
             });
         })

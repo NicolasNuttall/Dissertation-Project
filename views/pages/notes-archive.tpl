@@ -4,8 +4,8 @@
     <h3>All Notes</h3>
     <p>This page contains all the notes you've created using Readie.</p>
     <div class="notes-boxes">
-      {foreach from=$notes item=note }
-      <div class="note-box">
+      {if $notes} {foreach from=$notes item=note }
+      <div class="note-box" id="{$note.NoteID}">
         {if $note.liked}
         <i
           class="like-button far fa-heart active-like-button"
@@ -19,7 +19,7 @@
           data-noteid="{$note.NoteID}"
         ></i>
         {/if}
-        <h4>
+        <h4 class="x{$note.NoteID}">
           {$note.Note_Title}
           <span>
             <div class="note-menu">
@@ -45,14 +45,18 @@
           </span>
         </h4>
         <p class="noteauthor">By {$note.Username}</p>
-        <p class="note-text">{$note.NoteContent}</p>
+        <p class="{$note.NoteID} note-text">{$note.NoteContent}</p>
         <p class="loadmore">Read More</p>
         <p class="mt-4"><i>{$note.age}</i></p>
         <a href="/Readie/summary/{$note.BookID}" class="book-info">
           <img src="{$note.bookinfo.BookImage}" alt="" />
         </a>
       </div>
-      {/foreach}
+      {/foreach} {else}
+      <div class="empty-container">
+        <p>No notes yet - use a book's study section to create some.</p>
+      </div>
+      {/if}
     </div>
   </div>
 </div>

@@ -103,7 +103,7 @@ $(document).ready(()=>{
         }
         });
 
-
+        permcount = 0;
     };
 
     const updateTimer = (count) =>{
