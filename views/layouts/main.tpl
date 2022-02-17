@@ -48,12 +48,18 @@
       <button id="sidebarCollapse" type="button" class="burgerbar-button">
         <i class="fa fa-bars"></i>
       </button>
-      <a href="/Readie/">
+      <a href="/Readie/browse">
         <img class="readie-logo mb-5" src="/Readie/images/ReadieLogo.png" alt="" />
       </a>
       {if $user_datas}
       
       <ul class="nav flex-column mb-0">
+        <li class="nav-item">
+          <a href="/Readie/browse" class="nav-link">
+            <i class="fas fa-search mr-3 fa-fw"></i>
+            Browse
+          </a>
+        </li>
         <li class="nav-item">
           <a href="/Readie/bookshelf" class="nav-link">
             <i class="fas fa-book mr-3 fa-fw"></i>

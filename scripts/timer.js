@@ -89,6 +89,7 @@ $(document).ready(()=>{
         },
         complete: function () {
             $('#time-record').html(this.countNum + " seconds <span>+" + permcount + "</span>");
+            permcount = 0;
         }
         });
 
@@ -103,7 +104,7 @@ $(document).ready(()=>{
         }
         });
 
-        permcount = 0;
+     
     };
 
     const updateTimer = (count) =>{

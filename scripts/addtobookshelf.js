@@ -15,7 +15,7 @@ $(function(){
         .done(function(rtnData){
             if(rtnData.success == true){
                 $(obj).toggleClass("saved");
-                $(obj).text("Remove from shelf");
+                $(obj).text("Remove from Bookshelf");
                 $(obj).toggleClass("save");
                 $(obj).attr('id','unsave');
             }else{
@@ -38,7 +38,7 @@ $(function(){
         .done(function(rtnData){
             if(rtnData.success == true){
                 $(obj).toggleClass("saved");
-                $(obj).text("Save");
+                $(obj).text("Add to Bookshelf");
                 $(obj).toggleClass("save");
                 $(obj).attr('id','save');
             }

@@ -43,24 +43,15 @@
             <img src="{$book_data.usedImage}" alt="" />
           </div>
           <div class="d-flex flex-column">
-            {if $is_added}
-            <button class="green-button saved" id="unsave" data-bookid="{$id}">
-              Remove
-            </button>
-            {else}
-            <button class="green-button save" id="save" data-bookid="{$id}">
-              Save
-            </button>
-            {/if}
             <div class="stats">
-              <a class="stat">
+              <a href="/Readie/study/{$id}" class="stat">
                 <i class="fas fa-clock"></i>
                 <p>
                   {$book_data.timer.hours}h {$book_data.timer.minutes}m
                   {$book_data.timer.seconds}s
                 </p>
               </a>
-              <a class="stat">
+              <a href="/Readie/notes/{$id}" class="stat">
                 <i class="fas fa-sticky-note"></i>
                 <p>{$book_data.notes.amount} Notes</p>
               </a>
@@ -72,6 +63,19 @@
         <div class="book-details">
           <h3>{$book_data.title} ({$book_data.year})</h3>
           <p class="author-name">By {$book_data.authors}</p>
+          {if $is_added}
+          <button
+            class="green-button mb-3 saved"
+            id="unsave"
+            data-bookid="{$id}"
+          >
+            Remove from Bookshelf
+          </button>
+          {else}
+          <button class="green-button save mb-3" id="save" data-bookid="{$id}">
+            Add to Bookshelf
+          </button>
+          {/if}
           <div class="book-description">{$book_data.description}</div>
           <p class="loadmore">Read More</p>
         </div>

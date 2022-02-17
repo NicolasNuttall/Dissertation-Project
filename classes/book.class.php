@@ -32,6 +32,9 @@ class Book{
             else{
                 $book_data["title"] = "Unknown";
             }
+            if($book["volumeInfo"]["categories"]){
+                $book_data["genre"] = $book["volumeInfo"]["categories"][0];
+            }
 
             if($book["volumeInfo"]["authors"]){
                 $book_data["authors"] = implode(", ", $book["volumeInfo"]["authors"]);
@@ -89,7 +92,7 @@ class Book{
                 "add_time"=>date("Y-m-d H:i:s")
             ));
             if($saved == False){
-                $query = "INSERT INTO Books (BookID,BookTitle,BookDesc,BookPublishDate,Authors,BookImage) VALUES (:BookID,:BookTitle,:BookDesc,:BookPublishDate,:Authors,:BookImage)" ;
+                $query = "INSERT INTO Books (BookID,BookTitle,BookDesc,BookPublishDate,Authors,BookImage, genre) VALUES (:BookID,:BookTitle,:BookDesc,:BookPublishDate,:Authors,:BookImage, :genre)" ;
                 $stmt = $this->Conn->prepare($query);
                 $stmt->execute(array(
                     "BookID"=>$book_id,
@@ -97,7 +100,8 @@ class Book{
                     "BookDesc"=>$book_data["description"],
                     "BookPublishDate"=>$book_data["year"],
                     "Authors"=>$book_data["authors"],
-                    "BookImage"=>$book_data["usedImage"]
+                    "BookImage"=>$book_data["usedImage"],
+                    "genre"=>$book_data["genre"]
                 ));
                 
             }
@@ -207,4 +211,131 @@ class Book{
         }
         return $book_list;
     }
+
+    public function getByQuery($q){
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_URL, "https://www.googleapis.com/books/v1/volumes?".$q);
+        $output = curl_exec($ch);
+        curl_close($ch);
+        $books = json_decode($output, true);
+        $data = array();
+        for($x = 0; $x <= count($books); $x++){
+            $book_data = array();
+            if($books){
+
+                if($books["items"][$x]["volumeInfo"]["imageLinks"]["thumbnail"]){
+                    $book_data["usedImage"] = $books["items"][$x]["volumeInfo"]["imageLinks"]["thumbnail"];
+                }elseif($books["items"][$x]["volumeInfo"]["imageLinks"]["smallThumbnail"]){
+                    $book_data["usedImage"] = $books["items"][$x]["volumeInfo"]["imageLinks"]["smallThumbnail"];
+                }elseif($books["items"][$x]["volumeInfo"]["imageLinks"]["small"]){
+                    $book_data["usedImage"] = $books["items"][$x]["volumeInfo"]["imageLinks"]["small"];
+                }elseif($books["items"][$x]["volumeInfo"]["imageLinks"]["large"]){
+                    $book_data["usedImage"] = $books["items"][$x]["volumeInfo"]["imageLinks"]["large"];
+                }else{
+                    $book_data["usedImage"] = "No Image";
+                }
+                if($books["items"][$x]["volumeInfo"]["title"]){
+                    $book_data["title"] = $books["items"][$x]["volumeInfo"]["title"];
+                }
+                else{
+                    $book_data["title"] = "Unknown";
+                }
+                if($books["items"][$x]["volumeInfo"]["categories"]){
+                    $book_data["genre"] = $books["items"][$x]["volumeInfo"]["categories"][0];
+                }
+
+                if($books["items"][$x]["volumeInfo"]["authors"]){
+                    $book_data["authors"] = implode(", ", $books["items"][$x]["volumeInfo"]["authors"]);
+                }else{
+                    $book_data["authors"] = "Unknown Author";
+                }
+
+                $year = $books["items"][$x]["volumeInfo"]["publishedDate"];
+                if($year){
+                    $book_data["year"] = substr($year, 0, 4 ); 
+                }else{
+                    $book_data["year"] = "Year Unknown";
+                }
+                
+                if($books["items"][$x]["volumeInfo"]["description"]){
+                    $book_data["description"] = $books["items"][$x]["volumeInfo"]["description"];
+                }else{
+                    $book_data["description"] = "No Description";
+                }
+            }
+            array_push($data, $book_data);
+        }
+
+        return $data;
+    }
+
+    public function recomended(){
+        $query = "SELECT BookID FROM DashboardItems WHERE username=:username";
+        $stmt = $this->Conn->prepare($query);
+        $stmt->execute(array(
+            "username"=>$_SESSION["user_data"]["username"]
+        ));
+        $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $genre_list = array();
+        foreach($books as &$book){
+            $query ="SELECT genre FROM Books WHERE BookID = :book_id";
+            $stmt = $this->Conn->prepare($query);
+            $stmt->execute(array(
+                "book_id"=>$book["BookID"]
+            ));
+            $item = $stmt->fetch();
+            $x = explode("/", $item[0]);
+            foreach($x as $t){
+                if($t != ""){
+                    array_push($genre_list, $t);
+                }
+            }
+        }
+        $sorted_genres = array_count_values($genre_list);
+        $genre_item = array_keys($sorted_genres);
+        if($genre_item[2]){
+            $q = "q=genre:".$genre_item[0]."/".$genre_item[1]."/".$genre_item[2];
+            
+        }
+        elseif($genre_item[1]){
+            $q = "q=genre:".$genre_item[0]."/".$genre_item[1];
+        }elseif($genre_item[0]){
+            $q = "q=genre:".$genre_item[0];
+        }
+        $book_data = $this->getByQuery(str_replace(' ', "%20",$q));
+        return $book_data;
+
+    }
+
+    public function byAuthor(){
+        $query = "SELECT BookID FROM DashboardItems WHERE username=:username";
+        $stmt = $this->Conn->prepare($query);
+        $stmt->execute(array(
+            "username"=>$_SESSION["user_data"]["username"]
+        ));
+        $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $author_list = array();
+        foreach($books as &$book){
+            $query ="SELECT Authors FROM Books WHERE BookID = :book_id";
+            $stmt = $this->Conn->prepare($query);
+            $stmt->execute(array(
+                "book_id"=>$book["BookID"]
+            ));
+            $item = $stmt->fetch();
+            array_push($author_list, $item[0]);
+
+        }
+
+        $sorted_authors = array_count_values($author_list);
+        $author_item = array_keys($sorted_authors);
+        if($author_item[0]){
+            $q = "q=authors:".$author_item[2];
+        }
+     
+        $book_data = $this->getByQuery(str_replace(' ', "%20",$q));
+        return $book_data;
+    } 
+
+    
 }

@@ -28,8 +28,8 @@
   font-weight: bold;
   color: $darkblue;
   background-color: $green;
-  padding: 0.7em 2em;
-  border-radius: 1em 0 1em 0;
+  padding: 0.5em 1em;
+  border-radius: 4px;
   border: 0px;
   outline: 0px;
   transition: 0.1s ease-in-out;
@@ -140,5 +140,29 @@
     color:$darkblue;
     text-align: center;
     font-weight: bold;
+  }
+}
+
+@media screen and (max-width:975px){
+  .search-bar{
+    margin-top:1em;
+    input{
+      width:100%;
+    }
+  }
+  .book-cover-container{
+    display:none;
+  }
+  .your-notes-container{
+    .notes-boxes{
+      .note-box{
+        max-width: none !important  ;
+      }
+    }
+  }
+  .recent-activity-container{
+
+    max-width: none !important;
+    
   }
 }
