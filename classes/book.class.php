@@ -220,10 +220,10 @@ class Book{
         curl_close($ch);
         $books = json_decode($output, true);
         $data = array();
-        for($x = 0; $x <= count($books); $x++){
+        for($x = 0; $x <= 10; $x++){
             $book_data = array();
-            if($books){
-
+            if($books["items"][$x]){
+                $book_data["id"]=$books["items"][$x]["id"];
                 if($books["items"][$x]["volumeInfo"]["imageLinks"]["thumbnail"]){
                     $book_data["usedImage"] = $books["items"][$x]["volumeInfo"]["imageLinks"]["thumbnail"];
                 }elseif($books["items"][$x]["volumeInfo"]["imageLinks"]["smallThumbnail"]){
@@ -232,8 +232,6 @@ class Book{
                     $book_data["usedImage"] = $books["items"][$x]["volumeInfo"]["imageLinks"]["small"];
                 }elseif($books["items"][$x]["volumeInfo"]["imageLinks"]["large"]){
                     $book_data["usedImage"] = $books["items"][$x]["volumeInfo"]["imageLinks"]["large"];
-                }else{
-                    $book_data["usedImage"] = "No Image";
                 }
                 if($books["items"][$x]["volumeInfo"]["title"]){
                     $book_data["title"] = $books["items"][$x]["volumeInfo"]["title"];
@@ -264,7 +262,10 @@ class Book{
                     $book_data["description"] = "No Description";
                 }
             }
-            array_push($data, $book_data);
+            if($book_data["usedImage"]){
+                
+                array_push($data, $book_data);
+            }
         }
 
         return $data;
@@ -294,16 +295,19 @@ class Book{
         }
         $sorted_genres = array_count_values($genre_list);
         $genre_item = array_keys($sorted_genres);
-        if($genre_item[2]){
-            $q = "q=genre:".$genre_item[0]."/".$genre_item[1]."/".$genre_item[2];
-            
+
+        $book_set = array();
+
+        $random = rand(0, count($genre_item));
+
+        if($genre_item[$random]){
+            $q = "q=genre:".$genre_item[$random];
+            $book_data = $this->getByQuery(str_replace(' ', "%20",$q));
+            foreach($book_data as &$book){
+                array_push($book_set, $book);
+            }
         }
-        elseif($genre_item[1]){
-            $q = "q=genre:".$genre_item[0]."/".$genre_item[1];
-        }elseif($genre_item[0]){
-            $q = "q=genre:".$genre_item[0];
-        }
-        $book_data = $this->getByQuery(str_replace(' ', "%20",$q));
+    
         return $book_data;
 
     }
@@ -329,12 +333,19 @@ class Book{
 
         $sorted_authors = array_count_values($author_list);
         $author_item = array_keys($sorted_authors);
-        if($author_item[0]){
-            $q = "q=authors:".$author_item[2];
+        $book_set = array();
+
+        $random = rand(0, count($author_item) - 1);
+        if($author_item[$random]){
+            $q = "q=authors:".$author_item[$random];
+            $book_data = $this->getByQuery(str_replace(' ', "-",$q));
+            foreach($book_data as &$book){
+                array_push($book_set, $book);
+            }
         }
+        
      
-        $book_data = $this->getByQuery(str_replace(' ', "%20",$q));
-        return $book_data;
+        return $book_set;
     } 
 
     

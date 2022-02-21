@@ -4,7 +4,10 @@
         $recomended = $book->recomended();
         $byAuthors = $book->byAuthor();
         if($recomended){
-            $smarty->assign("recomended",$byAuthors);
+            $smarty->assign("recomended",$recomended);
         }
- 
+        if($byAuthors){
+            $smarty->assign("authors",$byAuthors);
+        }
+
     }
