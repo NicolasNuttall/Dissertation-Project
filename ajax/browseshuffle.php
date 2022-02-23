@@ -6,16 +6,17 @@
 
     
     if($_SESSION["user_data"]){
-        $shuffle = (bool) $_POST["shuffle"];
+        $shuffle = (int) $_POST["shuffle"];
 
         if($shuffle){
             $book = new Book($Conn);
-            $genre = $book->recomended();
-            $authors = $book->byAuthors();
+            
+            $authors = $book->byAuthor();
+            $recomended = $book->recomended();
             if($authors){
-                echo json_encode($authors);
-                $smarty->assign("recomended",$genre);
-                $smarty->assign("authors",$authors);
+         
+                echo json_encode(array($recomended,$authors));
+
             }else{
                 echo json_encode(array(
                     "success"=>true,
@@ -25,7 +26,7 @@
         }else{
             echo json_encode(array(
                 "success"=>false,
-                "reason"=>"k"
+                "reason"=>"b"
             ));
         }
     }else{

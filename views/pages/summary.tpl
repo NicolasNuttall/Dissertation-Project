@@ -63,19 +63,27 @@
         <div class="book-details">
           <h3>{$book_data.title} ({$book_data.year})</h3>
           <p class="author-name">By {$book_data.authors}</p>
-          {if $is_added}
-          <button
-            class="green-button mb-3 saved"
-            id="unsave"
-            data-bookid="{$id}"
-          >
-            Remove from Bookshelf
-          </button>
-          {else}
-          <button class="green-button save mb-3" id="save" data-bookid="{$id}">
-            Add to Bookshelf
-          </button>
-          {/if}
+          <div class="d-flex">
+            {if $is_added}
+            <button
+              class="green-button mb-3 saved"
+              id="unsave"
+              data-bookid="{$id}"
+            >
+              Remove from Bookshelf
+            </button>
+            {else}
+            <button
+              class="green-button save mb-3"
+              id="save"
+              data-bookid="{$id}"
+            >
+              Add to Bookshelf
+            </button>
+            {/if} {if $book_data.buyLink}
+            <a class="buylink" href="{$book_data.buyLink}">Get a Copy</a>
+            {/if}
+          </div>
           <div class="book-description">{$book_data.description}</div>
           <p class="loadmore">Read More</p>
         </div>

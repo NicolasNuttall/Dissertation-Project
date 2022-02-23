@@ -103,6 +103,22 @@
   }
 }
 
+.buylink{
+  margin-left:1em;
+  background-color: $darkblue;
+  color:$green;
+  padding:0.5em 1em;
+  border-radius: 4px;
+  font-weight: bold;
+  height: fit-content;
+  text-decoration: none;
+  &:hover{
+    color:$green;
+    text-decoration: none;
+    background-color: $blueText;
+  }
+}
+
 .book-header-container {
   width: 100%;
   display: flex;

@@ -1,8 +1,26 @@
 {extends file="layouts/main.tpl"} {block name="main-body"}
 <div class="bpb page-content">
   <div class="your-notes-container container">
+    <div class="ml-auto mr-4 row mb-4 search-bar">
+      <i class="fas fa-search"></i>
+      <input
+        placeholder="Search for a book to add"
+        type="text"
+        name="search-input"
+        id="search-input"
+      />
+    </div>
     <h3>All Notes</h3>
     <p>This page contains all the notes you've created using Readie.</p>
+    <div class="row mb-4 search-bar">
+      <i class="fas fa-search"></i>
+      <input
+        placeholder="Search for notes"
+        type="text"
+        name="note-search-input"
+        id="note-search-input"
+      />
+    </div>
     <div class="notes-boxes">
       {if $notes} {foreach from=$notes item=note }
       <div class="note-box" id="{$note.NoteID}">

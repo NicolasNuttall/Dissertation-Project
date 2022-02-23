@@ -14,7 +14,7 @@ class Book{
         curl_close($ch);
         $book = json_decode($output, true);
         $book_data = array();
-        if($book){
+        if($book && $book["volumeInfo"]["authors"]){
             if($book["volumeInfo"]["imageLinks"]["thumbnail"]){
                 $book_data["usedImage"] = $book["volumeInfo"]["imageLinks"]["thumbnail"];
             }elseif($book["volumeInfo"]["imageLinks"]["smallThumbnail"]){
@@ -34,6 +34,9 @@ class Book{
             }
             if($book["volumeInfo"]["categories"]){
                 $book_data["genre"] = $book["volumeInfo"]["categories"][0];
+            }
+            if($book["saleInfo"]["buyLink"]){
+                $book_data["buyLink"]=$book["saleInfo"]["buyLink"];
             }
 
             if($book["volumeInfo"]["authors"]){
@@ -222,7 +225,7 @@ class Book{
         $data = array();
         for($x = 0; $x <= 10; $x++){
             $book_data = array();
-            if($books["items"][$x]){
+            if($books["items"][$x] && $books["items"][$x]["volumeInfo"]["authors"]){
                 $book_data["id"]=$books["items"][$x]["id"];
                 if($books["items"][$x]["volumeInfo"]["imageLinks"]["thumbnail"]){
                     $book_data["usedImage"] = $books["items"][$x]["volumeInfo"]["imageLinks"]["thumbnail"];
@@ -298,17 +301,17 @@ class Book{
 
         $book_set = array();
 
-        $random = rand(0, count($genre_item));
+        $random = rand(0, count($genre_item) - 1);
 
         if($genre_item[$random]){
-            $q = "q=genre:".$genre_item[$random];
+            $q = "q=subject:".$genre_item[$random];
             $book_data = $this->getByQuery(str_replace(' ', "%20",$q));
             foreach($book_data as &$book){
                 array_push($book_set, $book);
             }
         }
     
-        return $book_data;
+        return $book_set;
 
     }
 
@@ -327,8 +330,13 @@ class Book{
                 "book_id"=>$book["BookID"]
             ));
             $item = $stmt->fetch();
-            array_push($author_list, $item[0]);
 
+            $x = explode(",", $item[0]);
+            foreach($x as $t){
+                if($t != ""){
+                    array_push($author_list, $t);
+                }
+            }
         }
 
         $sorted_authors = array_count_values($author_list);
@@ -337,14 +345,13 @@ class Book{
 
         $random = rand(0, count($author_item) - 1);
         if($author_item[$random]){
-            $q = "q=authors:".$author_item[$random];
+            $q = "q=inauthor:".$author_item[$random];
             $book_data = $this->getByQuery(str_replace(' ', "-",$q));
             foreach($book_data as &$book){
                 array_push($book_set, $book);
             }
         }
         
-     
         return $book_set;
     } 
 

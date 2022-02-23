@@ -101,6 +101,14 @@ class Note{
         $stmt->execute([
             "note_id"=>$note_id
         ]);
+        
+        $query = "DELETE FROM SavedNotes WHERE NoteID = :note_id";
+        $stmt= $this->Conn->prepare($query);
+        $stmt->execute([
+            "note_id"=>$note_id
+        ]);
+        
+
         return true;
     }
 
@@ -241,4 +249,32 @@ class Note{
         ]);
         return $stmt->fetch();
     }
+
+    public function noteSearch($q){
+        if($q != "show-all-notes"){
+            $query = "SELECT * FROM Notes WHERE Username = :username AND NoteContent LIKE :q OR Note_Title LIKE :q";
+            $stmt = $this->Conn->prepare($query);
+            $stmt->execute([
+                "q"=>"%".$q."%",
+                "username"=>$_SESSION["user_data"]["username"]
+            ]);
+        }else{
+            $query = "SELECT * FROM Notes WHERE Username = :username";
+            $stmt = $this->Conn->prepare($query);
+            $stmt->execute([
+                "username"=>$_SESSION["user_data"]["username"]
+            ]);
+        }
+
+        $notes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $notes_data = $this->getNoteAge($notes);
+        foreach($notes_data as &$note){
+            $note["liked"] = $this->isadded($note["NoteID"]);
+            $note["bookinfo"]=$this->getBookInfo($note["BookID"]);
+        }
+
+        return $notes_data;
+
+    }
+
 }

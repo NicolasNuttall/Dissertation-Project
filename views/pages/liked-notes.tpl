@@ -2,6 +2,15 @@
 <div class="page-content" id="content">
   <div class="container bpb">
     <div class="your-notes-container">
+      <div class="ml-auto mr-4 row mb-4 search-bar">
+        <i class="fas fa-search"></i>
+        <input
+          placeholder="Search for a book to add"
+          type="text"
+          name="search-input"
+          id="search-input"
+        />
+      </div>
       <h3>Liked Notes</h3>
       <div class="notes-boxes">
         {if $note_data} {foreach from=$note_data item=note}

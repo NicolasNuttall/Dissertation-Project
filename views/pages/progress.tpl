@@ -2,6 +2,15 @@
 
 <div class="page-content">
   <div class="progress-page container">
+    <div class="ml-auto mr-4 row mb-4 search-bar">
+      <i class="fas fa-search"></i>
+      <input
+        placeholder="Search for a book to add"
+        type="text"
+        name="search-input"
+        id="search-input"
+      />
+    </div>
     <h3 class="">
       Goals & Progress {if $progress}<span><button id="edit-goal">Edit Goals</button></span>{/if}
     </h2>

@@ -2,6 +2,15 @@
 
 <div class="page-content mt-5" id="content">
   <div class="container">
+    <div class="ml-auto mr-4 row mb-4 search-bar">
+      <i class="fas fa-search"></i>
+      <input
+        placeholder="Search for a book to add"
+        type="text"
+        name="search-input"
+        id="search-input"
+      />
+    </div>
     <div id="studyJournal" class="study-journal">
       <h3>Study Journal</h3>
       <p>
