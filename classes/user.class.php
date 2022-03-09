@@ -66,47 +66,10 @@
      
         }
 
-        public function getUserData($users_list){
-            $users = array();
-            foreach($users_list as &$user){
-                $query="SELECT username,avatar_img,banner_img,biography FROM Users WHERE username=:username";
-                $stmt=$this->Conn->prepare($query);
-                $stmt->execute(array(
-                    "username"=>$user["username"]
-                ));
-                $userData=$stmt->fetch();
-                $userData["followed"] = $this->isFollowed($user["username"]);
-                $userData["following"] = $this->isFollowing($user["username"]);
-                
-                $query = "SELECT COUNT(username) AS amount FROM Followers WHERE username = :username";
-                $stmt=$this->Conn->prepare($query);
-                $stmt->execute(array(
-                    "username"=>$user["username"]
-                ));
-                $followers = $stmt->fetch();
-                $userData["followers"] = $followers["amount"];
-                
-                array_push($users,$userData);
-            }
-
-            return $users;
-        }
+        
 
 
 
 
-        // public function changeUserPassword($current_pass, $new_pass){
-        //     if(!password_verify($current_pass, $_SESSION['user_data']['user_pass'])){
-        //         return false;
-        //     }
-            
-        //     $new_sec_pass = password_hash($new_pass, PASSWORD_DEFAULT);
-        //     $query = "UPDATE users SET user_pass = :user_pass WHERE user_id = :user_id";
-        //     $stmt = $this->Conn->prepare($query);
-        //     $stmt->execute(array(
-        //         "user_pass" =>$new_sec_pass,
-        //         "user_id"=>$_SESSION["user_data"]["user_id"]
-        //     ));
-        //     return true;
-        // }
+ 
     }

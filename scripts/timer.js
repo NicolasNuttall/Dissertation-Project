@@ -4,6 +4,7 @@ $(document).ready(()=>{
     let notecount = 0;
     let permcount = 0;
     var timer = null;
+    var audio = new Audio("../audio/bloop.mp3");
     $('#timerStart').click(()=>{
         let h = $("#hour").val();
         let m = $("#min").val();
@@ -31,6 +32,10 @@ $(document).ready(()=>{
             permcount++;
             if(s > 0){
                 s--;
+                if(s == 2 && m==0 & h==0){
+                    
+                    audio.load();
+                }
             }
             else if(s == 0 && m > 0){
                 s = 59;
@@ -44,7 +49,9 @@ $(document).ready(()=>{
                 h--;
             }
             else if (m == 0, h == 0, s == 0 ){
-                finishSession(permcount, notecount);
+                const tempperm =permcount;
+                permcount=0;
+                finishSession(tempperm, notecount);
             }
             $("#sec").val(s);
             $("#min").val(m);
@@ -66,13 +73,14 @@ $(document).ready(()=>{
         }
     });
 
-    const finishSession = (permcount, notecount) =>{
+    const finishSession = (tempperm, notecount) =>{
         const oldTime = parseInt($(".timer-changer").attr("data-time"));
         const oldNotes = parseInt($(".note-creation-box").attr("data-noteno"));
         clearInterval(timer);
         updateTimer(count);
-        
-        let newTime = oldTime + permcount;
+       
+        audio.play();
+        let newTime = oldTime + tempperm;
         let newNotes = oldNotes + notecount;
 
 
@@ -85,11 +93,10 @@ $(document).ready(()=>{
             duration: 2000,
             easing: 'swing',
             step: function () {
-            $('#time-record').html(Math.floor(this.countNum) + " seconds <span>+" + permcount + "</span>");
+            $('#time-record').html(Math.floor(this.countNum) + " seconds <span>+" + tempperm + "</span>");
         },
         complete: function () {
-            $('#time-record').html(this.countNum + " seconds <span>+" + permcount + "</span>");
-            permcount = 0;
+            $('#time-record').html(this.countNum + " seconds <span>+" + tempperm + "</span>");
         }
         });
 
@@ -104,7 +111,7 @@ $(document).ready(()=>{
         }
         });
 
-     
+        
     };
 
     const updateTimer = (count) =>{
