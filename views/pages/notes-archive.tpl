@@ -1,6 +1,6 @@
 {extends file="layouts/main.tpl"} {block name="main-body"}
-<div class="bpb page-content">
-  <div class="your-notes-container container">
+<div class="bpb page-content" id="content">
+  <div class="your-notes-container container mt-5">
     <div class="ml-auto mr-4 row mb-4 search-bar">
       <i class="fas fa-search"></i>
       <input

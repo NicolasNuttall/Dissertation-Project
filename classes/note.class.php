@@ -32,7 +32,7 @@ class Note{
     }
 
     public function GetUserNotes($book_id){
-        $query = "SELECT * FROM Notes WHERE Username = :username AND BookID = :book_id";
+        $query = "SELECT * FROM Notes WHERE Username = :username AND BookID = :book_id ORDER BY NoteID DESC " ;
         $stmt= $this->Conn->prepare($query);
         $stmt->execute([
             "username"=>$_SESSION["user_data"]["username"],

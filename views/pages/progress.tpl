@@ -1,6 +1,6 @@
 {extends file="layouts/main.tpl"} {block name="main-body"}
 
-<div class="page-content">
+<div class="page-content" id="content">
   <div class="progress-page container">
     <div class="ml-auto mr-4 row mb-4 search-bar">
       <i class="fas fa-search"></i>
