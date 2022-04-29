@@ -49,7 +49,6 @@
             </div>
             <input
               placeholder="00"
-              value="00"
               min="0"
               max="24"
               type="number"
@@ -58,7 +57,6 @@
               class="timer-input"
             />
             <input
-              value="00"
               placeholder="00"
               min="0"
               max="60"
@@ -68,7 +66,6 @@
               class="timer-input"
             />
             <input
-              value="0"
               placeholder="00"
               min="0"
               max="60"
@@ -92,6 +89,7 @@
             id="noteText"
             cols="1"
             rows="1"
+            maxlength="2000"
             placeholder="What did you learn? Press Ctrl + Enter to fast submit"
           ></textarea>
           <button

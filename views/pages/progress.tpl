@@ -40,6 +40,7 @@
     <div class="goal-progress-container mt-5">
       <p>{$progress.ga} / {$progress.gl} Minutes</p>
       <div class="empty-goal-bar">
+        <p style="left:{$progress.per}%;" class="progress-per">{$progress.per} % </p>
         <div style="width:{$progress.per}%;" class="goal-bar-fill"></div>
       </div>
     </div>

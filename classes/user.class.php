@@ -15,11 +15,11 @@
             ));
         }
         
-        public function loginUser($email,$password){
-            $query = "SELECT * FROM Users WHERE email = :user_email";
+        public function loginUser($username,$password){
+            $query = "SELECT * FROM Users WHERE username = :username";
             $stmt = $this->Conn->prepare($query);
             $stmt->execute(array(
-                "user_email"=>$email
+                "username"=>$username
             ));
             $attempt = $stmt->fetch();
             

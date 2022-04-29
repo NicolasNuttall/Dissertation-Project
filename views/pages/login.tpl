@@ -3,8 +3,8 @@
 <form action="" method="POST" name="login" id="login" class="acc-form" autocomplete="off" >
     <h1>Login</h3>
     <div class="input-section">
-      <input autocomplete="nope" type="email" class="acc-field" id="email" placeholder=" " name="email">
-      <label for="email" class="login-label">Email</label>
+      <input autocomplete="nope" type="username" class="acc-field" id="username" placeholder=" " name="username">
+      <label for="username" class="login-label">Username</label>
     </div>
     <div class="input-section">
       <input type="password" class="acc-field" id="password"  placeholder=" " name="password">  

@@ -87,6 +87,12 @@
                  border:0px;
                  outline:none;
                  -webkit-appearance: none;
+                 background-color: #ededed;
+                 text-align: center;
+                 height:3em;
+                 margin-right: 5px;
+                 border-radius: 3px;
+                 cursor:pointer;
                 }
                 i{
                     margin-left:1em;
@@ -227,11 +233,15 @@
 .timer-labels{
     display:flex;
     flex-direction: row;
-    justify-content: space-between;
-    width: 52%;
+    justify-content: space-around;
+    width:69%;
+    height: 1em;
     font-weight: bold;
     position: absolute;
     top:-1em;
+    p{
+        padding:0em 0.5em;
+    }
 }
 
 /* Chrome, Safari, Edge, Opera */

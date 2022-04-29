@@ -5,6 +5,11 @@ $(document).ready(()=>{
     let permcount = 0;
     var timer = null;
     var audio = new Audio("../audio/bloop.mp3");
+    $(".timer-input").click(()=>{
+        $(this).focus();
+        console.log("A");
+    })
+
     $('#timerStart').click(()=>{
         let h = $("#hour").val();
         let m = $("#min").val();
